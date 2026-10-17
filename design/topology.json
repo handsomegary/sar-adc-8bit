@@ -1,0 +1,4053 @@
+{
+  "scope": "Nominal authored geometry and connectivity. Symbolic models; no analog or native-CDF parameter equivalence claim for this export.",
+  "fingers_scope": "Fingers and native macro parameters are not exported; null is not a claim of one finger.",
+  "active_hierarchy_cell_count": 16,
+  "active_cells": [
+    "ADC",
+    "sar_and2",
+    "sar_buf_hi",
+    "sar_cdac",
+    "sar_comparator",
+    "sar_control",
+    "sar_inv",
+    "sar_inv_hi",
+    "sar_latchr0",
+    "sar_nand2",
+    "sar_nand3",
+    "sar_nor2",
+    "sar_or2",
+    "sar_pdffr0",
+    "sar_phases",
+    "sar_tg"
+  ],
+  "expanded_MOS_counts": {
+    "ADC": 769,
+    "sar_control": 424,
+    "sar_cdac": 314,
+    "sar_comparator": 27
+  },
+  "cells": {
+    "ADC": {
+      "ports": [
+        "AVDD",
+        "AVSS",
+        "VREFP",
+        "VREFN",
+        "VCM",
+        "VIP",
+        "VIN",
+        "D7",
+        "D6",
+        "D5",
+        "D4",
+        "D3",
+        "D2",
+        "D1",
+        "D0",
+        "CLK"
+      ],
+      "mos": [],
+      "instances": [
+        {
+          "instance": "XPI0",
+          "nodes": [
+            "AVDD",
+            "AVSS",
+            "por",
+            "porb"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XPI1",
+          "nodes": [
+            "AVDD",
+            "AVSS",
+            "porb",
+            "rst"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XCTL",
+          "nodes": [
+            "AVDD",
+            "AVSS",
+            "CLK",
+            "rst",
+            "cmpQ",
+            "track",
+            "cmpclk",
+            "q0",
+            "b7",
+            "b6",
+            "b5",
+            "b4",
+            "b3",
+            "b2",
+            "b1",
+            "b0",
+            "v7",
+            "v6",
+            "v5",
+            "v4",
+            "v3",
+            "v2",
+            "v1",
+            "v0",
+            "D7",
+            "D6",
+            "D5",
+            "D4",
+            "D3",
+            "D2",
+            "D1",
+            "D0"
+          ],
+          "cell": "sar_control"
+        },
+        {
+          "instance": "XCDAC",
+          "nodes": [
+            "AVDD",
+            "AVSS",
+            "VREFP",
+            "VREFN",
+            "VCM",
+            "VIP",
+            "VIN",
+            "track",
+            "b7",
+            "b6",
+            "b5",
+            "b4",
+            "b3",
+            "b2",
+            "b1",
+            "b0",
+            "v7",
+            "v6",
+            "v5",
+            "v4",
+            "v3",
+            "v2",
+            "v1",
+            "v0",
+            "vp",
+            "vn"
+          ],
+          "cell": "sar_cdac"
+        },
+        {
+          "instance": "XCMP",
+          "nodes": [
+            "AVDD",
+            "AVSS",
+            "cmpclk",
+            "vp",
+            "vn",
+            "cmpQ",
+            "cmpQB"
+          ],
+          "cell": "sar_comparator"
+        }
+      ],
+      "passives": [
+        {
+          "instance": "CPOR",
+          "nodes": [
+            "AVDD",
+            "por"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=1p"
+        },
+        {
+          "instance": "RPOR",
+          "nodes": [
+            "por",
+            "AVSS"
+          ],
+          "kind": "resistor",
+          "nominal_schematic_parameters": "r=100k"
+        }
+      ]
+    },
+    "sar_and2": {
+      "ports": [
+        "vdd",
+        "vss",
+        "a",
+        "b",
+        "y"
+      ],
+      "mos": [],
+      "instances": [
+        {
+          "instance": "Xn",
+          "nodes": [
+            "vdd",
+            "vss",
+            "a",
+            "b",
+            "yn"
+          ],
+          "cell": "sar_nand2"
+        },
+        {
+          "instance": "Xi",
+          "nodes": [
+            "vdd",
+            "vss",
+            "yn",
+            "y"
+          ],
+          "cell": "sar_inv"
+        }
+      ],
+      "passives": []
+    },
+    "sar_buf_hi": {
+      "ports": [
+        "vdd",
+        "vss",
+        "a",
+        "y"
+      ],
+      "mos": [],
+      "instances": [
+        {
+          "instance": "Xi0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "a",
+            "an"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xi1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "an",
+            "y"
+          ],
+          "cell": "sar_inv_hi"
+        }
+      ],
+      "passives": []
+    },
+    "sar_cdac": {
+      "ports": [
+        "vdd",
+        "vss",
+        "refp",
+        "refn",
+        "vcm",
+        "vip",
+        "vin",
+        "track",
+        "b7",
+        "b6",
+        "b5",
+        "b4",
+        "b3",
+        "b2",
+        "b1",
+        "b0",
+        "v7",
+        "v6",
+        "v5",
+        "v4",
+        "v3",
+        "v2",
+        "v1",
+        "v0",
+        "vp",
+        "vn"
+      ],
+      "mos": [
+        {
+          "instance": "MSNp0",
+          "nodes": [
+            "vp",
+            "track",
+            "vip",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MSPp0",
+          "nodes": [
+            "vp",
+            "trackb",
+            "vip",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MSNp1",
+          "nodes": [
+            "vp",
+            "track",
+            "vip",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MSPp1",
+          "nodes": [
+            "vp",
+            "trackb",
+            "vip",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MSNn0",
+          "nodes": [
+            "vn",
+            "track",
+            "vin",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MSPn0",
+          "nodes": [
+            "vn",
+            "trackb",
+            "vin",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MSNn1",
+          "nodes": [
+            "vn",
+            "track",
+            "vin",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MSPn1",
+          "nodes": [
+            "vn",
+            "trackb",
+            "vin",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHp7",
+          "nodes": [
+            "botp7",
+            "hi7",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHp7",
+          "nodes": [
+            "botp7",
+            "hib7",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLp7",
+          "nodes": [
+            "botp7",
+            "lo7",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLp7",
+          "nodes": [
+            "botp7",
+            "lob7",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMp7",
+          "nodes": [
+            "botp7",
+            "eb7",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMp7",
+          "nodes": [
+            "botp7",
+            "e7",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHn7",
+          "nodes": [
+            "botn7",
+            "hi7",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHn7",
+          "nodes": [
+            "botn7",
+            "hib7",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLn7",
+          "nodes": [
+            "botn7",
+            "lo7",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLn7",
+          "nodes": [
+            "botn7",
+            "lob7",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMn7",
+          "nodes": [
+            "botn7",
+            "eb7",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMn7",
+          "nodes": [
+            "botn7",
+            "e7",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHp6",
+          "nodes": [
+            "botp6",
+            "hi6",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHp6",
+          "nodes": [
+            "botp6",
+            "hib6",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLp6",
+          "nodes": [
+            "botp6",
+            "lo6",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLp6",
+          "nodes": [
+            "botp6",
+            "lob6",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMp6",
+          "nodes": [
+            "botp6",
+            "eb6",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMp6",
+          "nodes": [
+            "botp6",
+            "e6",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHn6",
+          "nodes": [
+            "botn6",
+            "hi6",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHn6",
+          "nodes": [
+            "botn6",
+            "hib6",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLn6",
+          "nodes": [
+            "botn6",
+            "lo6",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLn6",
+          "nodes": [
+            "botn6",
+            "lob6",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMn6",
+          "nodes": [
+            "botn6",
+            "eb6",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMn6",
+          "nodes": [
+            "botn6",
+            "e6",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHp5",
+          "nodes": [
+            "botp5",
+            "hi5",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHp5",
+          "nodes": [
+            "botp5",
+            "hib5",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLp5",
+          "nodes": [
+            "botp5",
+            "lo5",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLp5",
+          "nodes": [
+            "botp5",
+            "lob5",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMp5",
+          "nodes": [
+            "botp5",
+            "eb5",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMp5",
+          "nodes": [
+            "botp5",
+            "e5",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHn5",
+          "nodes": [
+            "botn5",
+            "hi5",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHn5",
+          "nodes": [
+            "botn5",
+            "hib5",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLn5",
+          "nodes": [
+            "botn5",
+            "lo5",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLn5",
+          "nodes": [
+            "botn5",
+            "lob5",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMn5",
+          "nodes": [
+            "botn5",
+            "eb5",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMn5",
+          "nodes": [
+            "botn5",
+            "e5",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHp4",
+          "nodes": [
+            "botp4",
+            "hi4",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHp4",
+          "nodes": [
+            "botp4",
+            "hib4",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLp4",
+          "nodes": [
+            "botp4",
+            "lo4",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLp4",
+          "nodes": [
+            "botp4",
+            "lob4",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMp4",
+          "nodes": [
+            "botp4",
+            "eb4",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMp4",
+          "nodes": [
+            "botp4",
+            "e4",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHn4",
+          "nodes": [
+            "botn4",
+            "hi4",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHn4",
+          "nodes": [
+            "botn4",
+            "hib4",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLn4",
+          "nodes": [
+            "botn4",
+            "lo4",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLn4",
+          "nodes": [
+            "botn4",
+            "lob4",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMn4",
+          "nodes": [
+            "botn4",
+            "eb4",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMn4",
+          "nodes": [
+            "botn4",
+            "e4",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHp3",
+          "nodes": [
+            "botp3",
+            "hi3",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHp3",
+          "nodes": [
+            "botp3",
+            "hib3",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLp3",
+          "nodes": [
+            "botp3",
+            "lo3",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLp3",
+          "nodes": [
+            "botp3",
+            "lob3",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMp3",
+          "nodes": [
+            "botp3",
+            "eb3",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMp3",
+          "nodes": [
+            "botp3",
+            "e3",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHn3",
+          "nodes": [
+            "botn3",
+            "hi3",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHn3",
+          "nodes": [
+            "botn3",
+            "hib3",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLn3",
+          "nodes": [
+            "botn3",
+            "lo3",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLn3",
+          "nodes": [
+            "botn3",
+            "lob3",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMn3",
+          "nodes": [
+            "botn3",
+            "eb3",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMn3",
+          "nodes": [
+            "botn3",
+            "e3",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHp2",
+          "nodes": [
+            "botp2",
+            "hi2",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHp2",
+          "nodes": [
+            "botp2",
+            "hib2",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLp2",
+          "nodes": [
+            "botp2",
+            "lo2",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLp2",
+          "nodes": [
+            "botp2",
+            "lob2",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMp2",
+          "nodes": [
+            "botp2",
+            "eb2",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMp2",
+          "nodes": [
+            "botp2",
+            "e2",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHn2",
+          "nodes": [
+            "botn2",
+            "hi2",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHn2",
+          "nodes": [
+            "botn2",
+            "hib2",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLn2",
+          "nodes": [
+            "botn2",
+            "lo2",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLn2",
+          "nodes": [
+            "botn2",
+            "lob2",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMn2",
+          "nodes": [
+            "botn2",
+            "eb2",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMn2",
+          "nodes": [
+            "botn2",
+            "e2",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHp1",
+          "nodes": [
+            "botp1",
+            "hi1",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHp1",
+          "nodes": [
+            "botp1",
+            "hib1",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLp1",
+          "nodes": [
+            "botp1",
+            "lo1",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLp1",
+          "nodes": [
+            "botp1",
+            "lob1",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMp1",
+          "nodes": [
+            "botp1",
+            "eb1",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMp1",
+          "nodes": [
+            "botp1",
+            "e1",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHn1",
+          "nodes": [
+            "botn1",
+            "hi1",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHn1",
+          "nodes": [
+            "botn1",
+            "hib1",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLn1",
+          "nodes": [
+            "botn1",
+            "lo1",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLn1",
+          "nodes": [
+            "botn1",
+            "lob1",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMn1",
+          "nodes": [
+            "botn1",
+            "eb1",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMn1",
+          "nodes": [
+            "botn1",
+            "e1",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHp0",
+          "nodes": [
+            "botp0",
+            "hi0",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHp0",
+          "nodes": [
+            "botp0",
+            "hib0",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLp0",
+          "nodes": [
+            "botp0",
+            "lo0",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLp0",
+          "nodes": [
+            "botp0",
+            "lob0",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMp0",
+          "nodes": [
+            "botp0",
+            "eb0",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMp0",
+          "nodes": [
+            "botp0",
+            "e0",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNHn0",
+          "nodes": [
+            "botn0",
+            "hi0",
+            "refp",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPHn0",
+          "nodes": [
+            "botn0",
+            "hib0",
+            "refp",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNLn0",
+          "nodes": [
+            "botn0",
+            "lo0",
+            "refn",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPLn0",
+          "nodes": [
+            "botn0",
+            "lob0",
+            "refn",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MNMn0",
+          "nodes": [
+            "botn0",
+            "eb0",
+            "vcm",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPMn0",
+          "nodes": [
+            "botn0",
+            "e0",
+            "vcm",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        }
+      ],
+      "instances": [
+        {
+          "instance": "XIT",
+          "nodes": [
+            "vdd",
+            "vss",
+            "track",
+            "trackb"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XVALID7",
+          "nodes": [
+            "vdd",
+            "vss",
+            "v7",
+            "trackb",
+            "e7"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XEI7",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e7",
+            "eb7"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XBI7",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b7",
+            "bb7"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XHI7",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e7",
+            "b7",
+            "hi7"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XLO7",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e7",
+            "bb7",
+            "lo7"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XHIB7",
+          "nodes": [
+            "vdd",
+            "vss",
+            "hi7",
+            "hib7"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XLOB7",
+          "nodes": [
+            "vdd",
+            "vss",
+            "lo7",
+            "lob7"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XVALID6",
+          "nodes": [
+            "vdd",
+            "vss",
+            "v6",
+            "trackb",
+            "e6"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XEI6",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e6",
+            "eb6"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XBI6",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b6",
+            "bb6"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XHI6",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e6",
+            "b6",
+            "hi6"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XLO6",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e6",
+            "bb6",
+            "lo6"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XHIB6",
+          "nodes": [
+            "vdd",
+            "vss",
+            "hi6",
+            "hib6"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XLOB6",
+          "nodes": [
+            "vdd",
+            "vss",
+            "lo6",
+            "lob6"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XVALID5",
+          "nodes": [
+            "vdd",
+            "vss",
+            "v5",
+            "trackb",
+            "e5"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XEI5",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e5",
+            "eb5"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XBI5",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b5",
+            "bb5"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XHI5",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e5",
+            "b5",
+            "hi5"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XLO5",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e5",
+            "bb5",
+            "lo5"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XHIB5",
+          "nodes": [
+            "vdd",
+            "vss",
+            "hi5",
+            "hib5"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XLOB5",
+          "nodes": [
+            "vdd",
+            "vss",
+            "lo5",
+            "lob5"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XVALID4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "v4",
+            "trackb",
+            "e4"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XEI4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e4",
+            "eb4"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XBI4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b4",
+            "bb4"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XHI4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e4",
+            "b4",
+            "hi4"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XLO4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e4",
+            "bb4",
+            "lo4"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XHIB4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "hi4",
+            "hib4"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XLOB4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "lo4",
+            "lob4"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XVALID3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "v3",
+            "trackb",
+            "e3"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XEI3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e3",
+            "eb3"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XBI3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b3",
+            "bb3"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XHI3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e3",
+            "b3",
+            "hi3"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XLO3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e3",
+            "bb3",
+            "lo3"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XHIB3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "hi3",
+            "hib3"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XLOB3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "lo3",
+            "lob3"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XVALID2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "v2",
+            "trackb",
+            "e2"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XEI2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e2",
+            "eb2"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XBI2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b2",
+            "bb2"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XHI2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e2",
+            "b2",
+            "hi2"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XLO2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e2",
+            "bb2",
+            "lo2"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XHIB2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "hi2",
+            "hib2"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XLOB2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "lo2",
+            "lob2"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XVALID1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "v1",
+            "trackb",
+            "e1"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XEI1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e1",
+            "eb1"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XBI1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b1",
+            "bb1"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XHI1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e1",
+            "b1",
+            "hi1"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XLO1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e1",
+            "bb1",
+            "lo1"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XHIB1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "hi1",
+            "hib1"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XLOB1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "lo1",
+            "lob1"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XVALID0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "v0",
+            "trackb",
+            "e0"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XEI0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e0",
+            "eb0"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XBI0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b0",
+            "bb0"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XHI0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e0",
+            "b0",
+            "hi0"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XLO0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "e0",
+            "bb0",
+            "lo0"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "XHIB0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "hi0",
+            "hib0"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XLOB0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "lo0",
+            "lob0"
+          ],
+          "cell": "sar_inv"
+        }
+      ],
+      "passives": [
+        {
+          "instance": "CDUMMYp",
+          "nodes": [
+            "vp",
+            "vcm"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=5e-15"
+        },
+        {
+          "instance": "CDUMMYn",
+          "nodes": [
+            "vn",
+            "vcm"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=5e-15"
+        },
+        {
+          "instance": "Cp7",
+          "nodes": [
+            "vp",
+            "botp7"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=6.4e-13"
+        },
+        {
+          "instance": "Cn7",
+          "nodes": [
+            "vn",
+            "botn7"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=6.4e-13"
+        },
+        {
+          "instance": "Cp6",
+          "nodes": [
+            "vp",
+            "botp6"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=3.2e-13"
+        },
+        {
+          "instance": "Cn6",
+          "nodes": [
+            "vn",
+            "botn6"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=3.2e-13"
+        },
+        {
+          "instance": "Cp5",
+          "nodes": [
+            "vp",
+            "botp5"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=1.6e-13"
+        },
+        {
+          "instance": "Cn5",
+          "nodes": [
+            "vn",
+            "botn5"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=1.6e-13"
+        },
+        {
+          "instance": "Cp4",
+          "nodes": [
+            "vp",
+            "botp4"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=8e-14"
+        },
+        {
+          "instance": "Cn4",
+          "nodes": [
+            "vn",
+            "botn4"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=8e-14"
+        },
+        {
+          "instance": "Cp3",
+          "nodes": [
+            "vp",
+            "botp3"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=4e-14"
+        },
+        {
+          "instance": "Cn3",
+          "nodes": [
+            "vn",
+            "botn3"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=4e-14"
+        },
+        {
+          "instance": "Cp2",
+          "nodes": [
+            "vp",
+            "botp2"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=2e-14"
+        },
+        {
+          "instance": "Cn2",
+          "nodes": [
+            "vn",
+            "botn2"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=2e-14"
+        },
+        {
+          "instance": "Cp1",
+          "nodes": [
+            "vp",
+            "botp1"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=1e-14"
+        },
+        {
+          "instance": "Cn1",
+          "nodes": [
+            "vn",
+            "botn1"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=1e-14"
+        },
+        {
+          "instance": "Cp0",
+          "nodes": [
+            "vp",
+            "botp0"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=5e-15"
+        },
+        {
+          "instance": "Cn0",
+          "nodes": [
+            "vn",
+            "botn0"
+          ],
+          "kind": "capacitor",
+          "nominal_schematic_parameters": "c=5e-15"
+        }
+      ]
+    },
+    "sar_comparator": {
+      "ports": [
+        "vdd",
+        "vss",
+        "clk",
+        "ip",
+        "in",
+        "q",
+        "qb"
+      ],
+      "mos": [
+        {
+          "instance": "M1",
+          "nodes": [
+            "p",
+            "ip",
+            "tail",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "M2",
+          "nodes": [
+            "n",
+            "in",
+            "tail",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "M3",
+          "nodes": [
+            "x",
+            "y",
+            "p",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "M4",
+          "nodes": [
+            "y",
+            "x",
+            "n",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "M5",
+          "nodes": [
+            "x",
+            "y",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "M6",
+          "nodes": [
+            "y",
+            "x",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "M7",
+          "nodes": [
+            "tail",
+            "clk",
+            "vss",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPp",
+          "nodes": [
+            "p",
+            "clk",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPn",
+          "nodes": [
+            "n",
+            "clk",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPx",
+          "nodes": [
+            "x",
+            "clk",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "MPy",
+          "nodes": [
+            "y",
+            "clk",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        }
+      ],
+      "instances": [
+        {
+          "instance": "XBX0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "x",
+            "xb"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XBX1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "xb",
+            "xd"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XBY0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "y",
+            "yb"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XBY1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "yb",
+            "yd"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "XLQ",
+          "nodes": [
+            "vdd",
+            "vss",
+            "xd",
+            "qb",
+            "q"
+          ],
+          "cell": "sar_nand2"
+        },
+        {
+          "instance": "XLQB",
+          "nodes": [
+            "vdd",
+            "vss",
+            "yd",
+            "q",
+            "qb"
+          ],
+          "cell": "sar_nand2"
+        }
+      ],
+      "passives": []
+    },
+    "sar_control": {
+      "ports": [
+        "vdd",
+        "vss",
+        "CLK",
+        "RST",
+        "cmpQ",
+        "track",
+        "cmpclk",
+        "q0",
+        "b7",
+        "b6",
+        "b5",
+        "b4",
+        "b3",
+        "b2",
+        "b1",
+        "b0",
+        "v7",
+        "v6",
+        "v5",
+        "v4",
+        "v3",
+        "v2",
+        "v1",
+        "v0",
+        "D7",
+        "D6",
+        "D5",
+        "D4",
+        "D3",
+        "D2",
+        "D1",
+        "D0"
+      ],
+      "mos": [],
+      "instances": [
+        {
+          "instance": "Xreset_inv",
+          "nodes": [
+            "vdd",
+            "vss",
+            "RST",
+            "nrst"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xclock_phases",
+          "nodes": [
+            "vdd",
+            "vss",
+            "CLK",
+            "phm",
+            "phmb",
+            "phs",
+            "phsb"
+          ],
+          "cell": "sar_phases"
+        },
+        {
+          "instance": "Xjohnson0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j4b",
+            "phm",
+            "phmb",
+            "phs",
+            "phsb",
+            "RST",
+            "nrst",
+            "j0"
+          ],
+          "cell": "sar_pdffr0"
+        },
+        {
+          "instance": "Xjohnson_inv0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j0",
+            "j0b"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xjohnson1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j0",
+            "phm",
+            "phmb",
+            "phs",
+            "phsb",
+            "RST",
+            "nrst",
+            "j1"
+          ],
+          "cell": "sar_pdffr0"
+        },
+        {
+          "instance": "Xjohnson_inv1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j1",
+            "j1b"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xjohnson2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j1",
+            "phm",
+            "phmb",
+            "phs",
+            "phsb",
+            "RST",
+            "nrst",
+            "j2"
+          ],
+          "cell": "sar_pdffr0"
+        },
+        {
+          "instance": "Xjohnson_inv2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j2",
+            "j2b"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xjohnson3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j2",
+            "phm",
+            "phmb",
+            "phs",
+            "phsb",
+            "RST",
+            "nrst",
+            "j3"
+          ],
+          "cell": "sar_pdffr0"
+        },
+        {
+          "instance": "Xjohnson_inv3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j3",
+            "j3b"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xjohnson4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j3",
+            "phm",
+            "phmb",
+            "phs",
+            "phsb",
+            "RST",
+            "nrst",
+            "j4"
+          ],
+          "cell": "sar_pdffr0"
+        },
+        {
+          "instance": "Xjohnson_inv4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j4",
+            "j4b"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xq0_decode",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j0b",
+            "j4b",
+            "q0"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "Xtrack",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j1",
+            "j4",
+            "track"
+          ],
+          "cell": "sar_nor2"
+        },
+        {
+          "instance": "Xnot_track",
+          "nodes": [
+            "vdd",
+            "vss",
+            "track",
+            "ntrack"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xcompare_clock",
+          "nodes": [
+            "vdd",
+            "vss",
+            "phm",
+            "ntrack",
+            "cmpclk"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "Xbit_enable_n7",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j1",
+            "j2b",
+            "phm",
+            "benb7"
+          ],
+          "cell": "sar_nand3"
+        },
+        {
+          "instance": "Xbit_enable7",
+          "nodes": [
+            "vdd",
+            "vss",
+            "benb7",
+            "ben7"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xbit7",
+          "nodes": [
+            "vdd",
+            "vss",
+            "cmpQ",
+            "ben7",
+            "benb7",
+            "RST",
+            "nrst",
+            "b7"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xbit_enable_n6",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j2",
+            "j3b",
+            "phm",
+            "benb6"
+          ],
+          "cell": "sar_nand3"
+        },
+        {
+          "instance": "Xbit_enable6",
+          "nodes": [
+            "vdd",
+            "vss",
+            "benb6",
+            "ben6"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xbit6",
+          "nodes": [
+            "vdd",
+            "vss",
+            "cmpQ",
+            "ben6",
+            "benb6",
+            "RST",
+            "nrst",
+            "b6"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xbit_enable_n5",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j3",
+            "j4b",
+            "phm",
+            "benb5"
+          ],
+          "cell": "sar_nand3"
+        },
+        {
+          "instance": "Xbit_enable5",
+          "nodes": [
+            "vdd",
+            "vss",
+            "benb5",
+            "ben5"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xbit5",
+          "nodes": [
+            "vdd",
+            "vss",
+            "cmpQ",
+            "ben5",
+            "benb5",
+            "RST",
+            "nrst",
+            "b5"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xbit_enable_n4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j0",
+            "j4",
+            "phm",
+            "benb4"
+          ],
+          "cell": "sar_nand3"
+        },
+        {
+          "instance": "Xbit_enable4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "benb4",
+            "ben4"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xbit4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "cmpQ",
+            "ben4",
+            "benb4",
+            "RST",
+            "nrst",
+            "b4"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xbit_enable_n3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j0b",
+            "j1",
+            "phm",
+            "benb3"
+          ],
+          "cell": "sar_nand3"
+        },
+        {
+          "instance": "Xbit_enable3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "benb3",
+            "ben3"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xbit3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "cmpQ",
+            "ben3",
+            "benb3",
+            "RST",
+            "nrst",
+            "b3"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xbit_enable_n2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j1b",
+            "j2",
+            "phm",
+            "benb2"
+          ],
+          "cell": "sar_nand3"
+        },
+        {
+          "instance": "Xbit_enable2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "benb2",
+            "ben2"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xbit2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "cmpQ",
+            "ben2",
+            "benb2",
+            "RST",
+            "nrst",
+            "b2"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xbit_enable_n1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j2b",
+            "j3",
+            "phm",
+            "benb1"
+          ],
+          "cell": "sar_nand3"
+        },
+        {
+          "instance": "Xbit_enable1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "benb1",
+            "ben1"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xbit1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "cmpQ",
+            "ben1",
+            "benb1",
+            "RST",
+            "nrst",
+            "b1"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xbit_enable_n0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j3b",
+            "j4",
+            "phm",
+            "benb0"
+          ],
+          "cell": "sar_nand3"
+        },
+        {
+          "instance": "Xbit_enable0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "benb0",
+            "ben0"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xbit0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "cmpQ",
+            "ben0",
+            "benb0",
+            "RST",
+            "nrst",
+            "b0"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xvalid7",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j2",
+            "j4",
+            "v7"
+          ],
+          "cell": "sar_or2"
+        },
+        {
+          "instance": "Xvalid6",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j3",
+            "j4",
+            "v6"
+          ],
+          "cell": "sar_or2"
+        },
+        {
+          "instance": "Xvalid5",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j4",
+            "v5"
+          ],
+          "cell": "sar_buf_hi"
+        },
+        {
+          "instance": "Xvalid4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j4",
+            "j0b",
+            "v4"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "Xvalid3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j4",
+            "j1b",
+            "v3"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "Xvalid2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j4",
+            "j2b",
+            "v2"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "Xvalid1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "j4",
+            "j3b",
+            "v1"
+          ],
+          "cell": "sar_and2"
+        },
+        {
+          "instance": "Xvalid0_low",
+          "nodes": [
+            "vdd",
+            "vss",
+            "vdd",
+            "v0"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xoutput_enable_n",
+          "nodes": [
+            "vdd",
+            "vss",
+            "q0",
+            "phm",
+            "oenb"
+          ],
+          "cell": "sar_nand2"
+        },
+        {
+          "instance": "Xoutput_enable",
+          "nodes": [
+            "vdd",
+            "vss",
+            "oenb",
+            "oen"
+          ],
+          "cell": "sar_inv_hi"
+        },
+        {
+          "instance": "Xoutput7",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b7",
+            "oen",
+            "oenb",
+            "RST",
+            "nrst",
+            "D7"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xoutput6",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b6",
+            "oen",
+            "oenb",
+            "RST",
+            "nrst",
+            "D6"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xoutput5",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b5",
+            "oen",
+            "oenb",
+            "RST",
+            "nrst",
+            "D5"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xoutput4",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b4",
+            "oen",
+            "oenb",
+            "RST",
+            "nrst",
+            "D4"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xoutput3",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b3",
+            "oen",
+            "oenb",
+            "RST",
+            "nrst",
+            "D3"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xoutput2",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b2",
+            "oen",
+            "oenb",
+            "RST",
+            "nrst",
+            "D2"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xoutput1",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b1",
+            "oen",
+            "oenb",
+            "RST",
+            "nrst",
+            "D1"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xoutput0",
+          "nodes": [
+            "vdd",
+            "vss",
+            "b0",
+            "oen",
+            "oenb",
+            "RST",
+            "nrst",
+            "D0"
+          ],
+          "cell": "sar_latchr0"
+        }
+      ],
+      "passives": []
+    },
+    "sar_inv": {
+      "ports": [
+        "vdd",
+        "vss",
+        "a",
+        "y"
+      ],
+      "mos": [
+        {
+          "instance": "Mp",
+          "nodes": [
+            "y",
+            "a",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mn",
+          "nodes": [
+            "y",
+            "a",
+            "vss",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 5e-07,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        }
+      ],
+      "instances": [],
+      "passives": []
+    },
+    "sar_inv_hi": {
+      "ports": [
+        "vdd",
+        "vss",
+        "a",
+        "y"
+      ],
+      "mos": [
+        {
+          "instance": "Mp",
+          "nodes": [
+            "y",
+            "a",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 3e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mn",
+          "nodes": [
+            "y",
+            "a",
+            "vss",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 2e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        }
+      ],
+      "instances": [],
+      "passives": []
+    },
+    "sar_latchr0": {
+      "ports": [
+        "vdd",
+        "vss",
+        "d",
+        "en",
+        "enb",
+        "rst",
+        "nrst",
+        "q"
+      ],
+      "mos": [],
+      "instances": [
+        {
+          "instance": "Xin",
+          "nodes": [
+            "vdd",
+            "vss",
+            "d",
+            "x",
+            "en",
+            "enb"
+          ],
+          "cell": "sar_tg"
+        },
+        {
+          "instance": "Xfb",
+          "nodes": [
+            "vdd",
+            "vss",
+            "q",
+            "x",
+            "enb",
+            "en"
+          ],
+          "cell": "sar_tg"
+        },
+        {
+          "instance": "Xg",
+          "nodes": [
+            "vdd",
+            "vss",
+            "x",
+            "nrst",
+            "qb"
+          ],
+          "cell": "sar_nand2"
+        },
+        {
+          "instance": "Xo",
+          "nodes": [
+            "vdd",
+            "vss",
+            "qb",
+            "q"
+          ],
+          "cell": "sar_inv"
+        }
+      ],
+      "passives": []
+    },
+    "sar_nand2": {
+      "ports": [
+        "vdd",
+        "vss",
+        "a",
+        "b",
+        "y"
+      ],
+      "mos": [
+        {
+          "instance": "Mp0",
+          "nodes": [
+            "y",
+            "a",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mp1",
+          "nodes": [
+            "y",
+            "b",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mn0",
+          "nodes": [
+            "y",
+            "a",
+            "ns",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mn1",
+          "nodes": [
+            "ns",
+            "b",
+            "vss",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        }
+      ],
+      "instances": [],
+      "passives": []
+    },
+    "sar_nand3": {
+      "ports": [
+        "vdd",
+        "vss",
+        "a",
+        "b",
+        "c",
+        "y"
+      ],
+      "mos": [
+        {
+          "instance": "Mp0",
+          "nodes": [
+            "y",
+            "a",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mp1",
+          "nodes": [
+            "y",
+            "b",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mp2",
+          "nodes": [
+            "y",
+            "c",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mn0",
+          "nodes": [
+            "y",
+            "a",
+            "n0",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 2e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mn1",
+          "nodes": [
+            "n0",
+            "b",
+            "n1",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 2e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mn2",
+          "nodes": [
+            "n1",
+            "c",
+            "vss",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 2e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        }
+      ],
+      "instances": [],
+      "passives": []
+    },
+    "sar_nor2": {
+      "ports": [
+        "vdd",
+        "vss",
+        "a",
+        "b",
+        "y"
+      ],
+      "mos": [
+        {
+          "instance": "Mp0",
+          "nodes": [
+            "ps",
+            "a",
+            "vdd",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 2e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mp1",
+          "nodes": [
+            "y",
+            "b",
+            "ps",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 2e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mn0",
+          "nodes": [
+            "y",
+            "a",
+            "vss",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 5e-07,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mn1",
+          "nodes": [
+            "y",
+            "b",
+            "vss",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 5e-07,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        }
+      ],
+      "instances": [],
+      "passives": []
+    },
+    "sar_or2": {
+      "ports": [
+        "vdd",
+        "vss",
+        "a",
+        "b",
+        "y"
+      ],
+      "mos": [],
+      "instances": [
+        {
+          "instance": "Xn",
+          "nodes": [
+            "vdd",
+            "vss",
+            "a",
+            "b",
+            "yn"
+          ],
+          "cell": "sar_nor2"
+        },
+        {
+          "instance": "Xi",
+          "nodes": [
+            "vdd",
+            "vss",
+            "yn",
+            "y"
+          ],
+          "cell": "sar_inv"
+        }
+      ],
+      "passives": []
+    },
+    "sar_pdffr0": {
+      "ports": [
+        "vdd",
+        "vss",
+        "d",
+        "phm",
+        "phmb",
+        "phs",
+        "phsb",
+        "rst",
+        "nrst",
+        "q"
+      ],
+      "mos": [],
+      "instances": [
+        {
+          "instance": "Xmaster",
+          "nodes": [
+            "vdd",
+            "vss",
+            "d",
+            "phm",
+            "phmb",
+            "rst",
+            "nrst",
+            "mq"
+          ],
+          "cell": "sar_latchr0"
+        },
+        {
+          "instance": "Xslave",
+          "nodes": [
+            "vdd",
+            "vss",
+            "mq",
+            "phs",
+            "phsb",
+            "rst",
+            "nrst",
+            "q"
+          ],
+          "cell": "sar_latchr0"
+        }
+      ],
+      "passives": []
+    },
+    "sar_phases": {
+      "ports": [
+        "vdd",
+        "vss",
+        "clk",
+        "phm",
+        "phmb",
+        "phs",
+        "phsb"
+      ],
+      "mos": [],
+      "instances": [
+        {
+          "instance": "Xci",
+          "nodes": [
+            "vdd",
+            "vss",
+            "clk",
+            "clkb"
+          ],
+          "cell": "sar_inv"
+        },
+        {
+          "instance": "Xmn",
+          "nodes": [
+            "vdd",
+            "vss",
+            "clkb",
+            "phs",
+            "mraw"
+          ],
+          "cell": "sar_nor2"
+        },
+        {
+          "instance": "Xsn",
+          "nodes": [
+            "vdd",
+            "vss",
+            "clk",
+            "phm",
+            "sraw"
+          ],
+          "cell": "sar_nor2"
+        },
+        {
+          "instance": "Xmb",
+          "nodes": [
+            "vdd",
+            "vss",
+            "mraw",
+            "phm"
+          ],
+          "cell": "sar_buf_hi"
+        },
+        {
+          "instance": "Xsb",
+          "nodes": [
+            "vdd",
+            "vss",
+            "sraw",
+            "phs"
+          ],
+          "cell": "sar_buf_hi"
+        },
+        {
+          "instance": "Xmi",
+          "nodes": [
+            "vdd",
+            "vss",
+            "phm",
+            "phmb"
+          ],
+          "cell": "sar_inv_hi"
+        },
+        {
+          "instance": "Xsi",
+          "nodes": [
+            "vdd",
+            "vss",
+            "phs",
+            "phsb"
+          ],
+          "cell": "sar_inv_hi"
+        }
+      ],
+      "passives": []
+    },
+    "sar_tg": {
+      "ports": [
+        "vdd",
+        "vss",
+        "a",
+        "y",
+        "en",
+        "enb"
+      ],
+      "mos": [
+        {
+          "instance": "Mn",
+          "nodes": [
+            "y",
+            "en",
+            "a",
+            "vss"
+          ],
+          "polarity": "NMOS",
+          "nominal_width_m": 5e-07,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        },
+        {
+          "instance": "Mp",
+          "nodes": [
+            "y",
+            "enb",
+            "a",
+            "vdd"
+          ],
+          "polarity": "PMOS",
+          "nominal_width_m": 1e-06,
+          "nominal_length_m": 3e-08,
+          "instance_multiplicity": 1,
+          "fingers": null
+        }
+      ],
+      "instances": [],
+      "passives": []
+    }
+  },
+  "die_area_inferred_from_width_length": false
+}

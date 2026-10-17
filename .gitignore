@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+reproduced/
+raw/
+models/
+pdk/
+*.tran
+*.zip
+*.oa
+*.log

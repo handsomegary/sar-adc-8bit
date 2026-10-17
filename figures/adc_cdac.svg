@@ -1,0 +1,291 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1190" viewBox="0 0 1600 1190">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2263ac"/></marker><marker id="greenArrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#137b68"/></marker></defs>
+<style>text{font-family:Arial,"Segoe UI",sans-serif;fill:#17263b} .wire{stroke:#17263b;stroke-width:2.5;fill:none;stroke-linejoin:round;stroke-linecap:round}</style>
+<rect width="100%" height="100%" fill="white"/>
+<desc>Engineering circuit illustration derived from local source; not an OA schematic, layout, simulation trace, or performance pass report. Source hashes: {&quot;sar_frontend.py&quot;: &quot;1a62fc262a973e92d16d8abbbb1d5da42728c2b2d976e214f254573d4cac1bda&quot;, &quot;sar_logic_compact.py&quot;: &quot;de4400d4a36ed1789afdec692d707800fb2c4d047c92fcb65fe686f9524edf76&quot;, &quot;sar_logic.py&quot;: &quot;a13be48f3047de0413e85ec7e8b223885bca21a25c8df4eb62453b4fafaec61e&quot;, &quot;sar_runner.py&quot;: &quot;b4c82c5aa83ff90ca450b80600dddedb613ad437ed8aaaf4e2522bdff3e02358&quot;}</desc>
+<text x="40" y="54" font-size="31" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">Differential CDAC - exact capacitor weights and switching</text>
+<text x="40" y="91" font-size="19" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">Cu = 5 fF | sum(weights + dummy) = 256 Cu = 1.28 pF per side | ideal schematic capacitors</text>
+<line x1="40" y1="113" x2="1560" y2="113" stroke="#d9e3ec" stroke-width="2.5"/>
+<text x="40" y="242" font-size="24" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">VIP</text>
+<line x1="95" y1="235" x2="130" y2="235" stroke="#17263b" stroke-width="2.5"/>
+<rect x="130" y="208" width="125" height="54" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="192" y="242" font-size="21" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">2x TG</text>
+<text x="192" y="193" font-size="17" font-weight="normal" fill="#2263ac" text-anchor="middle" style="fill:#2263ac">track / !track</text>
+<line x1="255" y1="235" x2="1510" y2="235" stroke="#17263b" stroke-width="2.5"/>
+<text x="279" y="222" font-size="25" font-weight="bold" fill="#137b68" text-anchor="start" style="fill:#137b68">vp</text>
+<line x1="340" y1="235" x2="340" y2="283" stroke="#17263b" stroke-width="2.5"/>
+<line x1="340" y1="283" x2="340" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="320" y1="312" x2="360" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="320" y1="328" x2="360" y2="328" stroke="#17263b" stroke-width="2.5"/>
+<line x1="340" y1="328" x2="340" y2="357" stroke="#17263b" stroke-width="2.5"/>
+<line x1="340" y1="357" x2="340" y2="381" stroke="#17263b" stroke-width="2.5"/>
+<text x="340" y="217" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cp7</text>
+<text x="367" y="313" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">128 Cu</text>
+<text x="367" y="340" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">640 fF</text>
+<rect x="295" y="382" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="340" y="406" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="340" y="429" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 7</text>
+<text x="340" y="465" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="340" cy="235" r="4" fill="#17263b"/>
+<line x1="475" y1="235" x2="475" y2="283" stroke="#17263b" stroke-width="2.5"/>
+<line x1="475" y1="283" x2="475" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="455" y1="312" x2="495" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="455" y1="328" x2="495" y2="328" stroke="#17263b" stroke-width="2.5"/>
+<line x1="475" y1="328" x2="475" y2="357" stroke="#17263b" stroke-width="2.5"/>
+<line x1="475" y1="357" x2="475" y2="381" stroke="#17263b" stroke-width="2.5"/>
+<text x="475" y="217" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cp6</text>
+<text x="502" y="313" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">64 Cu</text>
+<text x="502" y="340" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">320 fF</text>
+<rect x="430" y="382" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="475" y="406" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="475" y="429" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 6</text>
+<text x="475" y="465" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="475" cy="235" r="4" fill="#17263b"/>
+<line x1="610" y1="235" x2="610" y2="283" stroke="#17263b" stroke-width="2.5"/>
+<line x1="610" y1="283" x2="610" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="590" y1="312" x2="630" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="590" y1="328" x2="630" y2="328" stroke="#17263b" stroke-width="2.5"/>
+<line x1="610" y1="328" x2="610" y2="357" stroke="#17263b" stroke-width="2.5"/>
+<line x1="610" y1="357" x2="610" y2="381" stroke="#17263b" stroke-width="2.5"/>
+<text x="610" y="217" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cp5</text>
+<text x="637" y="313" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">32 Cu</text>
+<text x="637" y="340" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">160 fF</text>
+<rect x="565" y="382" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="610" y="406" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="610" y="429" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 5</text>
+<text x="610" y="465" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="610" cy="235" r="4" fill="#17263b"/>
+<line x1="745" y1="235" x2="745" y2="283" stroke="#17263b" stroke-width="2.5"/>
+<line x1="745" y1="283" x2="745" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="725" y1="312" x2="765" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="725" y1="328" x2="765" y2="328" stroke="#17263b" stroke-width="2.5"/>
+<line x1="745" y1="328" x2="745" y2="357" stroke="#17263b" stroke-width="2.5"/>
+<line x1="745" y1="357" x2="745" y2="381" stroke="#17263b" stroke-width="2.5"/>
+<text x="745" y="217" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cp4</text>
+<text x="772" y="313" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">16 Cu</text>
+<text x="772" y="340" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">80 fF</text>
+<rect x="700" y="382" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="745" y="406" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="745" y="429" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 4</text>
+<text x="745" y="465" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="745" cy="235" r="4" fill="#17263b"/>
+<line x1="880" y1="235" x2="880" y2="283" stroke="#17263b" stroke-width="2.5"/>
+<line x1="880" y1="283" x2="880" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="860" y1="312" x2="900" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="860" y1="328" x2="900" y2="328" stroke="#17263b" stroke-width="2.5"/>
+<line x1="880" y1="328" x2="880" y2="357" stroke="#17263b" stroke-width="2.5"/>
+<line x1="880" y1="357" x2="880" y2="381" stroke="#17263b" stroke-width="2.5"/>
+<text x="880" y="217" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cp3</text>
+<text x="907" y="313" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">8 Cu</text>
+<text x="907" y="340" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">40 fF</text>
+<rect x="835" y="382" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="880" y="406" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="880" y="429" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 3</text>
+<text x="880" y="465" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="880" cy="235" r="4" fill="#17263b"/>
+<line x1="1015" y1="235" x2="1015" y2="283" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1015" y1="283" x2="1015" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="995" y1="312" x2="1035" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="995" y1="328" x2="1035" y2="328" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1015" y1="328" x2="1015" y2="357" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1015" y1="357" x2="1015" y2="381" stroke="#17263b" stroke-width="2.5"/>
+<text x="1015" y="217" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cp2</text>
+<text x="1042" y="313" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">4 Cu</text>
+<text x="1042" y="340" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">20 fF</text>
+<rect x="970" y="382" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="1015" y="406" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="1015" y="429" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 2</text>
+<text x="1015" y="465" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="1015" cy="235" r="4" fill="#17263b"/>
+<line x1="1150" y1="235" x2="1150" y2="283" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1150" y1="283" x2="1150" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1130" y1="312" x2="1170" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1130" y1="328" x2="1170" y2="328" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1150" y1="328" x2="1150" y2="357" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1150" y1="357" x2="1150" y2="381" stroke="#17263b" stroke-width="2.5"/>
+<text x="1150" y="217" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cp1</text>
+<text x="1177" y="313" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">2 Cu</text>
+<text x="1177" y="340" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">10 fF</text>
+<rect x="1105" y="382" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="1150" y="406" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="1150" y="429" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 1</text>
+<text x="1150" y="465" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="1150" cy="235" r="4" fill="#17263b"/>
+<line x1="1285" y1="235" x2="1285" y2="283" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1285" y1="283" x2="1285" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1265" y1="312" x2="1305" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1265" y1="328" x2="1305" y2="328" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1285" y1="328" x2="1285" y2="357" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1285" y1="357" x2="1285" y2="381" stroke="#17263b" stroke-width="2.5"/>
+<text x="1285" y="217" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cp0</text>
+<text x="1312" y="313" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">1 Cu</text>
+<text x="1312" y="340" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">5 fF</text>
+<rect x="1240" y="382" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="1285" y="406" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="1285" y="429" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 0</text>
+<text x="1285" y="465" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="1285" cy="235" r="4" fill="#17263b"/>
+<line x1="1510" y1="235" x2="1510" y2="283" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1510" y1="283" x2="1510" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1490" y1="312" x2="1530" y2="312" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1490" y1="328" x2="1530" y2="328" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1510" y1="328" x2="1510" y2="357" stroke="#17263b" stroke-width="2.5"/>
+<text x="1510" y="217" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Dummy</text>
+<text x="1482" y="382" font-size="18" font-weight="normal" fill="#17263b" text-anchor="end" style="fill:#17263b">1 Cu</text>
+<text x="1482" y="407" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="end" style="fill:#5e6d80">5 fF</text>
+<line x1="1510" y1="357" x2="1510" y2="435" stroke="#17263b" stroke-width="2.5"/>
+<text x="1510" y="465" font-size="17" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM</text>
+<circle cx="1510" cy="235" r="4" fill="#17263b"/>
+<text x="40" y="607" font-size="24" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">VIN</text>
+<line x1="95" y1="600" x2="130" y2="600" stroke="#17263b" stroke-width="2.5"/>
+<rect x="130" y="573" width="125" height="54" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="192" y="607" font-size="21" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">2x TG</text>
+<text x="192" y="558" font-size="17" font-weight="normal" fill="#2263ac" text-anchor="middle" style="fill:#2263ac">track / !track</text>
+<line x1="255" y1="600" x2="1510" y2="600" stroke="#17263b" stroke-width="2.5"/>
+<text x="279" y="587" font-size="25" font-weight="bold" fill="#137b68" text-anchor="start" style="fill:#137b68">vn</text>
+<line x1="340" y1="600" x2="340" y2="648" stroke="#17263b" stroke-width="2.5"/>
+<line x1="340" y1="648" x2="340" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="320" y1="677" x2="360" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="320" y1="693" x2="360" y2="693" stroke="#17263b" stroke-width="2.5"/>
+<line x1="340" y1="693" x2="340" y2="722" stroke="#17263b" stroke-width="2.5"/>
+<line x1="340" y1="722" x2="340" y2="746" stroke="#17263b" stroke-width="2.5"/>
+<text x="340" y="582" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cn7</text>
+<text x="367" y="678" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">128 Cu</text>
+<text x="367" y="705" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">640 fF</text>
+<rect x="295" y="747" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="340" y="771" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="340" y="794" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 7</text>
+<text x="340" y="830" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="340" cy="600" r="4" fill="#17263b"/>
+<line x1="475" y1="600" x2="475" y2="648" stroke="#17263b" stroke-width="2.5"/>
+<line x1="475" y1="648" x2="475" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="455" y1="677" x2="495" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="455" y1="693" x2="495" y2="693" stroke="#17263b" stroke-width="2.5"/>
+<line x1="475" y1="693" x2="475" y2="722" stroke="#17263b" stroke-width="2.5"/>
+<line x1="475" y1="722" x2="475" y2="746" stroke="#17263b" stroke-width="2.5"/>
+<text x="475" y="582" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cn6</text>
+<text x="502" y="678" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">64 Cu</text>
+<text x="502" y="705" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">320 fF</text>
+<rect x="430" y="747" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="475" y="771" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="475" y="794" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 6</text>
+<text x="475" y="830" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="475" cy="600" r="4" fill="#17263b"/>
+<line x1="610" y1="600" x2="610" y2="648" stroke="#17263b" stroke-width="2.5"/>
+<line x1="610" y1="648" x2="610" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="590" y1="677" x2="630" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="590" y1="693" x2="630" y2="693" stroke="#17263b" stroke-width="2.5"/>
+<line x1="610" y1="693" x2="610" y2="722" stroke="#17263b" stroke-width="2.5"/>
+<line x1="610" y1="722" x2="610" y2="746" stroke="#17263b" stroke-width="2.5"/>
+<text x="610" y="582" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cn5</text>
+<text x="637" y="678" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">32 Cu</text>
+<text x="637" y="705" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">160 fF</text>
+<rect x="565" y="747" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="610" y="771" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="610" y="794" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 5</text>
+<text x="610" y="830" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="610" cy="600" r="4" fill="#17263b"/>
+<line x1="745" y1="600" x2="745" y2="648" stroke="#17263b" stroke-width="2.5"/>
+<line x1="745" y1="648" x2="745" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="725" y1="677" x2="765" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="725" y1="693" x2="765" y2="693" stroke="#17263b" stroke-width="2.5"/>
+<line x1="745" y1="693" x2="745" y2="722" stroke="#17263b" stroke-width="2.5"/>
+<line x1="745" y1="722" x2="745" y2="746" stroke="#17263b" stroke-width="2.5"/>
+<text x="745" y="582" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cn4</text>
+<text x="772" y="678" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">16 Cu</text>
+<text x="772" y="705" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">80 fF</text>
+<rect x="700" y="747" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="745" y="771" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="745" y="794" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 4</text>
+<text x="745" y="830" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="745" cy="600" r="4" fill="#17263b"/>
+<line x1="880" y1="600" x2="880" y2="648" stroke="#17263b" stroke-width="2.5"/>
+<line x1="880" y1="648" x2="880" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="860" y1="677" x2="900" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="860" y1="693" x2="900" y2="693" stroke="#17263b" stroke-width="2.5"/>
+<line x1="880" y1="693" x2="880" y2="722" stroke="#17263b" stroke-width="2.5"/>
+<line x1="880" y1="722" x2="880" y2="746" stroke="#17263b" stroke-width="2.5"/>
+<text x="880" y="582" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cn3</text>
+<text x="907" y="678" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">8 Cu</text>
+<text x="907" y="705" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">40 fF</text>
+<rect x="835" y="747" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="880" y="771" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="880" y="794" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 3</text>
+<text x="880" y="830" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="880" cy="600" r="4" fill="#17263b"/>
+<line x1="1015" y1="600" x2="1015" y2="648" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1015" y1="648" x2="1015" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="995" y1="677" x2="1035" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="995" y1="693" x2="1035" y2="693" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1015" y1="693" x2="1015" y2="722" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1015" y1="722" x2="1015" y2="746" stroke="#17263b" stroke-width="2.5"/>
+<text x="1015" y="582" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cn2</text>
+<text x="1042" y="678" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">4 Cu</text>
+<text x="1042" y="705" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">20 fF</text>
+<rect x="970" y="747" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="1015" y="771" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="1015" y="794" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 2</text>
+<text x="1015" y="830" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="1015" cy="600" r="4" fill="#17263b"/>
+<line x1="1150" y1="600" x2="1150" y2="648" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1150" y1="648" x2="1150" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1130" y1="677" x2="1170" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1130" y1="693" x2="1170" y2="693" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1150" y1="693" x2="1150" y2="722" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1150" y1="722" x2="1150" y2="746" stroke="#17263b" stroke-width="2.5"/>
+<text x="1150" y="582" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cn1</text>
+<text x="1177" y="678" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">2 Cu</text>
+<text x="1177" y="705" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">10 fF</text>
+<rect x="1105" y="747" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="1150" y="771" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="1150" y="794" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 1</text>
+<text x="1150" y="830" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="1150" cy="600" r="4" fill="#17263b"/>
+<line x1="1285" y1="600" x2="1285" y2="648" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1285" y1="648" x2="1285" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1265" y1="677" x2="1305" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1265" y1="693" x2="1305" y2="693" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1285" y1="693" x2="1285" y2="722" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1285" y1="722" x2="1285" y2="746" stroke="#17263b" stroke-width="2.5"/>
+<text x="1285" y="582" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Cn0</text>
+<text x="1312" y="678" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">1 Cu</text>
+<text x="1312" y="705" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">5 fF</text>
+<rect x="1240" y="747" width="90" height="59" rx="5" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="1285" y="771" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">3x TG</text>
+<text x="1285" y="794" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">bit 0</text>
+<text x="1285" y="830" font-size="15" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM / REF</text>
+<circle cx="1285" cy="600" r="4" fill="#17263b"/>
+<line x1="1510" y1="600" x2="1510" y2="648" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1510" y1="648" x2="1510" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1490" y1="677" x2="1530" y2="677" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1490" y1="693" x2="1530" y2="693" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1510" y1="693" x2="1510" y2="722" stroke="#17263b" stroke-width="2.5"/>
+<text x="1510" y="582" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">Dummy</text>
+<text x="1482" y="747" font-size="18" font-weight="normal" fill="#17263b" text-anchor="end" style="fill:#17263b">1 Cu</text>
+<text x="1482" y="772" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="end" style="fill:#5e6d80">5 fF</text>
+<line x1="1510" y1="722" x2="1510" y2="800" stroke="#17263b" stroke-width="2.5"/>
+<text x="1510" y="830" font-size="17" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VCM</text>
+<circle cx="1510" cy="600" r="4" fill="#17263b"/>
+<rect x="40" y="885" width="990" height="155" rx="10" fill="#f0f5fa" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="65" y="922" font-size="22" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">One bottom-plate selector, per bit and per side</text>
+<text x="65" y="958" font-size="21" font-weight="normal" fill="#2263ac" text-anchor="start" style="fill:#2263ac">e_k = v_k AND !track</text>
+<text x="65" y="994" font-size="19" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">Each of its 3 TGs: NMOS W=3 um + PMOS W=3 um; L=30 nm.</text>
+<text x="65" y="1026" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">Sampling TGs: 2 parallel copies per side, Wn/Wp = 6/6 um effective.</text>
+<rect x="1060" y="885" width="500" height="155" rx="10" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="1080" y="920" font-size="17" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">Control</text>
+<text x="1224" y="920" font-size="17" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">p bottom</text>
+<text x="1390" y="920" font-size="17" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">n bottom</text>
+<text x="1080" y="956" font-size="17" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">e=0</text>
+<text x="1224" y="956" font-size="17" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">VCM 0.45 V</text>
+<text x="1390" y="956" font-size="17" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">VCM 0.45 V</text>
+<text x="1080" y="989" font-size="17" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">e=1, b=1</text>
+<text x="1224" y="989" font-size="17" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">REF N 0.20 V</text>
+<text x="1390" y="989" font-size="17" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">REF P 0.70 V</text>
+<text x="1080" y="1022" font-size="17" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">e=1, b=0</text>
+<text x="1224" y="1022" font-size="17" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">REF P 0.70 V</text>
+<text x="1390" y="1022" font-size="17" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">REF N 0.20 V</text>
+<text x="40" y="1080" font-size="21" font-weight="normal" fill="#2263ac" text-anchor="start" style="fill:#2263ac">Compact controller holds v0 LOW: bit0 is decided, but its final DAC switch is unnecessary.</text>
+<line x1="40" y1="1114" x2="1560" y2="1114" stroke="#d9e3ec" stroke-width="2.5"/>
+<text x="40" y="1137" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">Sources: sar_frontend.py::sar_cdac; sar_logic_compact.py::valid0_low</text>
+<text x="40" y="1165" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">All 18 capacitors remain present. Reference selection uses matching net labels; wires to shared VCM/REF rails are omitted for clarity.</text>
+</svg>

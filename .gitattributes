@@ -1,0 +1,5 @@
+* text=auto eol=lf
+# Preserve exact exported CSV and source-derived SVG bytes, including line endings.
+*.csv -text
+*.svg -text
+*.png -text

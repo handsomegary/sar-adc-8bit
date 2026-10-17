@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1660" height="1250" viewBox="0 0 1660 1250">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2263ac"/></marker><marker id="greenArrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#137b68"/></marker></defs>
+<style>text{font-family:Arial,"Segoe UI",sans-serif;fill:#17263b} .wire{stroke:#17263b;stroke-width:2.5;fill:none;stroke-linejoin:round;stroke-linecap:round}</style>
+<rect width="100%" height="100%" fill="white"/>
+<desc>Engineering circuit illustration derived from local source; not an OA schematic, layout, simulation trace, or performance pass report. Source hashes: {&quot;sar_frontend.py&quot;: &quot;1a62fc262a973e92d16d8abbbb1d5da42728c2b2d976e214f254573d4cac1bda&quot;, &quot;sar_logic_compact.py&quot;: &quot;de4400d4a36ed1789afdec692d707800fb2c4d047c92fcb65fe686f9524edf76&quot;, &quot;sar_logic.py&quot;: &quot;a13be48f3047de0413e85ec7e8b223885bca21a25c8df4eb62453b4fafaec61e&quot;, &quot;sar_runner.py&quot;: &quot;b4c82c5aa83ff90ca450b80600dddedb613ad437ed8aaaf4e2522bdff3e02358&quot;}</desc>
+<text x="40" y="54" font-size="31" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">Compact controller - Johnson states and conversion timing</text>
+<text x="40" y="91" font-size="19" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">5 negative-edge master/slave DFFs + 8 decision latches + 8 output latches | 424 expanded MOS</text>
+<line x1="40" y1="113" x2="1620" y2="113" stroke="#d9e3ec" stroke-width="2.5"/>
+<rect x="150" y="160" width="126" height="100" rx="8" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="213" y="192" font-size="25" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q0</text>
+<text x="213" y="222" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">00000</text>
+<text x="213" y="247" font-size="16" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">track</text>
+<line x1="276" y1="209" x2="295" y2="209" stroke="#2263ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="295" y="160" width="126" height="100" rx="8" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="358" y="192" font-size="25" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q1</text>
+<text x="358" y="222" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">10000</text>
+<text x="358" y="247" font-size="16" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">track</text>
+<line x1="421" y1="209" x2="440" y2="209" stroke="#2263ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="440" y="160" width="126" height="100" rx="8" fill="#f0f5fa" stroke="#2263ac" stroke-width="1.8"/>
+<text x="503" y="192" font-size="25" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q2</text>
+<text x="503" y="222" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">11000</text>
+<text x="503" y="247" font-size="16" font-weight="normal" fill="#2263ac" text-anchor="middle" style="fill:#2263ac">bit 7</text>
+<line x1="566" y1="209" x2="585" y2="209" stroke="#2263ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="585" y="160" width="126" height="100" rx="8" fill="#f0f5fa" stroke="#2263ac" stroke-width="1.8"/>
+<text x="648" y="192" font-size="25" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q3</text>
+<text x="648" y="222" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">11100</text>
+<text x="648" y="247" font-size="16" font-weight="normal" fill="#2263ac" text-anchor="middle" style="fill:#2263ac">bit 6</text>
+<line x1="711" y1="209" x2="730" y2="209" stroke="#2263ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="730" y="160" width="126" height="100" rx="8" fill="#f0f5fa" stroke="#2263ac" stroke-width="1.8"/>
+<text x="793" y="192" font-size="25" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q4</text>
+<text x="793" y="222" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">11110</text>
+<text x="793" y="247" font-size="16" font-weight="normal" fill="#2263ac" text-anchor="middle" style="fill:#2263ac">bit 5</text>
+<line x1="856" y1="209" x2="875" y2="209" stroke="#2263ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="875" y="160" width="126" height="100" rx="8" fill="#f0f5fa" stroke="#2263ac" stroke-width="1.8"/>
+<text x="938" y="192" font-size="25" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q5</text>
+<text x="938" y="222" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">11111</text>
+<text x="938" y="247" font-size="16" font-weight="normal" fill="#2263ac" text-anchor="middle" style="fill:#2263ac">bit 4</text>
+<line x1="1001" y1="209" x2="1020" y2="209" stroke="#2263ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1020" y="160" width="126" height="100" rx="8" fill="#f0f5fa" stroke="#2263ac" stroke-width="1.8"/>
+<text x="1083" y="192" font-size="25" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q6</text>
+<text x="1083" y="222" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">01111</text>
+<text x="1083" y="247" font-size="16" font-weight="normal" fill="#2263ac" text-anchor="middle" style="fill:#2263ac">bit 3</text>
+<line x1="1146" y1="209" x2="1165" y2="209" stroke="#2263ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1165" y="160" width="126" height="100" rx="8" fill="#f0f5fa" stroke="#2263ac" stroke-width="1.8"/>
+<text x="1228" y="192" font-size="25" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q7</text>
+<text x="1228" y="222" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">00111</text>
+<text x="1228" y="247" font-size="16" font-weight="normal" fill="#2263ac" text-anchor="middle" style="fill:#2263ac">bit 2</text>
+<line x1="1291" y1="209" x2="1310" y2="209" stroke="#2263ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1310" y="160" width="126" height="100" rx="8" fill="#f0f5fa" stroke="#2263ac" stroke-width="1.8"/>
+<text x="1373" y="192" font-size="25" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q8</text>
+<text x="1373" y="222" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">00011</text>
+<text x="1373" y="247" font-size="16" font-weight="normal" fill="#2263ac" text-anchor="middle" style="fill:#2263ac">bit 1</text>
+<line x1="1436" y1="209" x2="1455" y2="209" stroke="#2263ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1455" y="160" width="126" height="100" rx="8" fill="#f0f5fa" stroke="#2263ac" stroke-width="1.8"/>
+<text x="1518" y="192" font-size="25" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q9</text>
+<text x="1518" y="222" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">00001</text>
+<text x="1518" y="247" font-size="16" font-weight="normal" fill="#2263ac" text-anchor="middle" style="fill:#2263ac">bit 0</text>
+<path d="M1581,242 L1615,242 L1615,295 L128,295 L128,209 L150,209" fill="none" stroke="#2263ac" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="40" y="332" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">State string order: j0 j1 j2 j3 j4. q1...q9 are conceptual slot names; only q0 is a top-level marker.</text>
+<text x="40" y="366" font-size="19" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">track = NOR(j1,j4); cmpclk = phm AND !track. Interlocked phases close masters before slaves advance.</text>
+<text x="40" y="424" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">Idealized steady-state schedule: propagation and settling delays are omitted.</text>
+<line x1="185" y1="455" x2="185" y2="860" stroke="#d9e3ec" stroke-width="1.3"/>
+<text x="185" y="891" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">0</text>
+<line x1="313" y1="455" x2="313" y2="860" stroke="#d9e3ec" stroke-width="1.3"/>
+<text x="313" y="891" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">5</text>
+<line x1="441" y1="455" x2="441" y2="860" stroke="#d9e3ec" stroke-width="1.3"/>
+<text x="441" y="891" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">10</text>
+<line x1="569" y1="455" x2="569" y2="860" stroke="#d9e3ec" stroke-width="1.3"/>
+<text x="569" y="891" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">15</text>
+<line x1="697" y1="455" x2="697" y2="860" stroke="#d9e3ec" stroke-width="1.3"/>
+<text x="697" y="891" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">20</text>
+<line x1="825" y1="455" x2="825" y2="860" stroke="#d9e3ec" stroke-width="1.3"/>
+<text x="825" y="891" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">25</text>
+<line x1="953" y1="455" x2="953" y2="860" stroke="#d9e3ec" stroke-width="1.3"/>
+<text x="953" y="891" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">30</text>
+<line x1="1081" y1="455" x2="1081" y2="860" stroke="#d9e3ec" stroke-width="1.3"/>
+<text x="1081" y="891" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">35</text>
+<line x1="1209" y1="455" x2="1209" y2="860" stroke="#d9e3ec" stroke-width="1.3"/>
+<text x="1209" y="891" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">40</text>
+<line x1="1337" y1="455" x2="1337" y2="860" stroke="#d9e3ec" stroke-width="1.3"/>
+<text x="1337" y="891" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">45</text>
+<line x1="1465" y1="455" x2="1465" y2="860" stroke="#d9e3ec" stroke-width="1.3"/>
+<text x="1465" y="891" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">50</text>
+<line x1="1593" y1="455" x2="1593" y2="860" stroke="#d9e3ec" stroke-width="1.3"/>
+<text x="1593" y="891" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">55</text>
+<rect x="185" y="455" width="128" height="47" rx="0" fill="#edf6f4" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="249.0" y="486" font-size="23" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q0</text>
+<rect x="313" y="455" width="128" height="47" rx="0" fill="#edf6f4" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="377.0" y="486" font-size="23" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q1</text>
+<rect x="441" y="455" width="128" height="47" rx="0" fill="#f0f5fa" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="505.0" y="486" font-size="23" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q2</text>
+<rect x="569" y="455" width="128" height="47" rx="0" fill="#f0f5fa" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="633.0" y="486" font-size="23" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q3</text>
+<rect x="697" y="455" width="128" height="47" rx="0" fill="#f0f5fa" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="761.0" y="486" font-size="23" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q4</text>
+<rect x="825" y="455" width="128" height="47" rx="0" fill="#f0f5fa" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="889.0" y="486" font-size="23" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q5</text>
+<rect x="953" y="455" width="128" height="47" rx="0" fill="#f0f5fa" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="1017.0" y="486" font-size="23" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q6</text>
+<rect x="1081" y="455" width="128" height="47" rx="0" fill="#f0f5fa" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="1145.0" y="486" font-size="23" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q7</text>
+<rect x="1209" y="455" width="128" height="47" rx="0" fill="#f0f5fa" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="1273.0" y="486" font-size="23" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q8</text>
+<rect x="1337" y="455" width="128" height="47" rx="0" fill="#f0f5fa" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="1401.0" y="486" font-size="23" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q9</text>
+<rect x="1465" y="455" width="128" height="47" rx="0" fill="#edf6f4" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="1529.0" y="486" font-size="23" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">q0</text>
+<text x="65" y="487" font-size="20" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">Slot</text>
+<path d="M185,566 L249.0,566 L249.0,530 L313,530 L313,566 L377.0,566 L377.0,530 L441,530 L441,566 L505.0,566 L505.0,530 L569,530 L569,566 L633.0,566 L633.0,530 L697,530 L697,566 L761.0,566 L761.0,530 L825,530 L825,566 L889.0,566 L889.0,530 L953,530 L953,566 L1017.0,566 L1017.0,530 L1081,530 L1081,566 L1145.0,566 L1145.0,530 L1209,530 L1209,566 L1273.0,566 L1273.0,530 L1337,530 L1337,566 L1401.0,566 L1401.0,530 L1465,530 L1465,566 L1529.0,566 L1529.0,530 L1593,530 L1593,566 L1593,566" fill="none" stroke="#2263ac" stroke-width="2.8" stroke-linejoin="round"/>
+<text x="40" y="556" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">CLK</text>
+<path d="M185,605 L441,605 L441,641 L1465,641 L1465,605 L1593,605" fill="none" stroke="#137b68" stroke-width="2.8" stroke-linejoin="round"/>
+<text x="40" y="630" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">track</text>
+<path d="M185,715 L249.0,715 L313,715 L377.0,715 L441,715 L505.0,715 L505.0,679 L569,679 L569,715 L633.0,715 L633.0,679 L697,679 L697,715 L761.0,715 L761.0,679 L825,679 L825,715 L889.0,715 L889.0,679 L953,679 L953,715 L1017.0,715 L1017.0,679 L1081,679 L1081,715 L1145.0,715 L1145.0,679 L1209,679 L1209,715 L1273.0,715 L1273.0,679 L1337,679 L1337,715 L1401.0,715 L1401.0,679 L1465,679 L1465,715 L1529.0,715 L1593,715" fill="none" stroke="#2263ac" stroke-width="2.8" stroke-linejoin="round"/>
+<text x="40" y="705" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">cmpclk</text>
+<text x="40" y="777" font-size="19" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">Bit latch</text>
+<rect x="505.0" y="747" width="64.0" height="45" rx="0" fill="#e3edfc" stroke="#2263ac" stroke-width="1.8"/>
+<text x="537.0" y="776" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">b7</text>
+<rect x="633.0" y="747" width="64.0" height="45" rx="0" fill="#e3edfc" stroke="#2263ac" stroke-width="1.8"/>
+<text x="665.0" y="776" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">b6</text>
+<rect x="761.0" y="747" width="64.0" height="45" rx="0" fill="#e3edfc" stroke="#2263ac" stroke-width="1.8"/>
+<text x="793.0" y="776" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">b5</text>
+<rect x="889.0" y="747" width="64.0" height="45" rx="0" fill="#e3edfc" stroke="#2263ac" stroke-width="1.8"/>
+<text x="921.0" y="776" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">b4</text>
+<rect x="1017.0" y="747" width="64.0" height="45" rx="0" fill="#e3edfc" stroke="#2263ac" stroke-width="1.8"/>
+<text x="1049.0" y="776" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">b3</text>
+<rect x="1145.0" y="747" width="64.0" height="45" rx="0" fill="#e3edfc" stroke="#2263ac" stroke-width="1.8"/>
+<text x="1177.0" y="776" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">b2</text>
+<rect x="1273.0" y="747" width="64.0" height="45" rx="0" fill="#e3edfc" stroke="#2263ac" stroke-width="1.8"/>
+<text x="1305.0" y="776" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">b1</text>
+<rect x="1401.0" y="747" width="64.0" height="45" rx="0" fill="#e3edfc" stroke="#2263ac" stroke-width="1.8"/>
+<text x="1433.0" y="776" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">b0</text>
+<text x="40" y="849" font-size="18" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">Output latch</text>
+<rect x="249.0" y="820" width="64.0" height="40" rx="0" fill="#fff2df" stroke="#b9691b" stroke-width="1.8"/>
+<text x="281.0" y="846" font-size="15" font-weight="normal" fill="#b9691b" text-anchor="middle" style="fill:#b9691b">open</text>
+<rect x="1529.0" y="820" width="64.0" height="40" rx="0" fill="#fff2df" stroke="#b9691b" stroke-width="1.8"/>
+<text x="1561.0" y="846" font-size="15" font-weight="normal" fill="#b9691b" text-anchor="middle" style="fill:#b9691b">open</text>
+<text x="1610" y="923" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="end" style="fill:#5e6d80">time (ns)</text>
+<line x1="441" y1="505" x2="441" y2="938" stroke="#137b68" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="441" y="965" font-size="21" font-weight="bold" fill="#137b68" text-anchor="middle" style="fill:#137b68">Hold</text>
+<line x1="1465" y1="505" x2="1465" y2="938" stroke="#2263ac" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="1465" y="965" font-size="19" font-weight="bold" fill="#2263ac" text-anchor="middle" style="fill:#2263ac">bit0 closes</text>
+<line x1="1593" y1="505" x2="1593" y2="990" stroke="#b9691b" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="1593" y="1018" font-size="19" font-weight="bold" fill="#b9691b" text-anchor="middle" style="fill:#b9691b">D stable</text>
+<rect x="40" y="1047" width="1580" height="100" rx="10" fill="#f5f7f9" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="60" y="1078" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">One conversion: 2 acquisition slots + 8 comparison slots = 50 ns. Outputs become stable after the following q0 fall.</text>
+<text x="60" y="1105" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">v0 stays LOW; earlier decisions drive resolved CDAC flags. Bit latches are transparent only during their selected master-high phase.</text>
+<text x="60" y="1132" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">Testbench: AVDD rises from 0 V in 0.2 ns (1.0 -&gt; 1.2 ns); POR R*C=100 ns; first CLK rising edge at 200 ns.</text>
+<line x1="40" y1="1167" x2="1620" y2="1167" stroke="#d9e3ec" stroke-width="2.5"/>
+<text x="40" y="1190" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">Sources: sar_logic_compact.py::generate_sar_logic; sar_logic.py::phases/latchr0/pdffr0; sar_runner.py::deck/analyze</text>
+<text x="40" y="1218" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">This schedule illustrates source logic, not simulated waveforms. Runner samples output after q0 fall plus 1 ns; targets are not pass claims.</text>
+</svg>

@@ -1,0 +1,566 @@
+{
+  "actual_input_timing_validated": true,
+  "comparison": [
+    {
+      "requested_index": 0,
+      "voltage_V": 0.49250000000000005,
+      "baseline_code": 255,
+      "reverse_tight_code": 255,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 1,
+      "voltage_V": 0.492,
+      "baseline_code": 254,
+      "reverse_tight_code": 254,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 2,
+      "voltage_V": 0.4345947342519686,
+      "baseline_code": 240,
+      "reverse_tight_code": 240,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 3,
+      "voltage_V": 0.43362573818897643,
+      "baseline_code": 239,
+      "reverse_tight_code": 239,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 4,
+      "voltage_V": 0.3725789862204724,
+      "baseline_code": 224,
+      "reverse_tight_code": 224,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 5,
+      "voltage_V": 0.3716099901574802,
+      "baseline_code": 223,
+      "reverse_tight_code": 223,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 6,
+      "voltage_V": 0.3531990649606301,
+      "baseline_code": 219,
+      "reverse_tight_code": 219,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 7,
+      "voltage_V": 0.3522300688976378,
+      "baseline_code": 218,
+      "reverse_tight_code": 218,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 8,
+      "voltage_V": 0.34932308070866147,
+      "baseline_code": 218,
+      "reverse_tight_code": 218,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 9,
+      "voltage_V": 0.34835408464566914,
+      "baseline_code": 217,
+      "reverse_tight_code": 217,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 10,
+      "voltage_V": 0.3221911909448821,
+      "baseline_code": 211,
+      "reverse_tight_code": 211,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 11,
+      "voltage_V": 0.3212221948818898,
+      "baseline_code": 210,
+      "reverse_tight_code": 210,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 12,
+      "voltage_V": 0.31831520669291347,
+      "baseline_code": 210,
+      "reverse_tight_code": 210,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 13,
+      "voltage_V": 0.31734621062992113,
+      "baseline_code": 209,
+      "reverse_tight_code": 209,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 14,
+      "voltage_V": 0.3105632381889764,
+      "baseline_code": 208,
+      "reverse_tight_code": 208,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 15,
+      "voltage_V": 0.3095942421259842,
+      "baseline_code": 207,
+      "reverse_tight_code": 207,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 16,
+      "voltage_V": 0.30668725393700785,
+      "baseline_code": 207,
+      "reverse_tight_code": 207,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 17,
+      "voltage_V": 0.30571825787401546,
+      "baseline_code": 206,
+      "reverse_tight_code": 206,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 18,
+      "voltage_V": 0.2950593011811024,
+      "baseline_code": 204,
+      "reverse_tight_code": 204,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 19,
+      "voltage_V": 0.2940903051181102,
+      "baseline_code": 203,
+      "reverse_tight_code": 203,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 20,
+      "voltage_V": 0.29118331692913374,
+      "baseline_code": 203,
+      "reverse_tight_code": 203,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 21,
+      "voltage_V": 0.29021432086614146,
+      "baseline_code": 202,
+      "reverse_tight_code": 202,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 22,
+      "voltage_V": 0.24854749015748018,
+      "baseline_code": 192,
+      "reverse_tight_code": 192,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 23,
+      "voltage_V": 0.24757849409448818,
+      "baseline_code": 191,
+      "reverse_tight_code": 191,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 24,
+      "voltage_V": 0.18653174212598428,
+      "baseline_code": 176,
+      "reverse_tight_code": 176,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 25,
+      "voltage_V": 0.18556274606299217,
+      "baseline_code": 175,
+      "reverse_tight_code": 175,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 26,
+      "voltage_V": 0.12451599409448805,
+      "baseline_code": 160,
+      "reverse_tight_code": 160,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 27,
+      "voltage_V": 0.12354699803149599,
+      "baseline_code": 159,
+      "reverse_tight_code": 159,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 28,
+      "voltage_V": 0.0625002460629921,
+      "baseline_code": 144,
+      "reverse_tight_code": 144,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 29,
+      "voltage_V": 0.06153124999999998,
+      "baseline_code": 143,
+      "reverse_tight_code": 143,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 30,
+      "voltage_V": 0.0004844980314960834,
+      "baseline_code": 128,
+      "reverse_tight_code": 128,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 31,
+      "voltage_V": 0.0,
+      "baseline_code": 127,
+      "reverse_tight_code": 128,
+      "voltage_matches_anchor": true,
+      "code_matches": false
+    },
+    {
+      "requested_index": 32,
+      "voltage_V": -0.06153124999999998,
+      "baseline_code": 112,
+      "reverse_tight_code": 112,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 33,
+      "voltage_V": -0.0625002460629921,
+      "baseline_code": 111,
+      "reverse_tight_code": 111,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 34,
+      "voltage_V": -0.1235469980314961,
+      "baseline_code": 96,
+      "reverse_tight_code": 96,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 35,
+      "voltage_V": -0.12451599409448816,
+      "baseline_code": 95,
+      "reverse_tight_code": 95,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 36,
+      "voltage_V": -0.18556274606299217,
+      "baseline_code": 80,
+      "reverse_tight_code": 80,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 37,
+      "voltage_V": -0.18653174212598428,
+      "baseline_code": 79,
+      "reverse_tight_code": 79,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 38,
+      "voltage_V": -0.21269463582677156,
+      "baseline_code": 73,
+      "reverse_tight_code": 73,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 39,
+      "voltage_V": -0.21366363188976384,
+      "baseline_code": 72,
+      "reverse_tight_code": 72,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 40,
+      "voltage_V": -0.21657062007874017,
+      "baseline_code": 72,
+      "reverse_tight_code": 72,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 41,
+      "voltage_V": -0.2175396161417324,
+      "baseline_code": 71,
+      "reverse_tight_code": 71,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 42,
+      "voltage_V": -0.24757849409448818,
+      "baseline_code": 64,
+      "reverse_tight_code": 64,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 43,
+      "voltage_V": -0.2485474901574804,
+      "baseline_code": 63,
+      "reverse_tight_code": 63,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 44,
+      "voltage_V": -0.28633833661417313,
+      "baseline_code": 54,
+      "reverse_tight_code": 54,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 45,
+      "voltage_V": -0.28730733267716546,
+      "baseline_code": 53,
+      "reverse_tight_code": 53,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 46,
+      "voltage_V": -0.2902143208661418,
+      "baseline_code": 53,
+      "reverse_tight_code": 53,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 47,
+      "voltage_V": -0.2911833169291341,
+      "baseline_code": 52,
+      "reverse_tight_code": 52,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 48,
+      "voltage_V": -0.3095942421259842,
+      "baseline_code": 48,
+      "reverse_tight_code": 48,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 49,
+      "voltage_V": -0.3105632381889764,
+      "baseline_code": 47,
+      "reverse_tight_code": 47,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 50,
+      "voltage_V": -0.31734621062992113,
+      "baseline_code": 46,
+      "reverse_tight_code": 46,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 51,
+      "voltage_V": -0.31831520669291347,
+      "baseline_code": 45,
+      "reverse_tight_code": 45,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 52,
+      "voltage_V": -0.3212221948818898,
+      "baseline_code": 45,
+      "reverse_tight_code": 45,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 53,
+      "voltage_V": -0.3221911909448821,
+      "baseline_code": 44,
+      "reverse_tight_code": 44,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 54,
+      "voltage_V": -0.3716099901574804,
+      "baseline_code": 32,
+      "reverse_tight_code": 32,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 55,
+      "voltage_V": -0.3725789862204724,
+      "baseline_code": 31,
+      "reverse_tight_code": 31,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 56,
+      "voltage_V": -0.42587376968503937,
+      "baseline_code": 18,
+      "reverse_tight_code": 18,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 57,
+      "voltage_V": -0.4268427657480317,
+      "baseline_code": 17,
+      "reverse_tight_code": 17,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 58,
+      "voltage_V": -0.43362573818897643,
+      "baseline_code": 16,
+      "reverse_tight_code": 16,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 59,
+      "voltage_V": -0.4345947342519686,
+      "baseline_code": 15,
+      "reverse_tight_code": 15,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 60,
+      "voltage_V": -0.46075762795275577,
+      "baseline_code": 9,
+      "reverse_tight_code": 9,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 61,
+      "voltage_V": -0.461726624015748,
+      "baseline_code": 8,
+      "reverse_tight_code": 8,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 62,
+      "voltage_V": -0.468509596456693,
+      "baseline_code": 7,
+      "reverse_tight_code": 7,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 63,
+      "voltage_V": -0.46947859251968527,
+      "baseline_code": 6,
+      "reverse_tight_code": 6,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 64,
+      "voltage_V": -0.48013754921259844,
+      "baseline_code": 4,
+      "reverse_tight_code": 4,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 65,
+      "voltage_V": -0.4811065452755906,
+      "baseline_code": 3,
+      "reverse_tight_code": 3,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 66,
+      "voltage_V": -0.4840135334645671,
+      "baseline_code": 3,
+      "reverse_tight_code": 3,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 67,
+      "voltage_V": -0.48498252952755927,
+      "baseline_code": 2,
+      "reverse_tight_code": 2,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 68,
+      "voltage_V": -0.492,
+      "baseline_code": 1,
+      "reverse_tight_code": 1,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    },
+    {
+      "requested_index": 69,
+      "voltage_V": -0.49250000000000005,
+      "baseline_code": 0,
+      "reverse_tight_code": 0,
+      "voltage_matches_anchor": true,
+      "code_matches": true
+    }
+  ],
+  "scope": "70 selected descending TT anchors at reltol1e-4 versus forward reltol1e-3. Combined history/tolerance check; not a universal hysteresis or numerical-convergence proof."
+}

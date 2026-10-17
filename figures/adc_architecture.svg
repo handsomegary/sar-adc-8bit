@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2263ac"/></marker><marker id="greenArrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#137b68"/></marker></defs>
+<style>text{font-family:Arial,"Segoe UI",sans-serif;fill:#17263b} .wire{stroke:#17263b;stroke-width:2.5;fill:none;stroke-linejoin:round;stroke-linecap:round}</style>
+<rect width="100%" height="100%" fill="white"/>
+<desc>Engineering circuit illustration derived from local source; not an OA schematic, layout, simulation trace, or performance pass report. Source hashes: {&quot;sar_frontend.py&quot;: &quot;1a62fc262a973e92d16d8abbbb1d5da42728c2b2d976e214f254573d4cac1bda&quot;, &quot;sar_logic_compact.py&quot;: &quot;de4400d4a36ed1789afdec692d707800fb2c4d047c92fcb65fe686f9524edf76&quot;, &quot;sar_logic.py&quot;: &quot;a13be48f3047de0413e85ec7e8b223885bca21a25c8df4eb62453b4fafaec61e&quot;, &quot;sar_runner.py&quot;: &quot;b4c82c5aa83ff90ca450b80600dddedb613ad437ed8aaaf4e2522bdff3e02358&quot;}</desc>
+<text x="40" y="54" font-size="31" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">8-bit differential SAR ADC - implemented signal path</text>
+<text x="40" y="91" font-size="19" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">28nm CMOS native MOS | 20 MS/s target | external CLK 200 MHz | schematic capacitors</text>
+<line x1="40" y1="113" x2="1560" y2="113" stroke="#d9e3ec" stroke-width="2.5"/>
+<rect x="40" y="150" width="280" height="300" rx="10" fill="#f0f5fa" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="60" y="187" font-size="24" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">External analog pins</text>
+<text x="60" y="236" font-size="21" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">AVDD = 0.9 V</text>
+<text x="60" y="272" font-size="21" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">AVSS = 0 V</text>
+<text x="60" y="308" font-size="21" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">VCM = 0.45 V</text>
+<text x="60" y="344" font-size="21" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">VREFP = 0.70 V</text>
+<text x="60" y="380" font-size="21" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">VREFN = 0.20 V</text>
+<rect x="40" y="485" width="280" height="165" rx="10" fill="#f0f5fa" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="60" y="522" font-size="24" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">Differential input</text>
+<text x="60" y="562" font-size="20" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">VIP, VIN around VCM</text>
+<text x="60" y="591" font-size="20" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">VIP - VIN: -0.5 ... +0.5 V</text>
+<text x="60" y="620" font-size="20" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">1 Vpp full scale</text>
+<rect x="370" y="235" width="205" height="230" rx="10" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="472" y="274" font-size="24" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">Top-plate</text>
+<text x="472" y="303" font-size="24" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">sampling TGs</text>
+<text x="472" y="352" font-size="17" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">2 parallel TGs / side</text>
+<text x="472" y="379" font-size="17" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">Each MOS W=3 um</text>
+<text x="472" y="406" font-size="17" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">Effective Wn/Wp=6/6 um</text>
+<text x="472" y="433" font-size="17" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">L=30 nm</text>
+<rect x="650" y="235" width="290" height="230" rx="10" fill="#edf6f4" stroke="#137b68" stroke-width="1.8"/>
+<text x="795" y="274" font-size="25" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">Differential CDAC</text>
+<text x="795" y="319" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">8 weighted C + dummy / side</text>
+<text x="795" y="348" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">128:64:32:16:8:4:2:1 + 1</text>
+<text x="795" y="377" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">Cu = 5 fF</text>
+<text x="795" y="406" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">Ctotal = 1.28 pF / side</text>
+<text x="795" y="435" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">18 ideal capacitors total</text>
+<rect x="1020" y="235" width="275" height="230" rx="10" fill="#f0f5fa" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="1157" y="275" font-size="24" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">Dynamic comparator</text>
+<text x="1157" y="323" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">11 direct MOS</text>
+<text x="1157" y="355" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">2 matched inverters / side</text>
+<text x="1157" y="387" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">NAND SR latch</text>
+<text x="1157" y="419" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">27 expanded MOS</text>
+<path d="M320,550 L345,550 L345,340 L370,340" fill="none" stroke="#137b68" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#greenArrow)"/>
+<text x="344" y="323" font-size="18" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">VIP / VIN</text>
+<line x1="575" y1="340" x2="650" y2="340" stroke="#137b68" stroke-width="2.5" marker-end="url(#greenArrow)"/>
+<line x1="940" y1="340" x2="1020" y2="340" stroke="#137b68" stroke-width="2.5" marker-end="url(#greenArrow)"/>
+<text x="980" y="325" font-size="18" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">vp, vn</text>
+<rect x="570" y="605" width="615" height="230" rx="10" fill="#eff4fc" stroke="#2263ac" stroke-width="1.8"/>
+<text x="877" y="645" font-size="26" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">Compact transistor SAR controller</text>
+<text x="877" y="690" font-size="21" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">5-stage Johnson counter -&gt; 10 slots</text>
+<text x="877" y="724" font-size="21" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">8 decision latches + 8 output latches</text>
+<text x="877" y="758" font-size="21" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">Interlocked master / slave phases</text>
+<text x="877" y="792" font-size="21" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">424 expanded MOS; no ideal digital logic</text>
+<path d="M1295,350 L1340,350 L1340,710 L1185,710" fill="none" stroke="#2263ac" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="1323" y="518" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="end" style="fill:#2263ac">cmpQ</text>
+<path d="M795,605 L795,520 L795,465" fill="none" stroke="#2263ac" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="815" y="535" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="start" style="fill:#2263ac">b[7:0], v[7:0]</text>
+<line x1="685" y1="205" x2="685" y2="235" stroke="#137b68" stroke-width="2.5" marker-end="url(#greenArrow)"/>
+<text x="650" y="190" font-size="17" font-weight="normal" fill="#137b68" text-anchor="start" style="fill:#137b68">VREFP / VREFN / VCM</text>
+<path d="M630,605 L630,535 L472,535 L472,465" fill="none" stroke="#2263ac" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="471" y="517" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="middle" style="fill:#2263ac">track</text>
+<path d="M1085,605 L1085,555 L1157,555 L1157,465" fill="none" stroke="#2263ac" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="1145" y="539" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="end" style="fill:#2263ac">cmpclk</text>
+<rect x="1325" y="770" width="225" height="145" rx="10" fill="#eff4fc" stroke="#2263ac" stroke-width="1.8"/>
+<text x="1437" y="807" font-size="25" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">D7 ... D0</text>
+<text x="1437" y="843" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">8-bit / 256 codes</text>
+<text x="1437" y="870" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">D7 = MSB</text>
+<text x="1437" y="897" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">Read after q0 fall</text>
+<path d="M1185,790 L1260,790 L1260,810 L1325,810" fill="none" stroke="#2263ac" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="1247" y="772" font-size="17" font-weight="normal" fill="#2263ac" text-anchor="middle" style="fill:#2263ac">Output bank</text>
+<rect x="350" y="765" width="165" height="115" rx="10" fill="#f0f5fa" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="432" y="801" font-size="24" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">CLK</text>
+<text x="432" y="837" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">200 MHz</text>
+<text x="432" y="863" font-size="18" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">5 ns period</text>
+<path d="M515,807 L550,807 L550,735 L570,735" fill="none" stroke="#2263ac" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="970" y="140" width="325" height="70" rx="10" fill="#fff6ea" stroke="#b9691b" stroke-width="1.8"/>
+<text x="1132" y="169" font-size="19" font-weight="normal" fill="#b9691b" text-anchor="middle" style="fill:#b9691b">POR: C=1 pF, R=100 kohm</text>
+<text x="1132" y="196" font-size="17" font-weight="normal" fill="#b9691b" text-anchor="middle" style="fill:#b9691b">2 MOS inverters -&gt; active-high RST</text>
+<path d="M1010,210 L985,210 L985,585 L1020,585 L1020,605" fill="none" stroke="#b9691b" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="985" y="575" font-size="16" font-weight="normal" fill="#b9691b" text-anchor="end" style="fill:#b9691b">RST</text>
+<text x="40" y="704" font-size="20" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">Pin order:</text>
+<text x="40" y="739" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">AVDD AVSS VREFP VREFN</text>
+<text x="40" y="768" font-size="18" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">VCM VIP VIN D7 ... D0 CLK</text>
+<rect x="40" y="910" width="1135" height="87" rx="10" fill="#f5f7f9" stroke="#d9e3ec" stroke-width="1.8"/>
+<text x="60" y="945" font-size="22" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">769 expanded MOS = controller 424 + CDAC 314 + comparator 27 + POR 4</text>
+<text x="60" y="977" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">MOS count follows actual instantiated hierarchy; unused helper subcircuits are excluded.</text>
+<line x1="40" y1="1017" x2="1560" y2="1017" stroke="#d9e3ec" stroke-width="2.5"/>
+<text x="40" y="1040" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">Sources: sar_runner.py::core, sar_logic_compact.py::generate_sar_logic, sar_frontend.py::generate_frontend</text>
+<text x="40" y="1068" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">Engineering netlist illustration; not Cadence OA, layout, PEX, or a claim that the performance targets passed.</text>
+</svg>

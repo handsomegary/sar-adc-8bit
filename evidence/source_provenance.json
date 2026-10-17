@@ -1,0 +1,218 @@
+{
+  "scope": "Anonymous archive artifact IDs and original hashes identify source evidence. Entries are projections unless marked exact. Source storage paths, process bindings, model/netlist/log/raw documents are not distributed.",
+  "exports": {
+    "src/sar_analysis.py": [
+      {
+        "sha256": "22d1b1ff2ada1a300ea3a02b9259dfcaeee62d3c67c916a3ccefa52455b892f3",
+        "export": "Unmodified authored algorithm/topology source; no process model coefficients.",
+        "source_artifact_id": "source-artifact-001"
+      }
+    ],
+    "src/sar_logic.py": [
+      {
+        "sha256": "a13be48f3047de0413e85ec7e8b223885bca21a25c8df4eb62453b4fafaec61e",
+        "export": "Unmodified authored algorithm/topology source; no process model coefficients.",
+        "source_artifact_id": "source-artifact-002"
+      }
+    ],
+    "src/sar_logic_compact.py": [
+      {
+        "sha256": "de4400d4a36ed1789afdec692d707800fb2c4d047c92fcb65fe686f9524edf76",
+        "export": "Unmodified authored algorithm/topology source; no process model coefficients.",
+        "source_artifact_id": "source-artifact-003"
+      }
+    ],
+    "src/sar_frontend.py": [
+      {
+        "sha256": "1a62fc262a973e92d16d8abbbb1d5da42728c2b2d976e214f254573d4cac1bda",
+        "export": "Unmodified authored algorithm/topology source; no process model coefficients.",
+        "source_artifact_id": "source-artifact-004"
+      }
+    ],
+    "data/dynamic/sin17_r4_codes.csv": [
+      {
+        "sha256": "a4f849812ea4f7f7df90ee8afaa2f7db54f6fa16a43722b3a03fe4d0913bc39f",
+        "export": "Exact selected256 conversion CSV; no raw transient rows.",
+        "source_artifact_id": "source-artifact-005"
+      }
+    ],
+    "data/dynamic/records.json:sin17_r4": [
+      {
+        "sha256": "301b0a97cad677f1d177fdf3bea909ff8f78c6dfc9b67913514536acef1833ed",
+        "source_artifact_id": "source-artifact-006"
+      },
+      {
+        "sha256": "ee82667aec87559438cb76d2155df6ab7ab0b5cfec3597edde0857f3ac456052",
+        "source_artifact_id": "source-artifact-007"
+      }
+    ],
+    "data/dynamic/sin29_r5_codes.csv": [
+      {
+        "sha256": "92b9755445557d0c7a90b548a106bcfcf13f003db60766c28eb44d0425cabc13",
+        "export": "Exact selected256 conversion CSV; no raw transient rows.",
+        "source_artifact_id": "source-artifact-008"
+      }
+    ],
+    "data/dynamic/records.json:sin29_r5": [
+      {
+        "sha256": "7bcfe9ba57e8988c7addc4e63e754f63c5cb48417acb9d9e439aec88ea79bc46",
+        "source_artifact_id": "source-artifact-009"
+      },
+      {
+        "sha256": "f85d0550bd4b8e1fcef63e6ea43997e65fbed1617963c539d9f4cfd51e43ef63",
+        "source_artifact_id": "source-artifact-010"
+      }
+    ],
+    "data/dynamic/sin119_r5_codes.csv": [
+      {
+        "sha256": "e88c4bd0ad11be075cfba7e735f702a61d10bb12614ff684645181166613c947",
+        "export": "Exact selected256 conversion CSV; no raw transient rows.",
+        "source_artifact_id": "source-artifact-011"
+      }
+    ],
+    "data/dynamic/records.json:sin119_r5": [
+      {
+        "sha256": "d45ac765dfabebc7b5a4f7637ac09bb465c62c97b3480cd03060b987ec2cc6f3",
+        "source_artifact_id": "source-artifact-012"
+      },
+      {
+        "sha256": "eb4c5f1c1ff3696fc759049fcc81b3b100491238a4eaea2016310fd0acab615e",
+        "source_artifact_id": "source-artifact-013"
+      }
+    ],
+    "data/dynamic/sin17_noise43_r5_codes.csv": [
+      {
+        "sha256": "966bbd30978dc9a56ce0db39220a266e5c9010ead92a6d939786c9eb17c4dcfb",
+        "export": "Exact selected256 conversion CSV; no raw transient rows.",
+        "source_artifact_id": "source-artifact-014"
+      }
+    ],
+    "data/dynamic/records.json:sin17_noise43_r5": [
+      {
+        "sha256": "ed90e133918286f44ce237096bee390ae45edfe6236d3ea491dd27eea41bf143",
+        "source_artifact_id": "source-artifact-015"
+      },
+      {
+        "sha256": "752f3be0fbc1114d18c5e986c21fc993ed568085b3df254645e4130866ca78e3",
+        "source_artifact_id": "source-artifact-016"
+      }
+    ],
+    "data/dynamic/sin119_noise79_r6_codes.csv": [
+      {
+        "sha256": "c7152dc46cd96a353234750c3ef8efeaecd9e54bb79d692827a698611e6f82a7",
+        "export": "Exact selected256 conversion CSV; no raw transient rows.",
+        "source_artifact_id": "source-artifact-017"
+      }
+    ],
+    "data/dynamic/records.json:sin119_noise79_r6": [
+      {
+        "sha256": "8d1169b2f0f93ca366c13a363f05f96670fd06eff0865b08c030089c334c4bd8",
+        "source_artifact_id": "source-artifact-018"
+      },
+      {
+        "sha256": "e518bc8ccbea6e0c6ea4b603a8f8bfb49957ce8a1b2f8c322ee47f741613d39b",
+        "source_artifact_id": "source-artifact-019"
+      }
+    ],
+    "data/static/static_tt_brackets.json": [
+      {
+        "sha256": "243b8ccfe318ec6c36114a928412f0742886fdf4d09d032876a60343d9a52e7a",
+        "source_artifact_id": "source-artifact-020"
+      }
+    ],
+    "data/static/static_tt_observations.csv": [
+      {
+        "sha256": "243b8ccfe318ec6c36114a928412f0742886fdf4d09d032876a60343d9a52e7a",
+        "export": "All553 saved observations, original order/IDs and input/timing-validation flags retained.",
+        "source_artifact_id": "source-artifact-020"
+      }
+    ],
+    "data/static/static_ss_brackets.json": [
+      {
+        "sha256": "9f1946f98ef519c5992522f13e292919f1df9191af823b3765f9b6bc746bfe6e",
+        "source_artifact_id": "source-artifact-021"
+      }
+    ],
+    "data/static/static_ss_observations.csv": [
+      {
+        "sha256": "9f1946f98ef519c5992522f13e292919f1df9191af823b3765f9b6bc746bfe6e",
+        "export": "All553 saved observations, original order/IDs and input/timing-validation flags retained.",
+        "source_artifact_id": "source-artifact-021"
+      }
+    ],
+    "data/static/static_ff_brackets.json": [
+      {
+        "sha256": "1d65496647f96017cdcd7cb1a0b2199626d9afb3e74263877667d52717274d09",
+        "source_artifact_id": "source-artifact-022"
+      }
+    ],
+    "data/static/static_ff_observations.csv": [
+      {
+        "sha256": "1d65496647f96017cdcd7cb1a0b2199626d9afb3e74263877667d52717274d09",
+        "export": "All553 saved observations, original order/IDs and input/timing-validation flags retained.",
+        "source_artifact_id": "source-artifact-022"
+      }
+    ],
+    "data/static/static_sf_brackets.json": [
+      {
+        "sha256": "21629197a32be16eb3e4c9ad77bf21fb024e2329212186739d7213152fe23d12",
+        "source_artifact_id": "source-artifact-023"
+      }
+    ],
+    "data/static/static_sf_observations.csv": [
+      {
+        "sha256": "21629197a32be16eb3e4c9ad77bf21fb024e2329212186739d7213152fe23d12",
+        "export": "All553 saved observations, original order/IDs and input/timing-validation flags retained.",
+        "source_artifact_id": "source-artifact-023"
+      }
+    ],
+    "data/static/static_fs_brackets.json": [
+      {
+        "sha256": "ea08926a9d0a8b1d7498d09c462a77280cd549d37eec921477d22bb1ba17179c",
+        "source_artifact_id": "source-artifact-024"
+      }
+    ],
+    "data/static/static_fs_observations.csv": [
+      {
+        "sha256": "ea08926a9d0a8b1d7498d09c462a77280cd549d37eec921477d22bb1ba17179c",
+        "export": "All553 saved observations, original order/IDs and input/timing-validation flags retained.",
+        "source_artifact_id": "source-artifact-024"
+      }
+    ],
+    "data/history/zero_boundary.json": [
+      {
+        "sha256": "bae394a77d9b296b0d85e48935073e21ea810b0ac4c47b1b16ca682daa2f29f7",
+        "source_artifact_id": "source-artifact-025"
+      }
+    ],
+    "data/history/reverse_70_anchors.json": [
+      {
+        "sha256": "18836263a09ce155cf94d99d5d95124f38e77974f196aecd74520a219032fd5b",
+        "source_artifact_id": "source-artifact-026"
+      }
+    ],
+    "evidence/declared_gate.json": [
+      {
+        "sha256": "5fd6b7951bb040b9245d395f9555ddec0ca32e55880d9ab1d0e1dcfd607e1b5d",
+        "source_artifact_id": "source-artifact-027"
+      }
+    ],
+    "evidence/oa_export.json": [
+      {
+        "sha256": "f9067405baa585a6fb07edd6a240bd7936492df74f0a055658734c65efdaaad8",
+        "source_artifact_id": "source-artifact-028"
+      },
+      {
+        "sha256": "121a09eb2667ea61f3bc661080a5a118b3c45cd13bd1a9df0fb4e62dad7c0aea",
+        "source_artifact_id": "source-artifact-029"
+      }
+    ],
+    "design/specification.json": [
+      {
+        "sha256": "51a898c51cc559304b4a5bf7707f9397e3046c23772e3c6b2479947bec77bbc7",
+        "source_artifact_id": "source-artifact-030"
+      }
+    ]
+  },
+  "source_identifier_scope": "Opaque identifiers preserve repeated-source relationships and content hashes without publishing original storage paths."
+}

@@ -1,0 +1,34 @@
+{
+  "status": "DECLARED_SCHEMATIC_PROTOTYPE_GATE_PASSED",
+  "schematic_prototype_complete": true,
+  "updated_at": "2026-10-13T10:02:25.475105-05:00",
+  "checks": {
+    "static_tt": true,
+    "static_ss": true,
+    "static_ff": true,
+    "static_sf": true,
+    "static_fs": true,
+    "sin17_noise43_r5": true,
+    "sin119_noise79_r6": true,
+    "sin17_r4": true,
+    "sin29_r5": true,
+    "sin119_r5": true,
+    "native_OA_DC_smoke": true,
+    "selected_history_and_tolerance_boundary_budget": true
+  },
+  "diagnostics_retained_without_overriding": {
+    "strict_selected_reverse_70_codes_identical": false
+  },
+  "scope": "28nm native MOS,8-bit256codes,20MS/s,.9V,25C,ideal schematic capacitors. Dynamic TT; static TT/SS/FF/SF/FS.",
+  "limitations": [
+    "Transient noise uses one256sample record per tested tone and effective74.6269kHz–10GHz model-noise band.",
+    "No physical capacitor mismatch,layout,DRC,LVS,PEX,voltage/temperature sweep,driver implementation or yield signoff.",
+    "The exact3dB ERBW crossing and original ERBW-based FOM are unmeasured.",
+    "Native output resolution is8bits; measured noisy ENOB is about7.60–7.69, consistent with the45/42dB targets.",
+    "Native OA equivalence plus8conversionDC smoke does not itself replace the separate ADC tests.",
+    "Exact0V produces127/128 depending on tested input history. The strict70-anchor equality diagnostic remains false; selected histories/tolerances are accepted only through the measured central-boundary budget and conservative interval union.",
+    "Tighter central-boundary summaries were recovered from complete raw data and a zero-error Spectre log; the missing original process exit code remains unknown. Recovery-time model hashes are not historical model-state proof."
+  ],
+  "source_gate_sha256": "5fd6b7951bb040b9245d395f9555ddec0ca32e55880d9ab1d0e1dcfd607e1b5d",
+  "scope_of_this_export": "Projection of historical declared gate. Raw/native files and licensed models excluded; exported-code and interval arithmetic can be reproduced here."
+}

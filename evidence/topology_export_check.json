@@ -1,0 +1,16 @@
+{
+  "scope": "Local pre-export nominal geometry/connectivity comparison only. No PDK/native parameter card is redistributed or revalidated by published tools.",
+  "active_cells": 16,
+  "active_direct_MOS_node_polarity_nominal_geometry_records_compared": 135,
+  "expanded_MOS_counts": {
+    "ADC": 769,
+    "sar_control": 424,
+    "sar_cdac": 314,
+    "sar_comparator": 27
+  },
+  "all_compared_records_match": true,
+  "native_model_coefficients_exported": false,
+  "process_fingers_inferred": false,
+  "die_area_inferred": false,
+  "archived_connectivity_source_sha256": "8de59941d12845e3ae71268dd03e718d04c9ae75ea5123172779a559c321ee6a"
+}

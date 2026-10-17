@@ -1,0 +1,60 @@
+{
+  "implementation": "Fully differential charge-redistribution SAR; static CMOS/TG controller, dynamic StrongARM with isolated SR hold.",
+  "process_label": "28nm CMOS schematic prototype; licensed process models excluded.",
+  "nominal_targets_not_all_measured_results": {
+    "resolution_bits": 8,
+    "codes": 256,
+    "VDD_V": 0.9,
+    "VCM_V": 0.45,
+    "VREFP_V": 0.7,
+    "VREFN_V": 0.2,
+    "differential_input_full_scale_Vpp": 1.0,
+    "LSB_V": 0.00390625,
+    "sample_rate_Hz": 20000000,
+    "external_clock_Hz": 200000000,
+    "clock_slots_per_conversion": 10,
+    "acquisition_slots": 2,
+    "comparison_slots": 8,
+    "FFT_samples": 256,
+    "FFT_tone_bins": [
+      17,
+      29,
+      119
+    ],
+    "FFT_tone_Hz": [
+      1328125,
+      2265625,
+      9296875
+    ],
+    "FFT_input_amplitude_fraction_full_scale": 0.95,
+    "SNDR_low_frequency_min_dB": 45,
+    "SNDR_high_frequency_min_dB": 42,
+    "DNL_limit_LSB": [
+      -0.5,
+      0.5
+    ],
+    "INL_limit_LSB": [
+      -1.0,
+      1.0
+    ],
+    "power": "Minimize after correctness and linearity validation"
+  },
+  "ideal_CDAC": {
+    "architecture": "Fully differential charge-redistribution SAR with dynamic comparator and transistor logic",
+    "capacitor_weights_per_side": [
+      128,
+      64,
+      32,
+      16,
+      8,
+      4,
+      2,
+      1
+    ],
+    "dummy_capacitor_units_per_side": 1,
+    "unit_capacitor_F": 5e-15,
+    "total_capacitance_per_side_F": 1.28e-12,
+    "capacitor_model_status": "Ideal schematic capacitors; physical MOM/MIM sizing, mismatch and PEX not verified"
+  },
+  "adaptation_scope": "20MS/s,.9V project target retains8-bit output. Adapted implementation; not a foundry maximum speed or original ADFP process/rate claim."
+}

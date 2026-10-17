@@ -1,0 +1,389 @@
+// SYMBOLIC CONNECTIVITY ONLY: supply authorized process models separately.
+// 8-bit SAR logic: real-model MOS only; no ideal logic sources
+// Width/length units passed to the MOS callback are metres.
+// All subcircuits have vdd vss as their first two ports.
+// RST: active high. Ring initialization: q0=1, q1..q9=0.
+// Slot order: q0,q1 track; q2..q9 decide bits 7..0.
+// Output D7..D0 updates one slot after the final decision.
+
+subckt sar_inv vdd vss a y
+Mp (y a vdd vdd) PMOS_CORE w=1e-06 l=3e-08
+Mn (y a vss vss) NMOS_CORE w=5e-07 l=3e-08
+ends sar_inv
+
+subckt sar_inv_hi vdd vss a y
+Mp (y a vdd vdd) PMOS_CORE w=3e-06 l=3e-08
+Mn (y a vss vss) NMOS_CORE w=2e-06 l=3e-08
+ends sar_inv_hi
+
+subckt sar_nand2 vdd vss a b y
+Mp0 (y a vdd vdd) PMOS_CORE w=1e-06 l=3e-08
+Mp1 (y b vdd vdd) PMOS_CORE w=1e-06 l=3e-08
+Mn0 (y a ns vss) NMOS_CORE w=1e-06 l=3e-08
+Mn1 (ns b vss vss) NMOS_CORE w=1e-06 l=3e-08
+ends sar_nand2
+
+subckt sar_nor2 vdd vss a b y
+Mp0 (ps a vdd vdd) PMOS_CORE w=2e-06 l=3e-08
+Mp1 (y b ps vdd) PMOS_CORE w=2e-06 l=3e-08
+Mn0 (y a vss vss) NMOS_CORE w=5e-07 l=3e-08
+Mn1 (y b vss vss) NMOS_CORE w=5e-07 l=3e-08
+ends sar_nor2
+
+subckt sar_and2 vdd vss a b y
+Xn (vdd vss a b yn) sar_nand2
+Xi (vdd vss yn y) sar_inv
+ends sar_and2
+
+subckt sar_or2 vdd vss a b y
+Xn (vdd vss a b yn) sar_nor2
+Xi (vdd vss yn y) sar_inv
+ends sar_or2
+
+subckt sar_tg vdd vss a y en enb
+Mn (y en a vss) NMOS_CORE w=5e-07 l=3e-08
+Mp (y enb a vdd) PMOS_CORE w=1e-06 l=3e-08
+ends sar_tg
+
+subckt sar_mux vdd vss d0 d1 sel y
+Xs (vdd vss sel selb) sar_inv
+Xt0 (vdd vss d0 y selb sel) sar_tg
+Xt1 (vdd vss d1 y sel selb) sar_tg
+ends sar_mux
+
+subckt sar_buf_hi vdd vss a y
+Xi0 (vdd vss a an) sar_inv
+Xi1 (vdd vss an y) sar_inv_hi
+ends sar_buf_hi
+
+subckt sar_phases vdd vss clk phm phmb phs phsb
+Xci (vdd vss clk clkb) sar_inv
+Xmn (vdd vss clkb phs mraw) sar_nor2
+Xsn (vdd vss clk phm sraw) sar_nor2
+Xmb (vdd vss mraw phm) sar_buf_hi
+Xsb (vdd vss sraw phs) sar_buf_hi
+Xmi (vdd vss phm phmb) sar_inv_hi
+Xsi (vdd vss phs phsb) sar_inv_hi
+ends sar_phases
+
+subckt sar_latchr0 vdd vss d en enb rst nrst q
+Xin (vdd vss d x en enb) sar_tg
+Xfb (vdd vss q x enb en) sar_tg
+Xg (vdd vss x nrst qb) sar_nand2
+Xo (vdd vss qb q) sar_inv
+ends sar_latchr0
+
+subckt sar_pdffr0 vdd vss d phm phmb phs phsb rst nrst q
+Xmaster (vdd vss d phm phmb rst nrst mq) sar_latchr0
+Xslave (vdd vss mq phs phsb rst nrst q) sar_latchr0
+ends sar_pdffr0
+
+subckt sar_dffr0 vdd vss d clk rst q
+Xri (vdd vss rst nrst) sar_inv
+Xph (vdd vss clk phm phmb phs phsb) sar_phases
+Xff (vdd vss d phm phmb phs phsb rst nrst q) sar_pdffr0
+ends sar_dffr0
+
+subckt sar_latchr1 vdd vss d en enb rst nrst q
+Xin (vdd vss d x en enb) sar_tg
+Xfb (vdd vss q x enb en) sar_tg
+Xg (vdd vss x rst qb) sar_nor2
+Xo (vdd vss qb q) sar_inv
+ends sar_latchr1
+
+subckt sar_pdffr1 vdd vss d phm phmb phs phsb rst nrst q
+Xmaster (vdd vss d phm phmb rst nrst mq) sar_latchr1
+Xslave (vdd vss mq phs phsb rst nrst q) sar_latchr1
+ends sar_pdffr1
+
+subckt sar_dffr1 vdd vss d clk rst q
+Xri (vdd vss rst nrst) sar_inv
+Xph (vdd vss clk phm phmb phs phsb) sar_phases
+Xff (vdd vss d phm phmb phs phsb rst nrst q) sar_pdffr1
+ends sar_dffr1
+
+// Three-input NAND, used to select a bit slot and master phase.
+subckt sar_nand3 vdd vss a b c y
+Mp0 (y a vdd vdd) PMOS_CORE w=1e-06 l=3e-08
+Mp1 (y b vdd vdd) PMOS_CORE w=1e-06 l=3e-08
+Mp2 (y c vdd vdd) PMOS_CORE w=1e-06 l=3e-08
+Mn0 (y a n0 vss) NMOS_CORE w=2e-06 l=3e-08
+Mn1 (n0 b n1 vss) NMOS_CORE w=2e-06 l=3e-08
+Mn2 (n1 c vss vss) NMOS_CORE w=2e-06 l=3e-08
+ends sar_nand3
+
+// Compact control: 5 Johnson DFFs, 16 static single latches.
+// Direct resolved flags; v0 is permanently LOW.
+// D7..D0 must be sampled after the q0 falling edge.
+subckt sar_control vdd vss CLK RST cmpQ track cmpclk q0 b7 b6 b5 b4 b3 b2 b1 b0 v7 v6 v5 v4 v3 v2 v1 v0 D7 D6 D5 D4 D3 D2 D1 D0
+Xreset_inv (vdd vss RST nrst) sar_inv
+Xclock_phases (vdd vss CLK phm phmb phs phsb) sar_phases
+Xjohnson0 (vdd vss j4b phm phmb phs phsb RST nrst j0) sar_pdffr0
+Xjohnson_inv0 (vdd vss j0 j0b) sar_inv
+Xjohnson1 (vdd vss j0 phm phmb phs phsb RST nrst j1) sar_pdffr0
+Xjohnson_inv1 (vdd vss j1 j1b) sar_inv
+Xjohnson2 (vdd vss j1 phm phmb phs phsb RST nrst j2) sar_pdffr0
+Xjohnson_inv2 (vdd vss j2 j2b) sar_inv
+Xjohnson3 (vdd vss j2 phm phmb phs phsb RST nrst j3) sar_pdffr0
+Xjohnson_inv3 (vdd vss j3 j3b) sar_inv
+Xjohnson4 (vdd vss j3 phm phmb phs phsb RST nrst j4) sar_pdffr0
+Xjohnson_inv4 (vdd vss j4 j4b) sar_inv
+Xq0_decode (vdd vss j0b j4b q0) sar_and2
+Xtrack (vdd vss j1 j4 track) sar_nor2
+Xnot_track (vdd vss track ntrack) sar_inv
+Xcompare_clock (vdd vss phm ntrack cmpclk) sar_and2
+Xbit_enable_n7 (vdd vss j1 j2b phm benb7) sar_nand3
+Xbit_enable7 (vdd vss benb7 ben7) sar_inv
+Xbit7 (vdd vss cmpQ ben7 benb7 RST nrst b7) sar_latchr0
+Xbit_enable_n6 (vdd vss j2 j3b phm benb6) sar_nand3
+Xbit_enable6 (vdd vss benb6 ben6) sar_inv
+Xbit6 (vdd vss cmpQ ben6 benb6 RST nrst b6) sar_latchr0
+Xbit_enable_n5 (vdd vss j3 j4b phm benb5) sar_nand3
+Xbit_enable5 (vdd vss benb5 ben5) sar_inv
+Xbit5 (vdd vss cmpQ ben5 benb5 RST nrst b5) sar_latchr0
+Xbit_enable_n4 (vdd vss j0 j4 phm benb4) sar_nand3
+Xbit_enable4 (vdd vss benb4 ben4) sar_inv
+Xbit4 (vdd vss cmpQ ben4 benb4 RST nrst b4) sar_latchr0
+Xbit_enable_n3 (vdd vss j0b j1 phm benb3) sar_nand3
+Xbit_enable3 (vdd vss benb3 ben3) sar_inv
+Xbit3 (vdd vss cmpQ ben3 benb3 RST nrst b3) sar_latchr0
+Xbit_enable_n2 (vdd vss j1b j2 phm benb2) sar_nand3
+Xbit_enable2 (vdd vss benb2 ben2) sar_inv
+Xbit2 (vdd vss cmpQ ben2 benb2 RST nrst b2) sar_latchr0
+Xbit_enable_n1 (vdd vss j2b j3 phm benb1) sar_nand3
+Xbit_enable1 (vdd vss benb1 ben1) sar_inv
+Xbit1 (vdd vss cmpQ ben1 benb1 RST nrst b1) sar_latchr0
+Xbit_enable_n0 (vdd vss j3b j4 phm benb0) sar_nand3
+Xbit_enable0 (vdd vss benb0 ben0) sar_inv
+Xbit0 (vdd vss cmpQ ben0 benb0 RST nrst b0) sar_latchr0
+Xvalid7 (vdd vss j2 j4 v7) sar_or2
+Xvalid6 (vdd vss j3 j4 v6) sar_or2
+Xvalid5 (vdd vss j4 v5) sar_buf_hi
+Xvalid4 (vdd vss j4 j0b v4) sar_and2
+Xvalid3 (vdd vss j4 j1b v3) sar_and2
+Xvalid2 (vdd vss j4 j2b v2) sar_and2
+Xvalid1 (vdd vss j4 j3b v1) sar_and2
+Xvalid0_low (vdd vss vdd v0) sar_inv
+Xoutput_enable_n (vdd vss q0 phm oenb) sar_nand2
+Xoutput_enable (vdd vss oenb oen) sar_inv_hi
+Xoutput7 (vdd vss b7 oen oenb RST nrst D7) sar_latchr0
+Xoutput6 (vdd vss b6 oen oenb RST nrst D6) sar_latchr0
+Xoutput5 (vdd vss b5 oen oenb RST nrst D5) sar_latchr0
+Xoutput4 (vdd vss b4 oen oenb RST nrst D4) sar_latchr0
+Xoutput3 (vdd vss b3 oen oenb RST nrst D3) sar_latchr0
+Xoutput2 (vdd vss b2 oen oenb RST nrst D2) sar_latchr0
+Xoutput1 (vdd vss b1 oen oenb RST nrst D1) sar_latchr0
+Xoutput0 (vdd vss b0 oen oenb RST nrst D0) sar_latchr0
+ends sar_control
+
+subckt sar_comparator vdd vss clk ip in q qb
+M1 (p ip tail vss) NMOS_CORE w=3e-06 l=3e-08
+M2 (n in tail vss) NMOS_CORE w=3e-06 l=3e-08
+M3 (x y p vss) NMOS_CORE w=1e-06 l=3e-08
+M4 (y x n vss) NMOS_CORE w=1e-06 l=3e-08
+M5 (x y vdd vdd) PMOS_CORE w=1e-06 l=3e-08
+M6 (y x vdd vdd) PMOS_CORE w=1e-06 l=3e-08
+M7 (tail clk vss vss) NMOS_CORE w=3e-06 l=3e-08
+MPp (p clk vdd vdd) PMOS_CORE w=1e-06 l=3e-08
+MPn (n clk vdd vdd) PMOS_CORE w=1e-06 l=3e-08
+MPx (x clk vdd vdd) PMOS_CORE w=1e-06 l=3e-08
+MPy (y clk vdd vdd) PMOS_CORE w=1e-06 l=3e-08
+XBX0 (vdd vss x xb) sar_inv
+XBX1 (vdd vss xb xd) sar_inv
+XBY0 (vdd vss y yb) sar_inv
+XBY1 (vdd vss yb yd) sar_inv
+XLQ (vdd vss xd qb q) sar_nand2
+XLQB (vdd vss yd q qb) sar_nand2
+ends sar_comparator
+subckt sar_cdac vdd vss refp refn vcm vip vin track b7 b6 b5 b4 b3 b2 b1 b0 v7 v6 v5 v4 v3 v2 v1 v0 vp vn
+XIT (vdd vss track trackb) sar_inv
+MSNp0 (vp track vip vss) NMOS_CORE w=3e-06 l=3e-08
+MSPp0 (vp trackb vip vdd) PMOS_CORE w=3e-06 l=3e-08
+MSNp1 (vp track vip vss) NMOS_CORE w=3e-06 l=3e-08
+MSPp1 (vp trackb vip vdd) PMOS_CORE w=3e-06 l=3e-08
+CDUMMYp (vp vcm) capacitor c=5e-15
+MSNn0 (vn track vin vss) NMOS_CORE w=3e-06 l=3e-08
+MSPn0 (vn trackb vin vdd) PMOS_CORE w=3e-06 l=3e-08
+MSNn1 (vn track vin vss) NMOS_CORE w=3e-06 l=3e-08
+MSPn1 (vn trackb vin vdd) PMOS_CORE w=3e-06 l=3e-08
+CDUMMYn (vn vcm) capacitor c=5e-15
+XVALID7 (vdd vss v7 trackb e7) sar_and2
+XEI7 (vdd vss e7 eb7) sar_inv
+XBI7 (vdd vss b7 bb7) sar_inv
+XHI7 (vdd vss e7 b7 hi7) sar_and2
+XLO7 (vdd vss e7 bb7 lo7) sar_and2
+XHIB7 (vdd vss hi7 hib7) sar_inv
+XLOB7 (vdd vss lo7 lob7) sar_inv
+Cp7 (vp botp7) capacitor c=6.4e-13
+MNHp7 (botp7 hi7 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPHp7 (botp7 hib7 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLp7 (botp7 lo7 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPLp7 (botp7 lob7 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMp7 (botp7 eb7 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMp7 (botp7 e7 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+Cn7 (vn botn7) capacitor c=6.4e-13
+MNHn7 (botn7 hi7 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPHn7 (botn7 hib7 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLn7 (botn7 lo7 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPLn7 (botn7 lob7 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMn7 (botn7 eb7 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMn7 (botn7 e7 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+XVALID6 (vdd vss v6 trackb e6) sar_and2
+XEI6 (vdd vss e6 eb6) sar_inv
+XBI6 (vdd vss b6 bb6) sar_inv
+XHI6 (vdd vss e6 b6 hi6) sar_and2
+XLO6 (vdd vss e6 bb6 lo6) sar_and2
+XHIB6 (vdd vss hi6 hib6) sar_inv
+XLOB6 (vdd vss lo6 lob6) sar_inv
+Cp6 (vp botp6) capacitor c=3.2e-13
+MNHp6 (botp6 hi6 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPHp6 (botp6 hib6 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLp6 (botp6 lo6 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPLp6 (botp6 lob6 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMp6 (botp6 eb6 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMp6 (botp6 e6 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+Cn6 (vn botn6) capacitor c=3.2e-13
+MNHn6 (botn6 hi6 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPHn6 (botn6 hib6 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLn6 (botn6 lo6 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPLn6 (botn6 lob6 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMn6 (botn6 eb6 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMn6 (botn6 e6 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+XVALID5 (vdd vss v5 trackb e5) sar_and2
+XEI5 (vdd vss e5 eb5) sar_inv
+XBI5 (vdd vss b5 bb5) sar_inv
+XHI5 (vdd vss e5 b5 hi5) sar_and2
+XLO5 (vdd vss e5 bb5 lo5) sar_and2
+XHIB5 (vdd vss hi5 hib5) sar_inv
+XLOB5 (vdd vss lo5 lob5) sar_inv
+Cp5 (vp botp5) capacitor c=1.6e-13
+MNHp5 (botp5 hi5 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPHp5 (botp5 hib5 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLp5 (botp5 lo5 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPLp5 (botp5 lob5 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMp5 (botp5 eb5 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMp5 (botp5 e5 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+Cn5 (vn botn5) capacitor c=1.6e-13
+MNHn5 (botn5 hi5 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPHn5 (botn5 hib5 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLn5 (botn5 lo5 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPLn5 (botn5 lob5 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMn5 (botn5 eb5 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMn5 (botn5 e5 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+XVALID4 (vdd vss v4 trackb e4) sar_and2
+XEI4 (vdd vss e4 eb4) sar_inv
+XBI4 (vdd vss b4 bb4) sar_inv
+XHI4 (vdd vss e4 b4 hi4) sar_and2
+XLO4 (vdd vss e4 bb4 lo4) sar_and2
+XHIB4 (vdd vss hi4 hib4) sar_inv
+XLOB4 (vdd vss lo4 lob4) sar_inv
+Cp4 (vp botp4) capacitor c=8e-14
+MNHp4 (botp4 hi4 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPHp4 (botp4 hib4 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLp4 (botp4 lo4 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPLp4 (botp4 lob4 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMp4 (botp4 eb4 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMp4 (botp4 e4 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+Cn4 (vn botn4) capacitor c=8e-14
+MNHn4 (botn4 hi4 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPHn4 (botn4 hib4 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLn4 (botn4 lo4 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPLn4 (botn4 lob4 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMn4 (botn4 eb4 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMn4 (botn4 e4 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+XVALID3 (vdd vss v3 trackb e3) sar_and2
+XEI3 (vdd vss e3 eb3) sar_inv
+XBI3 (vdd vss b3 bb3) sar_inv
+XHI3 (vdd vss e3 b3 hi3) sar_and2
+XLO3 (vdd vss e3 bb3 lo3) sar_and2
+XHIB3 (vdd vss hi3 hib3) sar_inv
+XLOB3 (vdd vss lo3 lob3) sar_inv
+Cp3 (vp botp3) capacitor c=4e-14
+MNHp3 (botp3 hi3 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPHp3 (botp3 hib3 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLp3 (botp3 lo3 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPLp3 (botp3 lob3 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMp3 (botp3 eb3 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMp3 (botp3 e3 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+Cn3 (vn botn3) capacitor c=4e-14
+MNHn3 (botn3 hi3 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPHn3 (botn3 hib3 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLn3 (botn3 lo3 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPLn3 (botn3 lob3 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMn3 (botn3 eb3 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMn3 (botn3 e3 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+XVALID2 (vdd vss v2 trackb e2) sar_and2
+XEI2 (vdd vss e2 eb2) sar_inv
+XBI2 (vdd vss b2 bb2) sar_inv
+XHI2 (vdd vss e2 b2 hi2) sar_and2
+XLO2 (vdd vss e2 bb2 lo2) sar_and2
+XHIB2 (vdd vss hi2 hib2) sar_inv
+XLOB2 (vdd vss lo2 lob2) sar_inv
+Cp2 (vp botp2) capacitor c=2e-14
+MNHp2 (botp2 hi2 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPHp2 (botp2 hib2 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLp2 (botp2 lo2 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPLp2 (botp2 lob2 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMp2 (botp2 eb2 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMp2 (botp2 e2 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+Cn2 (vn botn2) capacitor c=2e-14
+MNHn2 (botn2 hi2 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPHn2 (botn2 hib2 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLn2 (botn2 lo2 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPLn2 (botn2 lob2 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMn2 (botn2 eb2 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMn2 (botn2 e2 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+XVALID1 (vdd vss v1 trackb e1) sar_and2
+XEI1 (vdd vss e1 eb1) sar_inv
+XBI1 (vdd vss b1 bb1) sar_inv
+XHI1 (vdd vss e1 b1 hi1) sar_and2
+XLO1 (vdd vss e1 bb1 lo1) sar_and2
+XHIB1 (vdd vss hi1 hib1) sar_inv
+XLOB1 (vdd vss lo1 lob1) sar_inv
+Cp1 (vp botp1) capacitor c=1e-14
+MNHp1 (botp1 hi1 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPHp1 (botp1 hib1 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLp1 (botp1 lo1 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPLp1 (botp1 lob1 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMp1 (botp1 eb1 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMp1 (botp1 e1 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+Cn1 (vn botn1) capacitor c=1e-14
+MNHn1 (botn1 hi1 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPHn1 (botn1 hib1 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLn1 (botn1 lo1 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPLn1 (botn1 lob1 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMn1 (botn1 eb1 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMn1 (botn1 e1 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+XVALID0 (vdd vss v0 trackb e0) sar_and2
+XEI0 (vdd vss e0 eb0) sar_inv
+XBI0 (vdd vss b0 bb0) sar_inv
+XHI0 (vdd vss e0 b0 hi0) sar_and2
+XLO0 (vdd vss e0 bb0 lo0) sar_and2
+XHIB0 (vdd vss hi0 hib0) sar_inv
+XLOB0 (vdd vss lo0 lob0) sar_inv
+Cp0 (vp botp0) capacitor c=5e-15
+MNHp0 (botp0 hi0 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPHp0 (botp0 hib0 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLp0 (botp0 lo0 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPLp0 (botp0 lob0 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMp0 (botp0 eb0 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMp0 (botp0 e0 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+Cn0 (vn botn0) capacitor c=5e-15
+MNHn0 (botn0 hi0 refp vss) NMOS_CORE w=3e-06 l=3e-08
+MPHn0 (botn0 hib0 refp vdd) PMOS_CORE w=3e-06 l=3e-08
+MNLn0 (botn0 lo0 refn vss) NMOS_CORE w=3e-06 l=3e-08
+MPLn0 (botn0 lob0 refn vdd) PMOS_CORE w=3e-06 l=3e-08
+MNMn0 (botn0 eb0 vcm vss) NMOS_CORE w=3e-06 l=3e-08
+MPMn0 (botn0 e0 vcm vdd) PMOS_CORE w=3e-06 l=3e-08
+ends sar_cdac
+
+subckt ADC AVDD AVSS VREFP VREFN VCM VIP VIN D7 D6 D5 D4 D3 D2 D1 D0 CLK
+// Power-on reset requires an actual VDD ramp in a simulation fixture.
+CPOR (AVDD por) capacitor c=1p
+RPOR (por AVSS) resistor r=100k
+XPI0 (AVDD AVSS por porb) sar_inv
+XPI1 (AVDD AVSS porb rst) sar_inv
+XCTL (AVDD AVSS CLK rst cmpQ track cmpclk q0 b7 b6 b5 b4 b3 b2 b1 b0 v7 v6 v5 v4 v3 v2 v1 v0 D7 D6 D5 D4 D3 D2 D1 D0) sar_control
+XCDAC (AVDD AVSS VREFP VREFN VCM VIP VIN track b7 b6 b5 b4 b3 b2 b1 b0 v7 v6 v5 v4 v3 v2 v1 v0 vp vn) sar_cdac
+XCMP (AVDD AVSS cmpclk vp vn cmpQ cmpQB) sar_comparator
+ends ADC

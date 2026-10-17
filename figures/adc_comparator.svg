@@ -1,0 +1,253 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1450" viewBox="0 0 1600 1450">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2263ac"/></marker><marker id="greenArrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#137b68"/></marker></defs>
+<style>text{font-family:Arial,"Segoe UI",sans-serif;fill:#17263b} .wire{stroke:#17263b;stroke-width:2.5;fill:none;stroke-linejoin:round;stroke-linecap:round}</style>
+<rect width="100%" height="100%" fill="white"/>
+<desc>Engineering circuit illustration derived from local source; not an OA schematic, layout, simulation trace, or performance pass report. Source hashes: {&quot;sar_frontend.py&quot;: &quot;1a62fc262a973e92d16d8abbbb1d5da42728c2b2d976e214f254573d4cac1bda&quot;, &quot;sar_logic_compact.py&quot;: &quot;de4400d4a36ed1789afdec692d707800fb2c4d047c92fcb65fe686f9524edf76&quot;, &quot;sar_logic.py&quot;: &quot;a13be48f3047de0413e85ec7e8b223885bca21a25c8df4eb62453b4fafaec61e&quot;, &quot;sar_runner.py&quot;: &quot;b4c82c5aa83ff90ca450b80600dddedb613ad437ed8aaaf4e2522bdff3e02358&quot;}</desc>
+<text x="40" y="54" font-size="31" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">Dynamic comparator - actual MOS connections and isolated latch</text>
+<text x="40" y="91" font-size="19" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">11 direct MOS + 4 CMOS inverters (8 MOS) + 2 NAND2 gates (8 MOS) = 27 expanded MOS</text>
+<line x1="40" y1="113" x2="1560" y2="113" stroke="#d9e3ec" stroke-width="2.5"/>
+<text x="45" y="145" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">Named gates/nodes are electrically connected wherever the same name appears.</text>
+<line x1="225" y1="185" x2="970" y2="185" stroke="#17263b" stroke-width="2.5"/>
+<text x="600" y="172" font-size="23" font-weight="bold" fill="#17263b" text-anchor="middle" style="fill:#17263b">vdd = AVDD 0.9 V</text>
+<line x1="390" y1="185" x2="390" y2="215" stroke="#17263b" stroke-width="2.5"/>
+<line x1="390" y1="215" x2="390" y2="237" stroke="#17263b" stroke-width="2.5"/>
+<line x1="390" y1="283" x2="390" y2="305" stroke="#17263b" stroke-width="2.5"/>
+<line x1="382" y1="237" x2="382" y2="283" stroke="#17263b" stroke-width="2.5"/>
+<line x1="365" y1="240" x2="365" y2="280" stroke="#17263b" stroke-width="2.5"/>
+<line x1="332" y1="260" x2="365" y2="260" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="355" cy="260" r="5" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<line x1="382" y1="237" x2="390" y2="237" stroke="#17263b" stroke-width="2.5"/>
+<line x1="382" y1="283" x2="390" y2="283" stroke="#17263b" stroke-width="2.5"/>
+<text x="405" y="256" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">M5</text>
+<text x="405" y="283" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">W=1 um</text>
+<text x="325" y="267" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="end" style="fill:#2263ac">y</text>
+<text x="397" y="226" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">S</text>
+<text x="397" y="303" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">D</text>
+<line x1="390" y1="305" x2="390" y2="350" stroke="#17263b" stroke-width="2.5"/>
+<line x1="845" y1="185" x2="845" y2="215" stroke="#17263b" stroke-width="2.5"/>
+<line x1="845" y1="215" x2="845" y2="237" stroke="#17263b" stroke-width="2.5"/>
+<line x1="845" y1="283" x2="845" y2="305" stroke="#17263b" stroke-width="2.5"/>
+<line x1="837" y1="237" x2="837" y2="283" stroke="#17263b" stroke-width="2.5"/>
+<line x1="820" y1="240" x2="820" y2="280" stroke="#17263b" stroke-width="2.5"/>
+<line x1="787" y1="260" x2="820" y2="260" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="810" cy="260" r="5" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<line x1="837" y1="237" x2="845" y2="237" stroke="#17263b" stroke-width="2.5"/>
+<line x1="837" y1="283" x2="845" y2="283" stroke="#17263b" stroke-width="2.5"/>
+<text x="860" y="256" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">M6</text>
+<text x="860" y="283" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">W=1 um</text>
+<text x="780" y="267" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="end" style="fill:#2263ac">x</text>
+<text x="852" y="226" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">S</text>
+<text x="852" y="303" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">D</text>
+<line x1="845" y1="305" x2="845" y2="350" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="390" cy="350" r="4" fill="#17263b"/>
+<text x="412" y="358" font-size="25" font-weight="bold" fill="#137b68" text-anchor="start" style="fill:#137b68">x</text>
+<line x1="390" y1="350" x2="390" y2="405" stroke="#17263b" stroke-width="2.5"/>
+<line x1="390" y1="405" x2="390" y2="427" stroke="#17263b" stroke-width="2.5"/>
+<line x1="390" y1="473" x2="390" y2="495" stroke="#17263b" stroke-width="2.5"/>
+<line x1="382" y1="427" x2="382" y2="473" stroke="#17263b" stroke-width="2.5"/>
+<line x1="365" y1="430" x2="365" y2="470" stroke="#17263b" stroke-width="2.5"/>
+<line x1="332" y1="450" x2="365" y2="450" stroke="#17263b" stroke-width="2.5"/>
+<line x1="382" y1="427" x2="390" y2="427" stroke="#17263b" stroke-width="2.5"/>
+<line x1="382" y1="473" x2="390" y2="473" stroke="#17263b" stroke-width="2.5"/>
+<text x="405" y="446" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">M3</text>
+<text x="405" y="473" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">W=1 um</text>
+<text x="325" y="457" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="end" style="fill:#2263ac">y</text>
+<text x="397" y="416" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">D</text>
+<text x="397" y="493" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">S</text>
+<line x1="390" y1="495" x2="390" y2="550" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="390" cy="550" r="4" fill="#17263b"/>
+<text x="412" y="558" font-size="25" font-weight="bold" fill="#137b68" text-anchor="start" style="fill:#137b68">p</text>
+<circle cx="845" cy="350" r="4" fill="#17263b"/>
+<text x="867" y="358" font-size="25" font-weight="bold" fill="#137b68" text-anchor="start" style="fill:#137b68">y</text>
+<line x1="845" y1="350" x2="845" y2="405" stroke="#17263b" stroke-width="2.5"/>
+<line x1="845" y1="405" x2="845" y2="427" stroke="#17263b" stroke-width="2.5"/>
+<line x1="845" y1="473" x2="845" y2="495" stroke="#17263b" stroke-width="2.5"/>
+<line x1="837" y1="427" x2="837" y2="473" stroke="#17263b" stroke-width="2.5"/>
+<line x1="820" y1="430" x2="820" y2="470" stroke="#17263b" stroke-width="2.5"/>
+<line x1="787" y1="450" x2="820" y2="450" stroke="#17263b" stroke-width="2.5"/>
+<line x1="837" y1="427" x2="845" y2="427" stroke="#17263b" stroke-width="2.5"/>
+<line x1="837" y1="473" x2="845" y2="473" stroke="#17263b" stroke-width="2.5"/>
+<text x="860" y="446" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">M4</text>
+<text x="860" y="473" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">W=1 um</text>
+<text x="780" y="457" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="end" style="fill:#2263ac">x</text>
+<text x="852" y="416" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">D</text>
+<text x="852" y="493" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">S</text>
+<line x1="845" y1="495" x2="845" y2="550" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="845" cy="550" r="4" fill="#17263b"/>
+<text x="867" y="558" font-size="25" font-weight="bold" fill="#137b68" text-anchor="start" style="fill:#137b68">n</text>
+<line x1="390" y1="550" x2="390" y2="610" stroke="#17263b" stroke-width="2.5"/>
+<line x1="390" y1="610" x2="390" y2="632" stroke="#17263b" stroke-width="2.5"/>
+<line x1="390" y1="678" x2="390" y2="700" stroke="#17263b" stroke-width="2.5"/>
+<line x1="382" y1="632" x2="382" y2="678" stroke="#17263b" stroke-width="2.5"/>
+<line x1="365" y1="635" x2="365" y2="675" stroke="#17263b" stroke-width="2.5"/>
+<line x1="332" y1="655" x2="365" y2="655" stroke="#17263b" stroke-width="2.5"/>
+<line x1="382" y1="632" x2="390" y2="632" stroke="#17263b" stroke-width="2.5"/>
+<line x1="382" y1="678" x2="390" y2="678" stroke="#17263b" stroke-width="2.5"/>
+<text x="405" y="651" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">M1</text>
+<text x="405" y="678" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">W=3 um</text>
+<text x="325" y="662" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="end" style="fill:#2263ac">ip = vp</text>
+<text x="397" y="621" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">D</text>
+<text x="397" y="698" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">S</text>
+<line x1="390" y1="700" x2="390" y2="765" stroke="#17263b" stroke-width="2.5"/>
+<line x1="845" y1="550" x2="845" y2="610" stroke="#17263b" stroke-width="2.5"/>
+<line x1="845" y1="610" x2="845" y2="632" stroke="#17263b" stroke-width="2.5"/>
+<line x1="845" y1="678" x2="845" y2="700" stroke="#17263b" stroke-width="2.5"/>
+<line x1="837" y1="632" x2="837" y2="678" stroke="#17263b" stroke-width="2.5"/>
+<line x1="820" y1="635" x2="820" y2="675" stroke="#17263b" stroke-width="2.5"/>
+<line x1="787" y1="655" x2="820" y2="655" stroke="#17263b" stroke-width="2.5"/>
+<line x1="837" y1="632" x2="845" y2="632" stroke="#17263b" stroke-width="2.5"/>
+<line x1="837" y1="678" x2="845" y2="678" stroke="#17263b" stroke-width="2.5"/>
+<text x="860" y="651" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">M2</text>
+<text x="860" y="678" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">W=3 um</text>
+<text x="780" y="662" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="end" style="fill:#2263ac">in = vn</text>
+<text x="852" y="621" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">D</text>
+<text x="852" y="698" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">S</text>
+<line x1="845" y1="700" x2="845" y2="765" stroke="#17263b" stroke-width="2.5"/>
+<line x1="390" y1="765" x2="845" y2="765" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="615" cy="765" r="4" fill="#17263b"/>
+<text x="641" y="757" font-size="23" font-weight="bold" fill="#137b68" text-anchor="start" style="fill:#137b68">tail</text>
+<line x1="615" y1="765" x2="615" y2="800" stroke="#17263b" stroke-width="2.5"/>
+<line x1="615" y1="800" x2="615" y2="822" stroke="#17263b" stroke-width="2.5"/>
+<line x1="615" y1="868" x2="615" y2="890" stroke="#17263b" stroke-width="2.5"/>
+<line x1="607" y1="822" x2="607" y2="868" stroke="#17263b" stroke-width="2.5"/>
+<line x1="590" y1="825" x2="590" y2="865" stroke="#17263b" stroke-width="2.5"/>
+<line x1="557" y1="845" x2="590" y2="845" stroke="#17263b" stroke-width="2.5"/>
+<line x1="607" y1="822" x2="615" y2="822" stroke="#17263b" stroke-width="2.5"/>
+<line x1="607" y1="868" x2="615" y2="868" stroke="#17263b" stroke-width="2.5"/>
+<text x="630" y="841" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">M7</text>
+<text x="630" y="868" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">W=3 um</text>
+<text x="550" y="852" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="end" style="fill:#2263ac">clk = cmpclk</text>
+<text x="622" y="811" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">D</text>
+<text x="622" y="888" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">S</text>
+<line x1="615" y1="890" x2="615" y2="925" stroke="#17263b" stroke-width="2.5"/>
+<line x1="575" y1="925" x2="655" y2="925" stroke="#17263b" stroke-width="2.5"/>
+<line x1="586" y1="936" x2="644" y2="936" stroke="#17263b" stroke-width="2.5"/>
+<line x1="598" y1="947" x2="632" y2="947" stroke="#17263b" stroke-width="2.5"/>
+<text x="666" y="936" font-size="20" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">vss = AVSS 0 V</text>
+<rect x="1020" y="180" width="525" height="650" rx="10" fill="#faf6ef" stroke="#deccae" stroke-width="1.8"/>
+<text x="1040" y="215" font-size="24" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">Precharge bank - 4 PMOS</text>
+<text x="1040" y="247" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">All gates clk; all sources/bulks vdd.</text>
+<line x1="1175" y1="295" x2="1175" y2="355" stroke="#17263b" stroke-width="2.5"/>
+<text x="1175" y="278" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">vdd</text>
+<line x1="1175" y1="355" x2="1175" y2="377" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1175" y1="423" x2="1175" y2="445" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1167" y1="377" x2="1167" y2="423" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1150" y1="380" x2="1150" y2="420" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1117" y1="400" x2="1150" y2="400" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="1140" cy="400" r="5" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<line x1="1167" y1="377" x2="1175" y2="377" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1167" y1="423" x2="1175" y2="423" stroke="#17263b" stroke-width="2.5"/>
+<text x="1190" y="396" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">MPx</text>
+<text x="1190" y="423" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">W=1 um</text>
+<text x="1110" y="407" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="end" style="fill:#2263ac">clk</text>
+<text x="1182" y="366" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">S</text>
+<text x="1182" y="443" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">D</text>
+<line x1="1175" y1="445" x2="1175" y2="492" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="1175" cy="492" r="4" fill="#17263b"/>
+<text x="1175" y="523" font-size="25" font-weight="bold" fill="#137b68" text-anchor="middle" style="fill:#137b68">x</text>
+<line x1="1415" y1="295" x2="1415" y2="355" stroke="#17263b" stroke-width="2.5"/>
+<text x="1415" y="278" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">vdd</text>
+<line x1="1415" y1="355" x2="1415" y2="377" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1415" y1="423" x2="1415" y2="445" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1407" y1="377" x2="1407" y2="423" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1390" y1="380" x2="1390" y2="420" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1357" y1="400" x2="1390" y2="400" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="1380" cy="400" r="5" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<line x1="1407" y1="377" x2="1415" y2="377" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1407" y1="423" x2="1415" y2="423" stroke="#17263b" stroke-width="2.5"/>
+<text x="1430" y="396" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">MPy</text>
+<text x="1430" y="423" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">W=1 um</text>
+<text x="1350" y="407" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="end" style="fill:#2263ac">clk</text>
+<text x="1422" y="366" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">S</text>
+<text x="1422" y="443" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">D</text>
+<line x1="1415" y1="445" x2="1415" y2="492" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="1415" cy="492" r="4" fill="#17263b"/>
+<text x="1415" y="523" font-size="25" font-weight="bold" fill="#137b68" text-anchor="middle" style="fill:#137b68">y</text>
+<line x1="1175" y1="580" x2="1175" y2="640" stroke="#17263b" stroke-width="2.5"/>
+<text x="1175" y="563" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">vdd</text>
+<line x1="1175" y1="640" x2="1175" y2="662" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1175" y1="708" x2="1175" y2="730" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1167" y1="662" x2="1167" y2="708" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1150" y1="665" x2="1150" y2="705" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1117" y1="685" x2="1150" y2="685" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="1140" cy="685" r="5" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<line x1="1167" y1="662" x2="1175" y2="662" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1167" y1="708" x2="1175" y2="708" stroke="#17263b" stroke-width="2.5"/>
+<text x="1190" y="681" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">MPp</text>
+<text x="1190" y="708" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">W=1 um</text>
+<text x="1110" y="692" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="end" style="fill:#2263ac">clk</text>
+<text x="1182" y="651" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">S</text>
+<text x="1182" y="728" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">D</text>
+<line x1="1175" y1="730" x2="1175" y2="777" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="1175" cy="777" r="4" fill="#17263b"/>
+<text x="1175" y="808" font-size="25" font-weight="bold" fill="#137b68" text-anchor="middle" style="fill:#137b68">p</text>
+<line x1="1415" y1="580" x2="1415" y2="640" stroke="#17263b" stroke-width="2.5"/>
+<text x="1415" y="563" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">vdd</text>
+<line x1="1415" y1="640" x2="1415" y2="662" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1415" y1="708" x2="1415" y2="730" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1407" y1="662" x2="1407" y2="708" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1390" y1="665" x2="1390" y2="705" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1357" y1="685" x2="1390" y2="685" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="1380" cy="685" r="5" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<line x1="1407" y1="662" x2="1415" y2="662" stroke="#17263b" stroke-width="2.5"/>
+<line x1="1407" y1="708" x2="1415" y2="708" stroke="#17263b" stroke-width="2.5"/>
+<text x="1430" y="681" font-size="21" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">MPn</text>
+<text x="1430" y="708" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">W=1 um</text>
+<text x="1350" y="692" font-size="19" font-weight="normal" fill="#2263ac" text-anchor="end" style="fill:#2263ac">clk</text>
+<text x="1422" y="651" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">S</text>
+<text x="1422" y="728" font-size="12" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">D</text>
+<line x1="1415" y1="730" x2="1415" y2="777" stroke="#17263b" stroke-width="2.5"/>
+<circle cx="1415" cy="777" r="4" fill="#17263b"/>
+<text x="1415" y="808" font-size="25" font-weight="bold" fill="#137b68" text-anchor="middle" style="fill:#137b68">n</text>
+<text x="1040" y="882" font-size="19" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">clk=0: p,n,x,y precharge HIGH.</text>
+<text x="1040" y="913" font-size="19" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">clk=1: M7 evaluates; precharge turns OFF.</text>
+<text x="1040" y="944" font-size="19" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">ip &gt; in should resolve x LOW, y HIGH -&gt; q=1.</text>
+<line x1="40" y1="995" x2="1560" y2="995" stroke="#d9e3ec" stroke-width="2.5"/>
+<text x="40" y="1025" font-size="22" font-weight="bold" fill="#17263b" text-anchor="start" style="fill:#17263b">Two identical inverters per side isolate the regenerative nodes from SR-latch history.</text>
+<text x="85" y="1127" font-size="27" font-weight="bold" fill="#137b68" text-anchor="start" style="fill:#137b68">x</text>
+<line x1="115" y1="1120" x2="225" y2="1120" stroke="#17263b" stroke-width="2.5"/>
+<path d="M225,1097 L225,1143 L270,1120 Z" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<circle cx="276" cy="1120" r="6" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<text x="248" y="1083" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">XBX0</text>
+<line x1="282" y1="1120" x2="440" y2="1120" stroke="#17263b" stroke-width="2.5"/>
+<text x="360" y="1107" font-size="20" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">xb</text>
+<path d="M440,1097 L440,1143 L485,1120 Z" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<circle cx="491" cy="1120" r="6" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<text x="463" y="1083" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">XBX1</text>
+<line x1="497" y1="1120" x2="695" y2="1120" stroke="#17263b" stroke-width="2.5"/>
+<text x="603" y="1107" font-size="20" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">xd</text>
+<text x="85" y="1287" font-size="27" font-weight="bold" fill="#137b68" text-anchor="start" style="fill:#137b68">y</text>
+<line x1="115" y1="1280" x2="225" y2="1280" stroke="#17263b" stroke-width="2.5"/>
+<path d="M225,1257 L225,1303 L270,1280 Z" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<circle cx="276" cy="1280" r="6" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<text x="248" y="1243" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">XBY0</text>
+<line x1="282" y1="1280" x2="440" y2="1280" stroke="#17263b" stroke-width="2.5"/>
+<text x="360" y="1267" font-size="20" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">yb</text>
+<path d="M440,1257 L440,1303 L485,1280 Z" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<circle cx="491" cy="1280" r="6" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<text x="463" y="1243" font-size="15" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">XBY1</text>
+<line x1="497" y1="1280" x2="695" y2="1280" stroke="#17263b" stroke-width="2.5"/>
+<text x="603" y="1267" font-size="20" font-weight="normal" fill="#137b68" text-anchor="middle" style="fill:#137b68">yd</text>
+<rect x="695" y="1085" width="125" height="70" rx="7" fill="white" stroke="#17263b" stroke-width="1.8"/>
+<text x="753" y="1127" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">NAND2</text>
+<circle cx="826" cy="1120" r="6" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<text x="757" y="1072" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">XLQ</text>
+<rect x="695" y="1245" width="125" height="70" rx="7" fill="white" stroke="#17263b" stroke-width="1.8"/>
+<text x="753" y="1287" font-size="19" font-weight="normal" fill="#17263b" text-anchor="middle" style="fill:#17263b">NAND2</text>
+<circle cx="826" cy="1280" r="6" fill="white" stroke="#17263b" stroke-width="2.3"/>
+<text x="757" y="1232" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="middle" style="fill:#5e6d80">XLQB</text>
+<line x1="832" y1="1120" x2="1100" y2="1120" stroke="#17263b" stroke-width="2.5"/>
+<line x1="832" y1="1280" x2="1100" y2="1280" stroke="#17263b" stroke-width="2.5"/>
+<text x="1125" y="1128" font-size="25" font-weight="bold" fill="#2263ac" text-anchor="start" style="fill:#2263ac">q = cmpQ</text>
+<text x="1125" y="1288" font-size="25" font-weight="bold" fill="#2263ac" text-anchor="start" style="fill:#2263ac">qb = cmpQB</text>
+<circle cx="920" cy="1120" r="4" fill="#17263b"/>
+<circle cx="1000" cy="1280" r="4" fill="#17263b"/>
+<path d="M920,1120 L920,1200 L650,1200 L650,1298 L695,1298" fill="none" stroke="#17263b" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M1000,1280 L1000,1340 L625,1340 L625,1138 L695,1138" fill="none" stroke="#17263b" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="1030" y="1195" font-size="20" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">q = NAND(xd, qb)</text>
+<text x="1030" y="1227" font-size="20" font-weight="normal" fill="#17263b" text-anchor="start" style="fill:#17263b">qb = NAND(yd, q)</text>
+<text x="85" y="1361" font-size="18" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">L=30 nm throughout. NMOS bulks=vss; PMOS bulks=vdd. Each inverter Wn/Wp=0.5/1 um.</text>
+<line x1="40" y1="1374" x2="1560" y2="1374" stroke="#d9e3ec" stroke-width="2.5"/>
+<text x="40" y="1397" font-size="17" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">Sources: sar_frontend.py::sar_comparator; sar_logic.py::sar_inv, sar_nand2</text>
+<text x="40" y="1425" font-size="16" font-weight="normal" fill="#5e6d80" text-anchor="start" style="fill:#5e6d80">MOS terminal mapping is checked against generator output. This is an engineering netlist diagram, not an OA schematic or layout.</text>
+</svg>

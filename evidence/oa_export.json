@@ -1,0 +1,88 @@
+{
+  "historical_OA_audit": {
+    "pin_connections_checked": 1379,
+    "CDF_fields_checked": 1775,
+    "hierarchy_ports_checked": 150,
+    "native_direct_instance_records_checked": 300,
+    "status": "OA_POST_EXPORT_CONNECTIVITY_CDF_AND_NATIVE_PARAMETER_EQUIVALENCE_CHECKED",
+    "native_top_mode": "IMPLICIT_ROOT_CONNECTIVITY_PLUS_VERIFIED_OA_CDF_TERMORDER",
+    "standalone_native_ADC_subckt_signature_checked": false,
+    "source_sha256": "8de59941d12845e3ae71268dd03e718d04c9ae75ea5123172779a559c321ee6a",
+    "native_netlist_sha256": "82687a11c21887bf42a5dc98ef6f29669e6e19332236cd15a8fe3b09d87b4758",
+    "limitations": [
+      "No simulation execution in this auditor",
+      "No layout/DRC/LVS/PEX claim",
+      "Schematic OA equivalence does not qualify ADC noise, DNL/INL or PVT"
+    ]
+  },
+  "native_wrapper_checks": {
+    "raw_native_wrapped_source_manifest_and_audit_hashes_match_smoke_proof": true,
+    "explicit_port_order": [
+      "AVDD",
+      "AVSS",
+      "VREFP",
+      "VREFN",
+      "VCM",
+      "VIP",
+      "VIN",
+      "D7",
+      "D6",
+      "D5",
+      "D4",
+      "D3",
+      "D2",
+      "D1",
+      "D0",
+      "CLK"
+    ],
+    "local_exact_native_card_and_connection_records_rechecked": 300,
+    "expanded_native_MOS_count": 769,
+    "original_OA_root_mode": "IMPLICIT_ROOT_CONNECTIVITY_PLUS_VERIFIED_OA_CDF_TERMORDER",
+    "explicit_wrapper_interface_verified": true,
+    "original_export_options_reused": false,
+    "external_fixture": "Native DUT only uses the existing runner's external model/clock/supply/refs/options; source cards and nodes are not regenerated."
+  },
+  "saved_DC_smoke": {
+    "exit_code": 0,
+    "completion": [
+      "spectre completes with 0 errors, 3 warnings, and 7 notices."
+    ],
+    "log_bsim4_count": 769,
+    "warnings": [
+      "SFE-1131"
+    ],
+    "discarded_initial_rows": 3,
+    "selected_zero_based_rows_inclusive": [
+      3,
+      10
+    ],
+    "conversion_count": 8,
+    "observed_codes": [
+      191,
+      191,
+      191,
+      191,
+      191,
+      191,
+      191,
+      191
+    ],
+    "applied_input_diff_V": 0.246,
+    "ideal_nominal_codes": [
+      190,
+      190,
+      190,
+      190,
+      190,
+      190,
+      190,
+      190
+    ],
+    "min_output_logic_margin_V": 0.4499498659094585,
+    "max_period_deviation_from50ns_s": 5.6645328347631335e-21,
+    "all_reads_after_own_hold_before_next_hold": true,
+    "rst_final_V": 4.999555181604576e-05
+  },
+  "interpretation": "Native OA-derived cards produce eight stable191 codes at+.246V with0 simulator errors. This supports runnable export and short DC functionality; it is not an ADC SNDR/noise/DNL/INL/PVT qualification of the native-wrapped DUT. The stimulus is93.75uV below the ideal190-to191 threshold, so observed191 alone does not imply a full1LSB analog gain error.",
+  "scope": "Historical saved-OA/reopen/native-export evidence only. OA binaries, PDK libraries and native model parameter cards are not distributed here."
+}
