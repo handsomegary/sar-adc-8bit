@@ -13,7 +13,7 @@ def main():
     manifest = read(ROOT / 'release_manifest.json')
     files = manifest['files']
     total = 0
-    forbidden = {'.zip', '.oa', '.oalib', '.pdf', '.log', '.tran', '.db', '.pyc'}
+    forbidden = {'.zip', '.oa', '.oalib', '.log', '.tran', '.db', '.pyc'}
     leaks = [r'/home/', r'/opt/eda', r'(?i)\b[A-Z]:[\\/]',
              r'192\.168\.\d+\.\d+', r'BEGIN [A-Z ]*PRIVATE KEY',
              r'(?i)(?:license_file|remote_host|password)\s*[=:]']
@@ -21,13 +21,17 @@ def main():
         path = ROOT / relative
         if path.resolve() != path or not path.is_file() or path.suffix.lower() in forbidden:
             raise ValueError('Missing/unsafe/excluded artifact: ' + relative)
+        if path.suffix.lower() == '.pdf' and not (
+                relative == 'report/sar-adc-8bit.pdf' or
+                (path.parent == ROOT/'report/figures' and path.with_suffix('.tex').is_file())):
+            raise ValueError('Only authored report and source-paired diagram PDFs are included')
         body = path.read_bytes()
         if hashlib.sha256(body).hexdigest() != expected['sha256'] or len(body) != expected['bytes']:
             raise ValueError('Release bytes differ: ' + relative)
         if len(body) >= 50 * 1024 * 1024:
             raise ValueError('File too large')
         total += len(body)
-        if path.suffix.lower() in {'.json', '.csv', '.py', '.md', '.svg', '.scs'}:
+        if path.suffix.lower() in {'.json', '.csv', '.py', '.md', '.svg', '.scs', '.tex', '.yml'}:
             text = body.decode('utf-8')
             # The scanner source itself contains intentional pattern literals.
             if relative != 'tools/verify_release.py' and any(re.search(pattern, text) for pattern in leaks):
@@ -35,13 +39,15 @@ def main():
     if total >= 100 * 1024 * 1024:
         raise ValueError('Release exceeds compact package target')
     actual = {str(path.relative_to(ROOT)).replace('\\', '/') for path in ROOT.rglob('*') if path.is_file()
-              and not any(part in {'.git', '__pycache__', 'reproduced', '.venv'} for part in path.relative_to(ROOT).parts)
+              and not any(part in {'.git', '__pycache__', 'reproduced', '.venv', 'runs'} for part in path.relative_to(ROOT).parts)
               and path.name != 'release_manifest.json'}
     if actual != set(files):
         raise ValueError('Unexpected/unmanifested artifacts: ' + str(sorted(actual ^ set(files))))
     result = reproduce()
     if (ROOT / 'design/adc_topology.scs').read_text(encoding='utf-8') != __import__('adc_topology').generate_core():
         raise ValueError('Published nominal topology differs from authored generator')
+    from verify_drawings import verify as verify_drawings
+    drawing_summary = verify_drawings()
     gate = read(ROOT / 'evidence/declared_gate.json')
     if gate['schematic_prototype_complete'] is not True or not all(value is True for value in gate['checks'].values()):
         raise ValueError('Historical declared prototype gate changed')
@@ -51,6 +57,7 @@ def main():
                       'total_bytes': total, 'dynamic_records': len(result['dynamic']),
                       'static_corners': len(result['static']), 'nominal_MOS': result['topology_counts']['ADC'],
                       'strict_reverse_history_equality': False, 'simulations_launched': 0,
+                      'drawing_sources': drawing_summary,
                       'native_power_reintegrated': False}, indent=2))
 
 

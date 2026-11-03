@@ -1,0 +1,41 @@
+% @instance sar_latchr0 Xin sar_tg vdd vss d x en enb
+% @instance sar_latchr0 Xfb sar_tg vdd vss q x enb en
+% @instance sar_latchr0 Xg sar_nand2 vdd vss x nrst qb
+% @instance sar_latchr0 Xo sar_inv vdd vss qb q
+% @instance sar_pdffr0 Xmaster sar_latchr0 vdd vss d phm phmb rst nrst mq
+% @instance sar_pdffr0 Xslave sar_latchr0 vdd vss mq phs phsb rst nrst q
+\begin{circuitikz}
+% Actual latch hierarchy, whose TG and gate implementations are shown separately.
+\node[adc block,minimum width=1.8cm,minimum height=.95cm] (xin) at (2.4,3.0) {TG\\$X_{\mathrm{in}}$};
+\node[nand port] (ng) at (6.7,3.0) {};
+\node[not port] (iv) at (9.0,3.0) {};
+\node[adc block,minimum width=1.8cm,minimum height=.95cm] (xfb) at (6.7,.75) {TG\\$X_{\mathrm{fb}}$};
+\draw (.1,3.0) node[left] {$d$} -- (xin.west);
+\draw (xin.east) -- (4.2,3.0) |- (ng.in 1);
+\node[above] at (4.2,3.0) {$x$};
+\draw (5.0,2.25) node[left] {$nrst$} -| (ng.in 2);
+\draw (ng.out) -- (iv.in);
+\node[above] at (7.8,3.0) {$qb$};
+\draw (iv.out) -- (11.1,3.0) node[right] {$q$};
+\draw (10.25,3.0) node[adc dot] {} -- (10.25,.75) -- (xfb.east);
+\draw (xfb.west) -- (4.2,.75) -- (4.2,3.0) node[adc dot] {};
+\draw (xin.north) -- ++(0,.42) node[above] {$en$};
+\draw (xin.south) -- ++(0,-.42) node[below] {$enb$};
+\draw (xfb.north) -- ++(0,.42) node[above] {$enb$};
+\draw (xfb.south) -- ++(0,-.42) node[below] {$en$};
+\node[above] at (ng.north) {$X_g$};
+\node[above] at (iv.north) {$X_o$};
+\node[align=left,anchor=west] at (11.8,1.6) {$q=x\,nrst$\\$nrst=\overline{RST}$\\10 MOS per latch};
+% DFF is a hierarchy of two physical latches, not an ideal behavioral device.
+\node[adc block,minimum width=2.35cm,minimum height=1.0cm] (ml) at (4.0,-2.0) {Master latch\\$X_{\mathrm{master}}$};
+\node[adc block,minimum width=2.35cm,minimum height=1.0cm] (sl) at (8.4,-2.0) {Slave latch\\$X_{\mathrm{slave}}$};
+\draw (1.7,-2.0) node[left] {$d$} -- (ml.west);
+\draw (ml.east) -- (sl.west) node[midway,above] {$mq$};
+\draw (sl.east) -- (10.7,-2.0) node[right] {$q$};
+\draw (ml.north) -- ++(0,.35) node[above] {$phm,\ phmb$};
+\draw (sl.north) -- ++(0,.35) node[above] {$phs,\ phsb$};
+\draw (ml.south) -- ++(0,-.35) node[below] {$RST,\ nrst$};
+\draw (sl.south) -- ++(0,-.35) node[below] {$RST,\ nrst$};
+\node[align=left,anchor=west] at (11.8,-2.0) {\texttt{sar\_pdffr0}\\20 MOS per DFF};
+\node[align=center] at (7.2,-3.75) {Each TG box denotes a complementary two-MOS pass gate.\\Supplies $V_{\mathrm{DD}},V_{\mathrm{SS}}$ are common to every cell.};
+\end{circuitikz}

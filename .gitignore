@@ -10,3 +10,8 @@ pdk/
 *.zip
 *.oa
 *.log
+runs/
+*.aux
+*.out
+*.toc
+*.synctex.gz

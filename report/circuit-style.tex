@@ -1,0 +1,25 @@
+% Shared by the report and every standalone PDF/SVG.
+\ctikzset{
+  transistors/scale=0.8,
+  resistors/scale=0.5,
+  capacitors/scale=0.5,
+  sources/scale=0.8,
+  logic ports/scale=0.6,
+  flipflops/scale=0.6,
+  tripoles/mos style=arrows,
+  transistors/arrow pos=end,
+  amplifiers/scale=0.7,
+  blocks/scale=0.7
+}
+\newcommand{\ADCfigurefont}{\sffamily\bfseries}
+\tikzset{every picture/.append style={line width=.60pt,
+  font=\ADCfigurefont\footnotesize},
+  adc block/.style={draw=black,fill=white,line width=.85pt,
+    rounded corners=0pt,align=center,font=\ADCfigurefont\footnotesize},
+  adc wire/.style={draw=black,line width=.60pt},
+  adc group/.style={draw=none,fill=black!12},
+  adc signal/.style={adc wire,-{Triangle[length=2.2mm,width=1.6mm]}},
+  adc control/.style={adc signal,densely dashed},
+  adc dot/.style={circle,fill=black,inner sep=1.15pt},
+  adc net/.style={font=\ADCfigurefont\footnotesize,inner sep=1.5pt}}
+\ctikzset{bipoles/thickness=1.25,tripoles/thickness=1.25}

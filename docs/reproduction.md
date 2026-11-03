@@ -17,6 +17,16 @@ The data retain acquisition and output-read timestamps. Do not treat both as ind
 
 For an analysis-library mathematics check, `python src/sar_analysis.py selftest` uses synthetic reference signals. Those reference checks are not ADC simulation evidence.
 
+## Rebuild the design report
+
+The [report build guide](../report/README.md) describes the local LaTeX dependencies and figure workflow. The paper source is [main.tex](../report/main.tex), with the shared CircuitikZ settings in [circuit-style.tex](../report/circuit-style.tex).
+
+```sh
+python report/build_report.py
+```
+
+This rebuilds the authored report with a local LaTeX installation. It does not start a simulator or alter the published measurement data. Building the report has separate dependencies from the standard-library-only result reproduction above.
+
 ## A new transistor simulation is separate work
 
 The repository has no licensed process-model binding or native parameter cards. `src/sar_logic*.py` and `src/sar_frontend.py` accept a MOS callback so authorized users can provide their own complete process instances. `src/adc_topology.py` uses undefined symbolic models for public connectivity export. Replacing these names with an arbitrary generic model does not reproduce the archived results.

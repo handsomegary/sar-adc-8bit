@@ -1,0 +1,52 @@
+% @mos sar_cdac MSNp0 NMOS vp track vip vss 3e-06 3e-08
+% @mos sar_cdac MSPp0 PMOS vp trackb vip vdd 3e-06 3e-08
+% @mos sar_cdac MSNp1 NMOS vp track vip vss 3e-06 3e-08
+% @mos sar_cdac MSPp1 PMOS vp trackb vip vdd 3e-06 3e-08
+% @mos sar_cdac MSNn0 NMOS vn track vin vss 3e-06 3e-08
+% @mos sar_cdac MSPn0 PMOS vn trackb vin vdd 3e-06 3e-08
+% @mos sar_cdac MSNn1 NMOS vn track vin vss 3e-06 3e-08
+% @mos sar_cdac MSPn1 PMOS vn trackb vin vdd 3e-06 3e-08
+% @mos sar_cdac MNHp7 NMOS botp7 hi7 refn vss 3e-06 3e-08
+% @mos sar_cdac MPHp7 PMOS botp7 hib7 refn vdd 3e-06 3e-08
+% @mos sar_cdac MNLp7 NMOS botp7 lo7 refp vss 3e-06 3e-08
+% @mos sar_cdac MPLp7 PMOS botp7 lob7 refp vdd 3e-06 3e-08
+% @mos sar_cdac MNMp7 NMOS botp7 eb7 vcm vss 3e-06 3e-08
+% @mos sar_cdac MPMp7 PMOS botp7 e7 vcm vdd 3e-06 3e-08
+% @mos sar_cdac MNHn7 NMOS botn7 hi7 refp vss 3e-06 3e-08
+% @mos sar_cdac MPHn7 PMOS botn7 hib7 refp vdd 3e-06 3e-08
+% @mos sar_cdac MNLn7 NMOS botn7 lo7 refn vss 3e-06 3e-08
+% @mos sar_cdac MPLn7 PMOS botn7 lob7 refn vdd 3e-06 3e-08
+% @mos sar_cdac MNMn7 NMOS botn7 eb7 vcm vss 3e-06 3e-08
+% @mos sar_cdac MPMn7 PMOS botn7 e7 vcm vdd 3e-06 3e-08
+% Source-derived representative positive-side bit i and sampling pair.
+% D/G/S/B of each representative switch is stated in the report's mapping table.
+\begin{circuitikz}
+% Actual parallel MOS topology of sampling: show one pair, explicit x2.
+\node[nmos,rotate=-90] (sn) at (2,4.3) {};
+\node[pmos,rotate=90] (sp) at (2,2.7) {};
+\draw (sn.S)--(.9,4.3)--(.9,2.7)--(sp.S);
+\draw (sn.D)--(3.1,4.3)--(3.1,2.7)--(sp.D);
+\draw (.9,3.5) node[adc dot] {}--(.1,3.5) node[left] {$VIP$};
+\draw (3.1,3.5) node[adc dot] {}--(3.9,3.5) node[right] {$v_p$};
+\draw (sn.G)--++(0,.25) node[above] {$track$};
+\draw (sp.G)--++(0,-.25) node[below] {$\overline{track}$};
+\node[above] at (2,6.1) {Sampling pair ($\times 2$)};
+\node[align=center] at (2,.3) {$W_n=W_p=3\,\mu\mathrm{m}$\\$L_n=L_p=30\,\mathrm{nm}$};
+% Three explicit CMOS transmission gates, shared drain node.
+\foreach \yy/\nn/\en/\eb/\src in {6.5/H/hi_i/\overline{hi_i}/V_{\mathrm{REFN}},3.5/L/lo_i/\overline{lo_i}/V_{\mathrm{REFP}},.5/M/\overline{e_i}/e_i/V_{\mathrm{CM}}}{
+ \node[nmos,rotate=-90] (n\nn) at (8.6,\yy+.4) {};
+ \node[pmos,rotate=90] (p\nn) at (8.6,\yy-.4) {};
+ \draw (n\nn.S)--(7.6,\yy+.4)--(7.6,\yy-.4)--(p\nn.S);
+ \draw (n\nn.D)--(9.6,\yy+.4)--(9.6,\yy-.4)--(p\nn.D);
+ \draw (7.6,\yy) node[adc dot] {}--(6.5,\yy) node[left] {$\src$};
+ \draw (9.6,\yy) node[adc dot] {}--(11,\yy);
+ \draw (n\nn.G)--++(0,.12) node[right,inner sep=2pt] {$\en$};
+ \draw (p\nn.G)--++(0,-.16) node[left,inner sep=2pt] {$\eb$};
+}
+\draw (11,.5)--(11,6.5);
+\draw (11,3.5) node[adc dot] {} to[C,l={$2^i C_u$}] (13.1,3.5)--(13.6,3.5) node[right] {$v_p$};
+\node[above right] at (11,3.5) {$bot_{pi}$};
+\node[align=left,anchor=west] at (11,.65) {$e_i=v_i\,\overline{track}$\\$hi_i=e_i b_i$\\$lo_i=e_i\overline{b_i}$};
+\node[align=center] at (8.4,-1.5) {Bottom-plate TGs: $W_n=W_p=3\,\mu\mathrm{m}$; $L=30\,\mathrm{nm}$.};
+\node[align=center] at (7,-2.4) {NMOS bulks: $V_{\mathrm{SS}}$; PMOS bulks: $V_{\mathrm{DD}}$.\\Negative side: $VIP\to VIN$, $v_p\to v_n$, $V_{\mathrm{REFP}}\leftrightarrow V_{\mathrm{REFN}}$.};
+\end{circuitikz}

@@ -1,0 +1,91 @@
+\section{Static Storage and Conversion Sequencing}
+The controller uses the CMOS cells in Fig.~\ref{fig:logic-cells}, not ideal
+logic sources. Figure~\ref{fig:logic-latch} expands its resettable storage
+hierarchy. With $en=1$, the input transmission gate conducts and the feedback
+gate opens. With $en=0$, the feedback gate retains the state. Pulling
+$nrst=\overline{RST}$ low forces the NAND output $qb$ high and the final
+output $q$ low. The formal $rst$ latch port is retained in the hierarchy;
+the reset-to-zero action is applied through $nrst$.
+
+\begin{figure*}[!t]
+\centering
+\resizebox{.97\textwidth}{!}{\input{figures/logic-cells}}
+\caption{Source-derived transistor implementations of the standard inverter,
+NAND2 and transmission gate. Each cell uses its own local net names. NMOS
+bulks connect to $V_{\mathrm{SS}}$ and PMOS bulks to $V_{\mathrm{DD}}$;
+the three-terminal symbols omit these common body wires. Dimensions are
+nominal requested geometry, not extracted dimensions or a replacement model card.}
+\label{fig:logic-cells}
+\end{figure*}
+
+\begin{table}[!t]\centering
+\caption{Logic-device terminal order $(D,G,S,B)$}
+\label{tab:logic-terminals}
+\begin{tabular}{lll}\toprule
+Cell & Device & $(D,G,S,B)$\\\midrule
+Inverter & $M_p$ & $(y,a,vdd,vdd)$\\
+ & $M_n$ & $(y,a,vss,vss)$\\
+NAND2 & $M_{p0}$ & $(y,a,vdd,vdd)$\\
+ & $M_{p1}$ & $(y,b,vdd,vdd)$\\
+ & $M_{n0}$ & $(y,a,ns,vss)$\\
+ & $M_{n1}$ & $(ns,b,vss,vss)$\\
+TG & $M_n$ & $(y,en,a,vss)$\\
+ & $M_p$ & $(y,enb,a,vdd)$\\\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure*}[!t]
+\centering
+\resizebox{.97\textwidth}{!}{\input{figures/logic-latch}}
+\caption{Actual reset-to-zero latch hierarchy and its two-latch DFF composition.
+The input TG uses $(en,enb)$ and the feedback TG uses $(enb,en)$.
+Each latch contains ten MOS instances; the DFF contains twenty, excluding
+the shared phase generator and reset inverter.}
+\label{fig:logic-latch}
+\end{figure*}
+
+The five Johnson stages obey
+\begin{equation}
+(j_0,j_1,j_2,j_3,j_4)^+
+  =(\overline{j_4},j_0,j_1,j_2,j_3).
+\end{equation}
+Reset initializes all five state bits to zero. There are ten decoded slots,
+not ten physical state flip-flops. The first two slots acquire the input;
+the following eight select decisions from bit~7 down to bit~0
+(Table~\ref{tab:johnson-slots}). Eight bit latches and eight output latches
+complete the storage shown in Fig.~\ref{fig:controller}.
+The physical phase generator uses two cross-inhibited NOR paths with
+buffers: $mraw=\overline{clkb+phs}$ and
+$sraw=\overline{clk+phm}$. Its finite gate delays create the actual
+master/slave phase separation; the drawing does not replace it with ideal
+nonoverlap clocks.
+
+\begin{table}[!t]\centering
+\caption{Johnson states and conversion operations}
+\label{tab:johnson-slots}
+\begin{tabular}{cll}\toprule
+Slot & $j_0j_1j_2j_3j_4$ & Operation / select $s_k$\\\midrule
+0 & 00000 & Acquire; output latch enabled by $phm$\\
+1 & 10000 & Acquire\\
+2 & 11000 & Bit 7: $j_1\overline{j_2}$\\
+3 & 11100 & Bit 6: $j_2\overline{j_3}$\\
+4 & 11110 & Bit 5: $j_3\overline{j_4}$\\
+5 & 11111 & Bit 4: $j_0j_4$\\
+6 & 01111 & Bit 3: $\overline{j_0}j_1$\\
+7 & 00111 & Bit 2: $\overline{j_1}j_2$\\
+8 & 00011 & Bit 1: $\overline{j_2}j_3$\\
+9 & 00001 & Bit 0: $\overline{j_3}j_4$\\\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure*}[!t]
+\centering
+\resizebox{.97\textwidth}{!}{\input{figures/controller}}
+\caption{Five-stage Johnson controller and the actual state-decoding relations.
+Every DFF expands to the physical master/slave hierarchy in
+Fig.~\ref{fig:logic-latch}. The horizontal phase/reset line is a labeled bundle
+of six distinct nets, not a short between those signals. The decoded bit and
+output storage blocks denote repeated physical latches. The active control
+hierarchy contains 424 MOS instances.}
+\label{fig:controller}
+\end{figure*}

@@ -1,0 +1,153 @@
+\documentclass[10pt,conference,letterpaper]{IEEEtran}
+\providecommand{\DoNotLoadEpstopdf}{}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,graphicx,booktabs}
+\usepackage{mathptmx}
+\usepackage[scaled=.95]{helvet}
+\usepackage[american]{circuitikz}
+\usetikzlibrary{calc,positioning,arrows.meta,shapes.gates.logic.US}
+\input{circuit-style}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={An 8-bit 20-MS/s Differential SAR ADC},pdfauthor={SAR ADC Project},pdfsubject={Circuit implementation and historical schematic verification}}
+\title{An 8-bit 20-MS/s Differential SAR ADC:\\Circuit Implementation and Schematic Verification}
+\author{\IEEEauthorblockN{SAR ADC Project}\IEEEauthorblockA{Design and verification report}}
+\begin{document}
+\raggedbottom
+\maketitle
+\begin{abstract}
+A differential charge-redistribution successive-approximation ADC combines an ideal binary capacitor array, a dynamic comparator with isolated static storage, and a transistor-level Johnson-counter controller. The schematic prototype operates at a nominal 20\,MS/s from a 0.9\,V supply. Two archived transient-noise records give 48.054 and 47.494\,dB SNDR at 1.328125 and 9.296875\,MHz. Five deterministic process-corner datasets observe all 256 output codes and bound endpoint-fit DNL and INL within the declared limits. A strict reverse-history comparison fails at the exact central transition and remains explicitly recorded. This report documents the implemented connections, historical results, and the limits of an ideal-capacitor, pre-layout prototype. Drawing and packaging the evidence do not constitute a new circuit simulation.
+\end{abstract}
+\begin{IEEEkeywords}
+successive-approximation ADC, charge redistribution, dynamic comparator, transmission-gate storage, schematic verification
+\end{IEEEkeywords}
+
+\section{Design Objective and Evidence}
+The implementation retains eight binary output decisions while adapting the conversion rate and supply to 20\,MS/s and 0.9\,V. A 200\,MHz external clock supplies ten slots per conversion: two nominal acquisition slots and eight comparisons. This operating point is a project target, not a maximum-speed claim. The nominal differential input range is 1\,V peak to peak with a 0.45\,V common mode. The ideal high and low references are 0.7 and 0.2\,V.
+
+The repository contains authored connectivity and nominal device geometry, compact conversion-code exports, deterministic transition brackets, and analysis programs \cite{repo}. The circuit drawings in this report are derived from that connectivity. They are not an editable CAD database, a layout, or a claim that the symbolic model names reproduce the licensed transistor simulations.
+
+\begin{table}[!b]\centering
+\caption{Prototype operating point and retained evidence}\label{tab:overview}
+\begin{tabular}{lr}\toprule
+Quantity & Value\\\midrule
+Nominal resolution & 8 bits / 256 codes\\
+Sampling rate & 20\,MS/s\\
+Supply / nominal temperature & 0.9\,V / 25\,$^\circ$C\\
+Differential full scale & 1\,V peak to peak\\
+Unit capacitor / each-side total & 5\,fF / 1.28\,pF\\
+Expanded ADC MOS instances & 769\\
+Noisy SNDR, low / high tone & 48.054 / 47.494\,dB\\
+Noisy ENOB, low / high tone & 7.690 / 7.597\\
+Worst static DNL magnitude bound & 0.251154\,LSB\\
+Worst static INL magnitude bound & 0.190113\,LSB\\\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Differential Signal Path}
+Fig.~\ref{fig:system} shows the top-level connection between the sampled capacitor-array top plates, comparator, and controller. The positive and negative arrays each contain eight binary-weighted branches and one dummy unit. With $C_u=5$\,fF,
+\begin{equation}
+C_{\mathrm{side}}=C_u\left(1+\sum_{k=0}^{7}2^k\right)=256C_u=1.28\,\mathrm{pF}.
+\end{equation}
+The dummy branch remains connected to common mode. During acquisition the input sampling gates connect the top plates to the differential input. Unresolved conversion branches connect their bottom plates to common mode. Resolved branches switch to complementary reference levels. A positive comparison selects the differential subtracting DAC step.
+
+\begin{figure*}[!t]\centering
+\resizebox{.96\textwidth}{!}{\input{figures/system}}
+\caption{Implemented ADC hierarchy. Solid arrows carry analog signals or comparison data; dashed arrows carry switching and clock controls. The analog array and comparator are closed by the native controller. Ideal external references and the external clock are testbench boundaries. The shaded region groups the controller; it does not imply a separate power domain.}\label{fig:system}
+\end{figure*}
+
+Fig.~\ref{fig:cdac} retains both complete binary arrays rather than replacing their weights with an unspecified DAC block. The least-significant capacitor is physically present. The last comparison supplies the least-significant decision without a following LSB DAC update: the controller holds the corresponding valid flag low.
+
+\begin{figure*}[!t]\centering
+\resizebox{.95\textwidth}{!}{\input{figures/cdac}}
+\caption{Differential binary CDAC. Each side has weights $128{:}64{:}32{:}16{:}8{:}4{:}2{:}1$ plus one common-mode dummy. Each labeled bottom-plate net connects to the corresponding selector in Fig.~\ref{fig:cdacswitch}. All capacitors are ideal schematic elements; the drawing assigns no physical capacitor dimensions or mismatch.}\label{fig:cdac}
+\end{figure*}
+
+\subsection{Sampling and Bottom-Plate Selection}
+The sampling gate on each input contains two explicit parallel NMOS/PMOS pairs. Each individual device has a nominal width of 3\,$\mu$m and length of 30\,nm. Thus each sampling polarity has a total nominal parallel width of 6\,$\mu$m. Each bottom-plate selection path instead contains one 3\,$\mu$m NMOS/PMOS pair. Separate explicit instances are not interchangeable with an unspecified multiplicity or finger parameter.
+
+The selector controls satisfy $e_k=v_k\overline{\mathrm{track}}$, $h_k=e_kb_k$, and $l_k=e_k\overline b_k$. The common-mode path is enabled by $\overline e_k$. When $h_k$ is active, the positive-side bottom plate connects to the low reference and the negative-side bottom plate to the high reference. When $l_k$ is active, those assignments reverse. This polarity is part of the implemented SAR feedback, not a cosmetic labeling choice.
+
+\begin{figure*}[!t]\centering
+\resizebox{.95\textwidth}{!}{\input{figures/cdac-switch}}
+\caption{Sampling and reference-selection circuits derived from the transistor connectivity. The sampler uses two parallel pairs per input; each selector uses one pair per reference/common-mode path. NMOS bulks connect to the negative supply and PMOS bulks to the positive supply. Equal labels identify connected nets. The negative-side selector uses the same controls with the high/low reference assignments exchanged.}\label{fig:cdacswitch}
+\end{figure*}
+
+\section{Comparator and Decision Storage}
+The dynamic comparator contains an input differential pair, a clocked tail, a cross-coupled regenerative stage, and four PMOS reset devices. Four inverters isolate the regenerative nodes from a cross-coupled NAND storage pair (Fig.~\ref{fig:comparator}). The held decision remains available while the dynamic stage resets.
+
+The comparator contains 11 direct MOS instances, eight MOS in the four inverters, and eight MOS in the two NAND gates, for 27 expanded instances. Device labels and internal nodes follow the source. The small-signal, reset, and regeneration behavior depends on the complete authorized device cards; nominal width and length alone do not recreate those cards.
+
+\begin{figure*}[!t]\centering
+\resizebox{.96\textwidth}{!}{\input{figures/comparator}}
+\caption{Dynamic comparator, isolation inverters, and NAND SR hold. The cross-coupled gate connections and reset connections follow the published netlist. All dimensions in Table~\ref{tab:compgeom} are nominal requested geometry. Equal named nodes are connected even when a long return wire is omitted for clarity.}\label{fig:comparator}
+\end{figure*}
+
+\begin{table}[!t]\centering
+\caption{Comparator nominal geometry; all $L=30$\,nm}\label{tab:compgeom}
+\begin{tabular}{llr}\toprule
+Devices & Type & Unit $W$ ($\mu$m)\\\midrule
+$M_1,M_2,M_7$ & NMOS & 3\\
+$M_3,M_4$ & NMOS & 1\\
+$M_5,M_6$ & PMOS & 1\\
+$M_{Pp},M_{Pn},M_{Px},M_{Py}$ & PMOS & 1\\
+Each isolation inverter & NMOS / PMOS & 0.5 / 1\\
+Each NAND device & NMOS / PMOS & 1 / 1\\\bottomrule
+\end{tabular}
+\end{table}
+
+\input{logic_modules}
+
+\section{Historical Verification Results}
+\subsection{Dynamic Conversion-Code Analysis}
+The dynamic evidence comprises five coherent records at the typical corner. Each analysis uses 256 settled conversion codes: original conversion indices 3--258 from 263 saved rows. The three leading and four trailing rows are not scored. Acquisition and output-read timestamps are distinct; neither arbitrary adaptive solver samples nor both timestamps are counted as additional conversions.
+
+The FFT removes DC and the specified coherent fundamental, retains all other AC bins including harmonics, and uses one-sided Parseval scaling without a window. There is no best-bin search, harmonic exclusion, or amplitude correction. The tone amplitude is 0.95 of nominal full scale. Fundamental bins 17, 29, and 119 correspond to 1.328125, 2.265625, and 9.296875\,MHz at 20\,MS/s.
+
+\begin{table*}[!t]\centering
+\caption{Saved typical-corner dynamic results; one 256-code record per row}\label{tab:dynamic}
+\begin{tabular}{rrrrr}\toprule
+Input (MHz) & Transient noise & SNDR (dB) & ENOB formula & Core AVDD ($\mu$W)\\\midrule
+1.328125 & Off & 50.754 & 8.139 & 46.009\\
+2.265625 & Off & 49.775 & 7.976 & 46.103\\
+9.296875 & Off & 50.463 & 8.090 & 46.385\\
+1.328125 & On, seed 43 & 48.054 & 7.690 & 46.000\\
+9.296875 & On, seed 79 & 47.494 & 7.597 & 46.380\\\bottomrule
+\end{tabular}
+\end{table*}
+
+The effective resolution is computed as $(\mathrm{SNDR}-1.76)/6.02$. Values above eight from short noiseless records do not establish greater physical precision. The two noisy results are 7.597--7.690 effective bits, while the output word remains nominally eight bits. The selected low- and high-tone SNDR targets are 45 and 42\,dB. One noisy record per tone is insufficient for precise noise statistics or a yield claim. The effective model-noise band in these runs is approximately 74.627\,kHz to 10\,GHz.
+
+\begin{figure}[!t]\centering
+\includegraphics[width=\columnwidth]{../figures/sndr_vs_fin.png}
+\caption{Historical output-code SNDR at the saved tones. The plotted values summarize the archived code records; no new analog simulation is introduced by this report.}\label{fig:sndr}
+\end{figure}
+
+\subsection{Static Linearity and History}
+Noiseless TT, SS, FF, SF, and FS datasets contain 553 observations each and observe all 256 codes. All 255 transition brackets include an input guard. Endpoint fitting removes offset and gain; the fitted LSB uncertainty is propagated into the reported intervals. DNL covers interior codes 1--254 because the saturated end bins do not have two bounded transition edges. The worst retained magnitudes across the saved bounds are 0.251154\,LSB DNL and 0.190113\,LSB INL, inside the declared $\pm0.5$ and $\pm1$\,LSB limits.
+
+The reverse-history equality diagnostic remains \emph{false}: 69 of 70 selected anchors agree. At exactly zero differential input, positive preceding history produces code 128 and negative preceding history produces 127. Under both tested relative tolerances, 0.001 and 0.0001, the selected $\pm20$\,$\mu$V probes produce the adjacent expected codes. This local observation does not eliminate history dependence at the transition.
+
+The selected central-history band is approximately $[-21,+21]$\,$\mu$V after guards. The earlier forward bracket extends farther positive. The final $T_{128}$ interval therefore retains their union, approximately $[-21,+485.498]$\,$\mu$V; it is not narrowed to the newer band. Other transitions retain their original forward brackets. The saved reverse anchors do not verify every possible input history.
+
+\subsection{Power and Export Boundaries}
+AVDD power is a saved aggregate measured by the original testbench over adaptive internal timesteps. Ideal reference-high, reference-low, common-mode, and clock-source contributions are recorded separately with their signs. Negative contributions indicate returned energy. The published analysis checks aggregate arithmetic but does not reintegrate raw supply currents. Physical input, reference, and clock drivers are not implemented or included in a complete system-power budget.
+
+Historical saved-and-reopened CAD export checks and an eight-conversion DC smoke test establish only their stated export scope. They do not replace dynamic or static ADC verification. The tighter central-boundary result was recovered from a complete saved transient and an error-free log after empty result files; its original process exit code remains unknown. Recovery-time model hashes cannot independently prove the earlier state of external model files.
+
+\section{Reproduction and Remaining Work}
+The repository's standard-library Python tools verify release hashes and recompute code spectra, deterministic bracket bounds, the central-history union, and the nominal hierarchy count. They retain the failed reverse diagnostic. These commands do not load a process model or run Spectre:
+\begin{quote}\small\ttfamily
+python tools/verify\_release.py\\
+python tools/reproduce\_all.py --outdir reproduced
+\end{quote}
+The output directory must be new. The symbolic connectivity export contains undefined \texttt{NMOS\_CORE} and \texttt{PMOS\_CORE} names. A transistor rerun needs authorized compatible models, complete native instance parameters and options, and a reviewed external stimulus and measurement fixture. Substituting arbitrary generic models is not equivalent reproduction.
+
+The schematic prototype has no qualified capacitor mismatch, extracted parasitics, layout area, DRC/LVS/PEX, voltage/temperature sweep, yield, extensive noisy-corner ensemble, or silicon result. The exact 3-dB effective-resolution bandwidth crossing is unmeasured. These limitations are unchanged by the new CircuitikZ presentation.
+
+\section{Conclusion}
+The saved experiments support an eight-bit, 20-MS/s schematic prototype with ideal capacitor arrays and 7.597--7.690 ENOB in two short transient-noise records. The publication preserves both bounded static linearity and the failed exact-zero reverse-history diagnostic. The editable drawings connect those results to the implemented CDAC switches, comparator storage, and native controller without extending the verification claims.
+
+\begin{thebibliography}{1}
+\bibitem{repo} SAR ADC Project, \emph{Authored Connectivity and Saved ADC Verification Exports}. [Online]. Available: \url{https://github.com/handsomegary/sar-adc-8bit}.
+\end{thebibliography}
+\end{document}

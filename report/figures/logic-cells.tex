@@ -1,0 +1,58 @@
+% Direct terminal order is D G S B; dimensions are nominal W L in metres.
+% @mos sar_inv Mp PMOS y a vdd vdd 1e-6 30e-9
+% @mos sar_inv Mn NMOS y a vss vss .5e-6 30e-9
+% @mos sar_nand2 Mp0 PMOS y a vdd vdd 1e-6 30e-9
+% @mos sar_nand2 Mp1 PMOS y b vdd vdd 1e-6 30e-9
+% @mos sar_nand2 Mn0 NMOS y a ns vss 1e-6 30e-9
+% @mos sar_nand2 Mn1 NMOS ns b vss vss 1e-6 30e-9
+% @mos sar_tg Mn NMOS y en a vss .5e-6 30e-9
+% @mos sar_tg Mp PMOS y enb a vdd 1e-6 30e-9
+\begin{circuitikz}
+% (a) CMOS inverter; named terminals follow the exported device order.
+\node[pmos] (ip) at (1.65,4.0) {};
+\node[nmos] (in) at (1.65,1.65) {};
+\draw (ip.S) -- (1.65,5.05) node[above] {$V_{\mathrm{DD}}$};
+\draw (in.S) -- (1.65,.70) node[ground] {};
+\draw (ip.D) -- (in.D);
+\draw (ip.G) -- (.35,4.0) -- (.35,1.65) -- (in.G);
+\draw (.35,2.8) node[adc dot] {} -- (-.2,2.8) node[left] {$a$};
+\draw (1.65,2.8) node[adc dot] {} -- (2.7,2.8) node[right] {$y$};
+\node[right] at (ip.D) {$M_p$};
+\node[right] at (in.D) {$M_n$};
+\node[align=center] at (1.4,-1.0) {(a) Inverter\\$W_p/W_n=1/0.5\;\mu\mathrm{m}$};
+% (b) NAND2: parallel PMOS pull-up and series NMOS pull-down.
+\node[pmos] (np0) at (5.4,4.0) {};
+\node[pmos,xscale=-1] (np1) at (7.8,4.0) {};
+\node[nmos] (nn0) at (6.6,2.15) {};
+\node[nmos] (nn1) at (6.6,.65) {};
+\draw (np0.S) -- (5.4,5.05) -- (7.8,5.05) -- (np1.S);
+\node[above] at (6.6,5.05) {$V_{\mathrm{DD}}$};
+\draw (np0.D) -- (5.4,3.1) -- (7.8,3.1) -- (np1.D);
+\draw (6.6,3.1) node[adc dot] {} -- (nn0.D);
+\draw (7.8,3.1) node[adc dot] {} -- (8.55,3.1) node[right] {$y$};
+\draw (nn0.S) -- (nn1.D);
+\draw (6.6,1.38) node[adc dot] {} -- (7.15,1.38) node[right] {$ns$};
+\draw (nn1.S) -- (6.6,-.15) node[ground] {};
+\draw (np0.G) -- ++(-.35,0) node[left] {$a$};
+\draw (np1.G) -- ++(.35,0) node[right] {$b$};
+\draw (nn0.G) -- ++(-.35,0) node[left] {$a$};
+\draw (nn1.G) -- ++(-.35,0) node[left] {$b$};
+\node[right] at (np0.D) {$M_{p0}$};
+\node[left] at (np1.D) {$M_{p1}$};
+\node[right] at (7.0,2.15) {$M_{n0}$};
+\node[right] at (7.0,.65) {$M_{n1}$};
+\node[align=center] at (6.6,-1.0) {(b) NAND2\\All four widths: $1\;\mu\mathrm{m}$};
+% (c) Parallel complementary pass devices; a is the declared source.
+\node[nmos,rotate=-90] (tn) at (12.35,3.65) {};
+\node[pmos,rotate=90] (tp) at (12.35,1.95) {};
+\draw (tn.S) -- (11.2,3.65) -- (11.2,1.95) -- (tp.S);
+\draw (tn.D) -- (13.5,3.65) -- (13.5,1.95) -- (tp.D);
+\draw (11.2,2.8) node[adc dot] {} -- (10.6,2.8) node[left] {$a$};
+\draw (13.5,2.8) node[adc dot] {} -- (14.1,2.8) node[right] {$y$};
+\draw (tn.G) -- ++(0,.4) node[above] {$en$};
+\draw (tp.G) -- ++(0,-.4) node[below] {$enb$};
+\node[above left] at (tn.S) {$M_n$};
+\node[below left] at (tp.S) {$M_p$};
+\node[align=center] at (12.35,-1.0) {(c) Transmission gate\\$W_n/W_p=0.5/1\;\mu\mathrm{m}$};
+\node[align=center] at (7.0,-2.0) {All $L=30\;\mathrm{nm}$. NMOS bulk: $V_{\mathrm{SS}}$; PMOS bulk: $V_{\mathrm{DD}}$.\\Equal labels denote the same net; dots mark junctions. Ground denotes $V_{\mathrm{SS}}$.};
+\end{circuitikz}

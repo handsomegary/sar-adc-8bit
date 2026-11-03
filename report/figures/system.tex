@@ -1,0 +1,38 @@
+\begin{circuitikz}[x=1cm,y=1cm]
+\node[adc block,minimum width=3.2cm,minimum height=2.2cm] (dac) at (3.4,3.8)
+  {Differential CDAC\\$C_u=5\,\mathrm{fF}$\\$256C_u$ per side};
+\node[adc block,minimum width=3.1cm,minimum height=2.2cm] (cmp) at (8.1,3.8)
+  {Dynamic comparator\\isolation buffers\\NAND SR hold};
+\path[adc group] (1.5,-.5) rectangle (13.8,1.9);
+\node[adc block,minimum width=4.7cm,minimum height=1.25cm] (seq) at (4.3,.6)
+  {5-stage Johnson counter\\interlocked phases / bit latches};
+\node[adc block,minimum width=3.2cm,minimum height=1.25cm] (out) at (10.7,.6)
+  {8 output latches\\$D_7\ldots D_0$};
+\node[adc net,anchor=west] at (8.6,-.3) {Native SAR controller};
+\draw[adc signal] (0,4.35) node[left] {$V_{\!IP}$} -- (1.8,4.35);
+\draw[adc signal] (0,3.25) node[left] {$V_{\!IN}$} -- (1.8,3.25);
+\draw[adc signal] (5,4.35) -- (6.55,4.35) node[midway,above] {$v_p$};
+\draw[adc signal] (5,3.25) -- (6.55,3.25) node[midway,above] {$v_n$};
+\draw[adc signal] (9.65,3.8) -- (12.8,3.8) node[midway,above] {$\mathrm{cmpQ}$}
+  -- (12.8,2.2) -- (5.2,2.2) -- (5.2,1.225);
+\draw[adc control] (2.4,1.225) -- (2.4,2.7) node[midway,left] {track};
+\draw[adc control] (3.4,1.225) -- (3.4,2.7) node[midway,right] {$b_{7:0},v_{7:0}$};
+\draw[adc control] (6.65,.6) -- (7.3,.6) -- (7.3,2.7) node[midway,left] {cmpclk};
+\draw[adc signal] (6.65,.25) -- (9.1,.25) node[midway,below] {$b_{7:0}$};
+\draw[adc control] (6.65,.95) -- (9.1,.95) node[pos=.65,above,align=center] {output\\enable};
+\draw[adc signal] (12.3,.6) -- (14.5,.6) node[right,align=left] {8-bit\\output};
+\draw[adc control] (0,.6) node[left,align=center] {200 MHz\\CLK} -- (1.95,.6);
+\draw (0,-1) node[vcc] {$V_{\!DD}$} to[C,l=$1\,\mathrm{pF}$] (0,-2.4)
+  node[circ] {} to[R,l_=$100\,\mathrm{k}\Omega$] (0,-4) node[ground] {};
+\node[not port] (pi0) at (1.7,-2.4) {};
+\node[not port] (pi1) at (3.1,-2.4) {};
+\draw (0,-2.4) -- (pi0.in) node[midway,above] {por};
+\draw (pi0.out) -- (pi1.in) node[midway,above] {porb};
+\draw[adc control] (pi1.out) -- (4.3,-2.4) -- (4.3,-.025)
+  node[pos=.55,right] {RST};
+\node[adc net,anchor=west,align=left] at (5.7,-2.25)
+  {Internal power-on reset\\requires an actual supply ramp};
+\draw[adc signal] (3.4,6) node[above,align=center] {$V_{\!REFP}=0.7$ V, $V_{\!REFN}=0.2$ V\\$V_{\!CM}=0.45$ V} -- (3.4,4.9);
+\node[adc net,anchor=west] at (8.2,5.65) {$V_{\!DD}=0.9$ V; $f_s=20$ MS/s};
+\node[adc net,anchor=west] at (8.2,5.15) {2 acquisition + 8 comparison slots};
+\end{circuitikz}

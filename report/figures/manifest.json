@@ -1,0 +1,81 @@
+{
+  "drawings": {
+    "cdac-switch": {
+      "source": "cdac-switch.tex",
+      "source_sha256": "85fc9d654c6aa074c21d77fa4f16586cea6376021fe42283f70435384a052710",
+      "style_sha256": "b0a2ce32fef6cf4e75f0008d1c73b30b8309c3f0df218b9fd012986dcf83fe1c",
+      "standalone_preamble_sha256": "3e80b035c4c0a8c7e96decfe87b4497807741ed4cd71eadb037c4101450900bf",
+      "pdf": "cdac-switch.pdf",
+      "pdf_sha256": "0fb9bc7fa654ad76f165348c70a01b55a61f22466d4a9b719e5224b9357d1404",
+      "svg": "cdac-switch.svg",
+      "svg_sha256": "ccf9d1e60fb5deb7e2e79b506d3f93521bb917fb696f5d6fd81f0001e8be1e3a",
+      "svg_conversion": "pdftocairo -svg from the compiled standalone PDF; explicit white background added"
+    },
+    "cdac": {
+      "source": "cdac.tex",
+      "source_sha256": "b5370c009f055a51420768822355d31a1fb33e356b3cecfddfd25c5039055298",
+      "style_sha256": "b0a2ce32fef6cf4e75f0008d1c73b30b8309c3f0df218b9fd012986dcf83fe1c",
+      "standalone_preamble_sha256": "3e80b035c4c0a8c7e96decfe87b4497807741ed4cd71eadb037c4101450900bf",
+      "pdf": "cdac.pdf",
+      "pdf_sha256": "0326a66a04949976f6a2022f6993659465a0ea094f5b31109a2e3ccd0d244c87",
+      "svg": "cdac.svg",
+      "svg_sha256": "95b7c158c6d7a24cb7a9f0711b0b1a0c42b8bd710d581898e54f20bfcd2f2848",
+      "svg_conversion": "pdftocairo -svg from the compiled standalone PDF; explicit white background added"
+    },
+    "comparator": {
+      "source": "comparator.tex",
+      "source_sha256": "09bc65caeada885f8abe6f2b486942a48004cd800c8fcb05da1472f4185ff7ad",
+      "style_sha256": "b0a2ce32fef6cf4e75f0008d1c73b30b8309c3f0df218b9fd012986dcf83fe1c",
+      "standalone_preamble_sha256": "3e80b035c4c0a8c7e96decfe87b4497807741ed4cd71eadb037c4101450900bf",
+      "pdf": "comparator.pdf",
+      "pdf_sha256": "c5f5200e5466eb1045fda8e2b41bf5c988866dc14c38d93af7a598e989005740",
+      "svg": "comparator.svg",
+      "svg_sha256": "040642ec7fd3b02e05be8d3f373cb88ded05ff78e7fea06fe56f483c42c41377",
+      "svg_conversion": "pdftocairo -svg from the compiled standalone PDF; explicit white background added"
+    },
+    "controller": {
+      "source": "controller.tex",
+      "source_sha256": "2714f9d37d67b26274975407e09c65651e9cff8d6985b4907822e777c99c6280",
+      "style_sha256": "b0a2ce32fef6cf4e75f0008d1c73b30b8309c3f0df218b9fd012986dcf83fe1c",
+      "standalone_preamble_sha256": "3e80b035c4c0a8c7e96decfe87b4497807741ed4cd71eadb037c4101450900bf",
+      "pdf": "controller.pdf",
+      "pdf_sha256": "a8e7ebdb17010298d84f3fe917b3dc63829a6522df9f1350a4066a3bcaa4221a",
+      "svg": "controller.svg",
+      "svg_sha256": "d9e8268459d7bb5c2559a12ed72e85db42a61c2ac8451f2c7fb7d11d0f0e7cc5",
+      "svg_conversion": "pdftocairo -svg from the compiled standalone PDF; explicit white background added"
+    },
+    "logic-cells": {
+      "source": "logic-cells.tex",
+      "source_sha256": "80bcb1f6a287411bce6a08977c19248b37290d99ddd092bf4d5c5aea153ce5a0",
+      "style_sha256": "b0a2ce32fef6cf4e75f0008d1c73b30b8309c3f0df218b9fd012986dcf83fe1c",
+      "standalone_preamble_sha256": "3e80b035c4c0a8c7e96decfe87b4497807741ed4cd71eadb037c4101450900bf",
+      "pdf": "logic-cells.pdf",
+      "pdf_sha256": "08cddd9c36dad59811e217aed347b35a285dd3722a1507ee0f0f400562cc2555",
+      "svg": "logic-cells.svg",
+      "svg_sha256": "67aacb61d05f87bdca5e9dcb2cd5a5a14d35a66d9ffe7f009152c5a1a12ec405",
+      "svg_conversion": "pdftocairo -svg from the compiled standalone PDF; explicit white background added"
+    },
+    "logic-latch": {
+      "source": "logic-latch.tex",
+      "source_sha256": "f4cf7403269ff062fa19b061ff2137f572be5f3708570df829fd3bfb3b79b9d3",
+      "style_sha256": "b0a2ce32fef6cf4e75f0008d1c73b30b8309c3f0df218b9fd012986dcf83fe1c",
+      "standalone_preamble_sha256": "3e80b035c4c0a8c7e96decfe87b4497807741ed4cd71eadb037c4101450900bf",
+      "pdf": "logic-latch.pdf",
+      "pdf_sha256": "ebd07ab21d99372b25d463ed0b3ba62423d66ba6de6108cc273afd03771cbb7b",
+      "svg": "logic-latch.svg",
+      "svg_sha256": "73319822e139bc84f98deb693621d3f62bd7f51a2243e744009c891635ff4011",
+      "svg_conversion": "pdftocairo -svg from the compiled standalone PDF; explicit white background added"
+    },
+    "system": {
+      "source": "system.tex",
+      "source_sha256": "486f7ec3c71ef2ddb60641b2340b58cef2985fc8a9294e0795e2ebc7c2422039",
+      "style_sha256": "b0a2ce32fef6cf4e75f0008d1c73b30b8309c3f0df218b9fd012986dcf83fe1c",
+      "standalone_preamble_sha256": "3e80b035c4c0a8c7e96decfe87b4497807741ed4cd71eadb037c4101450900bf",
+      "pdf": "system.pdf",
+      "pdf_sha256": "b0df51d7315cbbe30250fb913d1541a0a8951f8dca6b62fb70d803cfc05c3621",
+      "svg": "system.svg",
+      "svg_sha256": "05ef6540478e7f1a0c4f57804b88e8a4cbfd0e11f1749651d321b5c5091ebb55",
+      "svg_conversion": "pdftocairo -svg from the compiled standalone PDF; explicit white background added"
+    }
+  }
+}

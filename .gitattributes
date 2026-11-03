@@ -3,3 +3,4 @@
 *.csv -text
 *.svg -text
 *.png -text
+*.pdf -text

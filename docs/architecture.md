@@ -2,6 +2,8 @@
 
 The design retains eight output decisions while adapting the project target to 20 MS/s and 0.9 V. This target is an implementation choice, not a maximum-speed claim for a process node.
 
+The [IEEE-style report](../report/sar-adc-8bit.pdf) and [editable LaTeX](../report/main.tex) provide black-and-white CircuitikZ drawings with American circuit symbols. Standalone views include the [signal path](../report/figures/system.svg), [comparator](../report/figures/comparator.svg), [CDAC array](../report/figures/cdac.svg) and [CDAC switch detail](../report/figures/cdac-switch.svg). These drawings document the authored topology; they are not layout or an editable CAD schematic database.
+
 | Block | Expanded MOS | Function |
 |---|---:|---|
 | Compact controller | 424 | Johnson states, clock phases, bit storage and output storage |
